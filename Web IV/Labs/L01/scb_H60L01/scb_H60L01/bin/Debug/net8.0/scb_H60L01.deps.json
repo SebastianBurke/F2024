@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "scb_H60L01/1.0.0": {
+        "runtime": {
+          "scb_H60L01.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "scb_H60L01/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
