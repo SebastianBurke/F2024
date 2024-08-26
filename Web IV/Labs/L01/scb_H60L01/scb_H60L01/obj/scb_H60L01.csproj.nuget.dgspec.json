@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L01\\scb_H60L01\\scb_H60L01\\scb_H60L01.csproj": {}
+    "C:\\Users\\2026996\\Downloads\\scanalesburke_L01\\L01\\scb_H60L01\\scb_H60L01\\scb_H60L01.csproj": {}
   },
   "projects": {
-    "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L01\\scb_H60L01\\scb_H60L01\\scb_H60L01.csproj": {
+    "C:\\Users\\2026996\\Downloads\\scanalesburke_L01\\L01\\scb_H60L01\\scb_H60L01\\scb_H60L01.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L01\\scb_H60L01\\scb_H60L01\\scb_H60L01.csproj",
+        "projectUniqueName": "C:\\Users\\2026996\\Downloads\\scanalesburke_L01\\L01\\scb_H60L01\\scb_H60L01\\scb_H60L01.csproj",
         "projectName": "scb_H60L01",
-        "projectPath": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L01\\scb_H60L01\\scb_H60L01\\scb_H60L01.csproj",
+        "projectPath": "C:\\Users\\2026996\\Downloads\\scanalesburke_L01\\L01\\scb_H60L01\\scb_H60L01\\scb_H60L01.csproj",
         "packagesPath": "C:\\Users\\2026996\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L01\\scb_H60L01\\scb_H60L01\\obj\\",
+        "outputPath": "C:\\Users\\2026996\\Downloads\\scanalesburke_L01\\L01\\scb_H60L01\\scb_H60L01\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\2026996\\AppData\\Roaming\\NuGet\\NuGet.Config",

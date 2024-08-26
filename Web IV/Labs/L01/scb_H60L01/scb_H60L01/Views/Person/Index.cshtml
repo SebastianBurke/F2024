@@ -1,0 +1,40 @@
+﻿@model IEnumerable<scb_H60L01.Models.Person>
+
+@{
+    ViewData["Title"] = "Person List";
+}
+
+<main>
+    <h2>Person List</h2>
+
+    @if (ViewBag.Message != null)
+    {
+        <div class="alert alert-success">
+            @ViewBag.Message
+        </div>
+    }
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Country</th>
+                <th>Email</th>
+                <th>Validated</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var person in Model)
+            {
+                <tr>
+                    <td>@person.FirstName</td>
+                    <td>@person.LastName</td>
+                    <td>@person.Country</td>
+                    <td>@person.Email</td>
+                    <td>@person.Validated</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</main>

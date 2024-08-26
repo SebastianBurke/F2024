@@ -1,22 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L01\\scb_H60L01\\",
+  "WorkspaceRootPath": "C:\\Users\\2026996\\Downloads\\scanalesburke_L01\\L01\\scb_H60L01\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A65086A5-48A6-472D-B842-8522D5B4252A}|scb_H60L01\\scb_H60L01.csproj|c:\\users\\2026996\\desktop\\f2024\\web iv\\labs\\l01\\scb_h60l01\\scb_h60l01\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{A65086A5-48A6-472D-B842-8522D5B4252A}|scb_H60L01\\scb_H60L01.csproj|c:\\users\\2026996\\downloads\\scanalesburke_l01\\l01\\scb_h60l01\\scb_h60l01\\views\\person\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A65086A5-48A6-472D-B842-8522D5B4252A}|scb_H60L01\\scb_H60L01.csproj|solutionrelative:scb_h60l01\\views\\person\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A65086A5-48A6-472D-B842-8522D5B4252A}|scb_H60L01\\scb_H60L01.csproj|c:\\users\\2026996\\downloads\\scanalesburke_l01\\l01\\scb_h60l01\\scb_h60l01\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A65086A5-48A6-472D-B842-8522D5B4252A}|scb_H60L01\\scb_H60L01.csproj|solutionrelative:scb_h60l01\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A65086A5-48A6-472D-B842-8522D5B4252A}|scb_H60L01\\scb_H60L01.csproj|c:\\users\\2026996\\desktop\\f2024\\web iv\\labs\\l01\\scb_h60l01\\scb_h60l01\\models\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A65086A5-48A6-472D-B842-8522D5B4252A}|scb_H60L01\\scb_H60L01.csproj|c:\\users\\2026996\\downloads\\scanalesburke_l01\\l01\\scb_h60l01\\scb_h60l01\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A65086A5-48A6-472D-B842-8522D5B4252A}|scb_H60L01\\scb_H60L01.csproj|solutionrelative:scb_h60l01\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A65086A5-48A6-472D-B842-8522D5B4252A}|scb_H60L01\\scb_H60L01.csproj|c:\\users\\2026996\\downloads\\scanalesburke_l01\\l01\\scb_h60l01\\scb_h60l01\\views\\person\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A65086A5-48A6-472D-B842-8522D5B4252A}|scb_H60L01\\scb_H60L01.csproj|solutionrelative:scb_h60l01\\views\\person\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A65086A5-48A6-472D-B842-8522D5B4252A}|scb_H60L01\\scb_H60L01.csproj|c:\\users\\2026996\\downloads\\scanalesburke_l01\\l01\\scb_h60l01\\scb_h60l01\\models\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A65086A5-48A6-472D-B842-8522D5B4252A}|scb_H60L01\\scb_H60L01.csproj|solutionrelative:scb_h60l01\\models\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A65086A5-48A6-472D-B842-8522D5B4252A}|scb_H60L01\\scb_H60L01.csproj|c:\\users\\2026996\\desktop\\f2024\\web iv\\labs\\l01\\scb_h60l01\\scb_h60l01\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A65086A5-48A6-472D-B842-8522D5B4252A}|scb_H60L01\\scb_H60L01.csproj|solutionrelative:scb_h60l01\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{A65086A5-48A6-472D-B842-8522D5B4252A}|scb_H60L01\\scb_H60L01.csproj|c:\\users\\2026996\\downloads\\scanalesburke_l01\\l01\\scb_h60l01\\scb_h60l01\\controllers\\personcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A65086A5-48A6-472D-B842-8522D5B4252A}|scb_H60L01\\scb_H60L01.csproj|solutionrelative:scb_h60l01\\controllers\\personcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A65086A5-48A6-472D-B842-8522D5B4252A}|scb_H60L01\\scb_H60L01.csproj|c:\\users\\2026996\\desktop\\f2024\\web iv\\labs\\l01\\scb_h60l01\\scb_h60l01\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A65086A5-48A6-472D-B842-8522D5B4252A}|scb_H60L01\\scb_H60L01.csproj|solutionrelative:scb_h60l01\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A65086A5-48A6-472D-B842-8522D5B4252A}|scb_H60L01\\scb_H60L01.csproj|c:\\users\\2026996\\downloads\\scanalesburke_l01\\l01\\scb_h60l01\\scb_h60l01\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A65086A5-48A6-472D-B842-8522D5B4252A}|scb_H60L01\\scb_H60L01.csproj|solutionrelative:scb_h60l01\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,52 +38,91 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Person.cs",
-              "DocumentMoniker": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L01\\scb_H60L01\\scb_H60L01\\Models\\Person.cs",
+              "DocumentMoniker": "C:\\Users\\2026996\\Downloads\\scanalesburke_L01\\L01\\scb_H60L01\\scb_H60L01\\Models\\Person.cs",
               "RelativeDocumentMoniker": "scb_H60L01\\Models\\Person.cs",
-              "ToolTip": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L01\\scb_H60L01\\scb_H60L01\\Models\\Person.cs",
+              "ToolTip": "C:\\Users\\2026996\\Downloads\\scanalesburke_L01\\L01\\scb_H60L01\\scb_H60L01\\Models\\Person.cs",
               "RelativeToolTip": "scb_H60L01\\Models\\Person.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADAAAAAYAAAA",
+              "ViewState": "AQIAACwAAAAAAAAAAAAAwDQAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-23T18:38:50.865Z",
+              "WhenOpened": "2024-08-26T12:49:19.304Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "site.css",
-              "DocumentMoniker": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L01\\scb_H60L01\\scb_H60L01\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "scb_H60L01\\wwwroot\\css\\site.css",
-              "ToolTip": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L01\\scb_H60L01\\scb_H60L01\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "scb_H60L01\\wwwroot\\css\\site.css",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-08-23T18:19:04.556Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L01\\scb_H60L01\\scb_H60L01\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "scb_H60L01\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L01\\scb_H60L01\\scb_H60L01\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "scb_H60L01\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAZAAAA",
+              "Title": "Add.cshtml",
+              "DocumentMoniker": "C:\\Users\\2026996\\Downloads\\scanalesburke_L01\\L01\\scb_H60L01\\scb_H60L01\\Views\\Person\\Add.cshtml",
+              "RelativeDocumentMoniker": "scb_H60L01\\Views\\Person\\Add.cshtml",
+              "ToolTip": "C:\\Users\\2026996\\Downloads\\scanalesburke_L01\\L01\\scb_H60L01\\scb_H60L01\\Views\\Person\\Add.cshtml",
+              "RelativeToolTip": "scb_H60L01\\Views\\Person\\Add.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-23T18:13:48.073Z"
+              "WhenOpened": "2024-08-26T12:37:02.938Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L01\\scb_H60L01\\scb_H60L01\\Views\\Home\\Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\2026996\\Downloads\\scanalesburke_L01\\L01\\scb_H60L01\\scb_H60L01\\Views\\Person\\Index.cshtml",
+              "RelativeDocumentMoniker": "scb_H60L01\\Views\\Person\\Index.cshtml",
+              "ToolTip": "C:\\Users\\2026996\\Downloads\\scanalesburke_L01\\L01\\scb_H60L01\\scb_H60L01\\Views\\Person\\Index.cshtml",
+              "RelativeToolTip": "scb_H60L01\\Views\\Person\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-26T12:33:26.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PersonController.cs",
+              "DocumentMoniker": "C:\\Users\\2026996\\Downloads\\scanalesburke_L01\\L01\\scb_H60L01\\scb_H60L01\\Controllers\\PersonController.cs",
+              "RelativeDocumentMoniker": "scb_H60L01\\Controllers\\PersonController.cs",
+              "ToolTip": "C:\\Users\\2026996\\Downloads\\scanalesburke_L01\\L01\\scb_H60L01\\scb_H60L01\\Controllers\\PersonController.cs",
+              "RelativeToolTip": "scb_H60L01\\Controllers\\PersonController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-26T12:21:17.88Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\2026996\\Downloads\\scanalesburke_L01\\L01\\scb_H60L01\\scb_H60L01\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "scb_H60L01\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\2026996\\Downloads\\scanalesburke_L01\\L01\\scb_H60L01\\scb_H60L01\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "scb_H60L01\\wwwroot\\css\\site.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-08-23T18:19:04.556Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\2026996\\Downloads\\scanalesburke_L01\\L01\\scb_H60L01\\scb_H60L01\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "scb_H60L01\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\2026996\\Downloads\\scanalesburke_L01\\L01\\scb_H60L01\\scb_H60L01\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "scb_H60L01\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-23T18:13:48.073Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\2026996\\Downloads\\scanalesburke_L01\\L01\\scb_H60L01\\scb_H60L01\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "scb_H60L01\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L01\\scb_H60L01\\scb_H60L01\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\2026996\\Downloads\\scanalesburke_L01\\L01\\scb_H60L01\\scb_H60L01\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "scb_H60L01\\Views\\Home\\Index.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",

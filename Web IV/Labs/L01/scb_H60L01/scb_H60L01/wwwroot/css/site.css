@@ -29,3 +29,27 @@ body {
     height: 100px;
     float: right;
 }
+
+.validation-summary-errors {
+    color: red;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+
+.field-validation-error {
+    color: red;
+    padding: 5px;
+    display: block;
+    margin-top: 5px;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}

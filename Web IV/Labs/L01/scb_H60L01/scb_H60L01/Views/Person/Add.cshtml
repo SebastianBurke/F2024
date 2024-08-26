@@ -1,0 +1,59 @@
+﻿@model scb_H60L01.Models.Person
+
+@{
+    ViewData["Title"] = "Add Person";
+    var countries = Enum.GetValues(typeof(scb_H60L01.Models.Person.ValidCountry))
+                         .Cast<scb_H60L01.Models.Person.ValidCountry>()
+                         .ToList();
+}
+
+<main>
+    <h2>Add a New Person</h2>
+    <p>Fill in the details below to add a new person to the list.</p>
+
+    <form asp-action="Add" method="post">
+        <div class="form-group">
+            <div asp-validation-summary="All" class="validation-summary-errors"></div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="FirstName"></label>
+            <input asp-for="FirstName" class="form-control input-validation-error" />
+            <span asp-validation-for="FirstName" class="field-validation-error"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="LastName"></label>
+            <input asp-for="LastName" class="form-control input-validation-error" />
+            <span asp-validation-for="LastName" class="field-validation-error"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Country"></label>
+            <select asp-for="Country" class="form-control">
+                <option value="">Select Country</option>
+                @foreach (var country in countries)
+                {
+                    <option value="@country">@country</option>
+                }
+            </select>
+            <span asp-validation-for="Country" class="field-validation-error"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" class="form-control input-validation-error" />
+            <span asp-validation-for="Email" class="field-validation-error"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Validated"></label>
+            <input asp-for="Validated" type="checkbox" class="form-check-input" />
+            <span asp-validation-for="Validated" class="field-validation-error"></span>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Add Person</button>
+        </div>
+    </form>
+</main>
