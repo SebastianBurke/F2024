@@ -1,0 +1,13 @@
+﻿@model IEnumerable<PartA.Models.Pet>
+
+@{
+    ViewData["Title"] = "Pets with names that start with the letter P";
+}
+
+<main>
+    <h2>Pets with names that start with the letter P</h2>
+    @foreach (var pet in Model)
+    {
+        <p>@pet.PetName</p>
+    }
+</main>

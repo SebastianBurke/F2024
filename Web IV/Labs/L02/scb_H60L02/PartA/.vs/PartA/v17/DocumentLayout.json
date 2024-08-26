@@ -1,0 +1,207 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L02\\scb_H60L02\\PartA\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|c:\\users\\2026996\\desktop\\f2024\\web iv\\labs\\l02\\scb_h60l02\\parta\\parta\\controllers\\petscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|solutionrelative:parta\\controllers\\petscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|c:\\users\\2026996\\desktop\\f2024\\web iv\\labs\\l02\\scb_h60l02\\parta\\parta\\views\\pets\\p_pets.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|solutionrelative:parta\\views\\pets\\p_pets.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|c:\\users\\2026996\\desktop\\f2024\\web iv\\labs\\l02\\scb_h60l02\\parta\\parta\\models\\pet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|solutionrelative:parta\\models\\pet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|c:\\users\\2026996\\desktop\\f2024\\web iv\\labs\\l02\\scb_h60l02\\parta\\parta\\views\\cities\\allcities.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|solutionrelative:parta\\views\\cities\\allcities.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|c:\\users\\2026996\\desktop\\f2024\\web iv\\labs\\l02\\scb_h60l02\\parta\\parta\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|solutionrelative:parta\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|c:\\users\\2026996\\desktop\\f2024\\web iv\\labs\\l02\\scb_h60l02\\parta\\parta\\models\\city.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|solutionrelative:parta\\models\\city.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|c:\\users\\2026996\\desktop\\f2024\\web iv\\labs\\l02\\scb_h60l02\\parta\\parta\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|solutionrelative:parta\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|c:\\users\\2026996\\desktop\\f2024\\web iv\\labs\\l02\\scb_h60l02\\parta\\parta\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|solutionrelative:parta\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|c:\\users\\2026996\\desktop\\f2024\\web iv\\labs\\l02\\scb_h60l02\\parta\\parta\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|solutionrelative:parta\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|c:\\users\\2026996\\desktop\\f2024\\web iv\\labs\\l02\\scb_h60l02\\parta\\parta\\controllers\\citiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|solutionrelative:parta\\controllers\\citiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|c:\\users\\2026996\\desktop\\f2024\\web iv\\labs\\l02\\scb_h60l02\\parta\\parta\\models\\h60l02efreviewcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|solutionrelative:parta\\models\\h60l02efreviewcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Pet.cs",
+              "DocumentMoniker": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Models\\Pet.cs",
+              "RelativeDocumentMoniker": "PartA\\Models\\Pet.cs",
+              "ToolTip": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Models\\Pet.cs",
+              "RelativeToolTip": "PartA\\Models\\Pet.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-26T19:18:08.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "P_Pets.cshtml",
+              "DocumentMoniker": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Views\\Pets\\P_Pets.cshtml",
+              "RelativeDocumentMoniker": "PartA\\Views\\Pets\\P_Pets.cshtml",
+              "ToolTip": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Views\\Pets\\P_Pets.cshtml",
+              "RelativeToolTip": "PartA\\Views\\Pets\\P_Pets.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-26T19:15:44.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PetsController.cs",
+              "DocumentMoniker": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Controllers\\PetsController.cs",
+              "RelativeDocumentMoniker": "PartA\\Controllers\\PetsController.cs",
+              "ToolTip": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Controllers\\PetsController.cs",
+              "RelativeToolTip": "PartA\\Controllers\\PetsController.cs",
+              "ViewState": "AQIAAIkAAAAAAAAAAAAAwI8AAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-26T19:13:52.14Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AllCities.cshtml",
+              "DocumentMoniker": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Views\\Cities\\AllCities.cshtml",
+              "RelativeDocumentMoniker": "PartA\\Views\\Cities\\AllCities.cshtml",
+              "ToolTip": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Views\\Cities\\AllCities.cshtml",
+              "RelativeToolTip": "PartA\\Views\\Cities\\AllCities.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-26T19:04:35.094Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "City.cs",
+              "DocumentMoniker": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Models\\City.cs",
+              "RelativeDocumentMoniker": "PartA\\Models\\City.cs",
+              "ToolTip": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Models\\City.cs",
+              "RelativeToolTip": "PartA\\Models\\City.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-26T18:48:58.692Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "PartA\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "PartA\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-26T18:48:18.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CitiesController.cs",
+              "DocumentMoniker": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Controllers\\CitiesController.cs",
+              "RelativeDocumentMoniker": "PartA\\Controllers\\CitiesController.cs",
+              "ToolTip": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Controllers\\CitiesController.cs",
+              "RelativeToolTip": "PartA\\Controllers\\CitiesController.cs",
+              "ViewState": "AQIAAIYAAAAAAAAAAAAAwJ4AAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-26T18:47:48.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "PartA\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "PartA\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-26T18:26:45.615Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\appsettings.json",
+              "RelativeDocumentMoniker": "PartA\\appsettings.json",
+              "ToolTip": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\appsettings.json",
+              "RelativeToolTip": "PartA\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-26T18:18:29.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Program.cs",
+              "RelativeDocumentMoniker": "PartA\\Program.cs",
+              "ToolTip": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Program.cs",
+              "RelativeToolTip": "PartA\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-26T18:18:28.323Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "H60l02efreviewContext.cs",
+              "DocumentMoniker": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Models\\H60l02efreviewContext.cs",
+              "RelativeDocumentMoniker": "PartA\\Models\\H60l02efreviewContext.cs",
+              "ToolTip": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Models\\H60l02efreviewContext.cs",
+              "RelativeToolTip": "PartA\\Models\\H60l02efreviewContext.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAArwBcAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-26T18:14:19.977Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

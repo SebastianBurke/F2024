@@ -28,3 +28,34 @@ C:\Users\2026996\OneDrive - Cégep Heritage College\9th Semester\Web VI\scb_H60L
 C:\Users\2026996\OneDrive - Cégep Heritage College\9th Semester\Web VI\scb_H60L01\scb_H60L01\obj\Debug\net8.0\scb_H60L01.pdb
 C:\Users\2026996\OneDrive - Cégep Heritage College\9th Semester\Web VI\scb_H60L01\scb_H60L01\obj\Debug\net8.0\scb_H60L01.genruntimeconfig.cache
 C:\Users\2026996\OneDrive - Cégep Heritage College\9th Semester\Web VI\scb_H60L01\scb_H60L01\obj\Debug\net8.0\ref\scb_H60L01.dll
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\bin\Debug\net8.0\appsettings.json
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\bin\Debug\net8.0\scb_H60L01.staticwebassets.runtime.json
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\bin\Debug\net8.0\scb_H60L01.exe
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\bin\Debug\net8.0\scb_H60L01.deps.json
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\bin\Debug\net8.0\scb_H60L01.runtimeconfig.json
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\bin\Debug\net8.0\scb_H60L01.dll
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\bin\Debug\net8.0\scb_H60L01.pdb
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\obj\Debug\net8.0\scb_H60L01.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\obj\Debug\net8.0\scb_H60L01.AssemblyInfoInputs.cache
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\obj\Debug\net8.0\scb_H60L01.AssemblyInfo.cs
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\obj\Debug\net8.0\scb_H60L01.csproj.CoreCompileInputs.cache
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\obj\Debug\net8.0\scb_H60L01.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\obj\Debug\net8.0\scb_H60L01.RazorAssemblyInfo.cache
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\obj\Debug\net8.0\scb_H60L01.RazorAssemblyInfo.cs
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\obj\Debug\net8.0\scb_H60L01.sourcelink.json
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\obj\Debug\net8.0\staticwebassets\msbuild.scb_H60L01.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\obj\Debug\net8.0\staticwebassets\msbuild.build.scb_H60L01.props
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.scb_H60L01.props
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.scb_H60L01.props
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\obj\Debug\net8.0\scopedcss\bundle\scb_H60L01.styles.css
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\obj\Debug\net8.0\scopedcss\projectbundle\scb_H60L01.bundle.scp.css
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\obj\Debug\net8.0\scb_H60L01.dll
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\obj\Debug\net8.0\refint\scb_H60L01.dll
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\obj\Debug\net8.0\scb_H60L01.pdb
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\obj\Debug\net8.0\scb_H60L01.genruntimeconfig.cache
+C:\Users\2026996\Desktop\F2024\Web IV\Labs\L01\scb_H60L01\scb_H60L01\obj\Debug\net8.0\ref\scb_H60L01.dll

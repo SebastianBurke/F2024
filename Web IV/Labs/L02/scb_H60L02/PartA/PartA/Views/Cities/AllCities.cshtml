@@ -1,0 +1,13 @@
+﻿@model IEnumerable<PartA.Models.City>
+
+@{
+    ViewData["Title"] = "All Cities";
+}
+
+<main>
+    <h2>All Cities</h2>
+    @foreach (var city in Model)
+    {
+        <p>@city.City1</p>
+    }
+</main>
