@@ -7859,11 +7859,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\PartA.csproj",
+      "projectUniqueName": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\PartA.csproj",
       "projectName": "PartA",
-      "projectPath": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\PartA.csproj",
+      "projectPath": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\PartA.csproj",
       "packagesPath": "C:\\Users\\2026996\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\2026996\\Desktop\\F2024\\Web IV\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\obj\\",
+      "outputPath": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\2026996\\AppData\\Roaming\\NuGet\\NuGet.Config",
