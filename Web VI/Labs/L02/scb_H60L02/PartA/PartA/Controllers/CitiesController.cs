@@ -158,5 +158,7 @@ namespace PartA.Controllers
             var allCities = _context.Cities.OrderBy(c => c.City1).ToList();
             return View(allCities);
         }
+
+
     }
 }

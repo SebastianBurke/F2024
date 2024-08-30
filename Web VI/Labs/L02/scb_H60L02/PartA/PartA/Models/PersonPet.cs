@@ -12,4 +12,5 @@ public partial class PersonPet
     public virtual Person Person { get; set; } = null!;
 
     public virtual Pet Pet { get; set; } = null!;
+
 }

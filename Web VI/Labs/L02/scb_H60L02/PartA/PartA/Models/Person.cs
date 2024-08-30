@@ -14,4 +14,5 @@ public partial class Person
     public decimal CityId { get; set; }
 
     public virtual City City { get; set; } = null!;
+
 }
