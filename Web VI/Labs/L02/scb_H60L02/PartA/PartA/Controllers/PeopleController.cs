@@ -170,6 +170,45 @@ namespace PartA.Controllers
             return View(peopleFromGatineau);
         }
 
+        public IActionResult PeopleWithCats()
+        {
+            var peopleWithCats =
+                from person in _context.People
+                join personPet in _context.PersonPets on person.PersonId equals personPet.PersonId
+                join pet in _context.Pets on personPet.PetId equals pet.PetId
+                where pet.PetName == "Cat"
+                orderby person.FirstName
+                select person;
+
+            return View(peopleWithCats);
+        }
+
+        public IActionResult JammePets()
+        {
+            var jammePets =
+                from person in _context.People
+                join personPet in _context.PersonPets on person.PersonId equals personPet.PersonId
+                join pet in _context.Pets on personPet.PetId equals pet.PetId
+                where person.LastName == "Jamme"
+                orderby pet.PetName
+                select pet;
+
+            return View(jammePets);
+        }
+
+        public IActionResult noPets()
+        {
+            var noPets =
+             from person in _context.People
+             where !(from personPet in _context.PersonPets
+                     select personPet.PersonId)
+                    .Contains(person.PersonId)
+             orderby person.LastName, person.FirstName
+             select person;
+
+            return View(noPets);
+        }
+
 
     }
 }

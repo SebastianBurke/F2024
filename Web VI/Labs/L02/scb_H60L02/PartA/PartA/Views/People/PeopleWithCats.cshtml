@@ -1,0 +1,17 @@
+﻿@model IEnumerable<PartA.Models.Person>
+
+@{
+    ViewData["Title"] = "People with Cats";
+}
+
+<main>
+    <h2>People with Cats</h2>
+    <ul>
+        @foreach (var person in Model)
+        {
+            <li>
+                @person.FirstName @person.LastName
+            </li>
+        }
+    </ul>
+</main>

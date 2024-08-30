@@ -9,7 +9,7 @@ public class MovieContext : DbContext
 
     public MovieContext(DbContextOptions<MovieContext> options) : base(options)
     {
-        Database.EnsureCreated();  // Comment this out for migrations
+        Database.EnsureCreated();
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -24,7 +24,17 @@ public class MovieContext : DbContext
 
         modelBuilder.Entity<Movie>().HasData(
             new Movie { MovieId = 1, Title = "Inception", Rating = 88.5m },
-            new Movie { MovieId = 2, Title = "Titanic", Rating = 89.7m }
+            new Movie { MovieId = 2, Title = "Titanic", Rating = 89.7m },
+            new Movie { MovieId = 3, Title = "Inception 2", Rating = 88.5m },
+            new Movie { MovieId = 4, Title = "Titanic 2", Rating = 89.7m },
+            new Movie { MovieId = 5, Title = "Inception 3", Rating = 88.5m },
+            new Movie { MovieId = 6, Title = "Titanic 3", Rating = 89.7m },
+            new Movie { MovieId = 7, Title = "Inception 4", Rating = 88.5m },
+            new Movie { MovieId = 8, Title = "Titanic 4", Rating = 89.7m },
+            new Movie { MovieId = 9, Title = "Inception 5", Rating = 88.5m },
+            new Movie { MovieId = 10, Title = "Titanic 5 ", Rating = 89.7m },
+            new Movie { MovieId = 11, Title = "Inception 6", Rating = 88.5m },
+            new Movie { MovieId = 12, Title = "Titanic 6", Rating = 89.7m }
         );
     }
 }

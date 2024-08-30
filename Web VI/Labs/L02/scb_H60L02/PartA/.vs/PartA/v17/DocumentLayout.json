@@ -1,42 +1,42 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\",
+  "WorkspaceRootPath": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|d:\\temp\\f2024\\web vi\\labs\\l02\\scb_h60l02\\parta\\parta\\models\\personpet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|solutionrelative:parta\\models\\personpet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|d:\\temp\\f2024\\web vi\\labs\\l02\\scb_h60l02\\parta\\parta\\models\\pet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|solutionrelative:parta\\models\\pet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|d:\\temp\\f2024\\web vi\\labs\\l02\\scb_h60l02\\parta\\parta\\models\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|solutionrelative:parta\\models\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|d:\\temp\\f2024\\web vi\\labs\\l02\\scb_h60l02\\parta\\parta\\models\\city.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|solutionrelative:parta\\models\\city.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|d:\\temp\\f2024\\web vi\\labs\\l02\\scb_h60l02\\parta\\parta\\controllers\\peoplecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|c:\\users\\2026996\\desktop\\f2024\\web vi\\labs\\l02\\scb_h60l02\\parta\\parta\\controllers\\peoplecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|solutionrelative:parta\\controllers\\peoplecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|d:\\temp\\f2024\\web vi\\labs\\l02\\scb_h60l02\\parta\\parta\\views\\people\\peoplefromgatineau.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|solutionrelative:parta\\views\\people\\peoplefromgatineau.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|c:\\users\\2026996\\desktop\\f2024\\web vi\\labs\\l02\\scb_h60l02\\parta\\parta\\views\\people\\nopets.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|solutionrelative:parta\\views\\people\\nopets.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|d:\\temp\\f2024\\web vi\\labs\\l02\\scb_h60l02\\parta\\parta\\views\\cities\\allcities.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|solutionrelative:parta\\views\\cities\\allcities.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|d:\\temp\\f2024\\web vi\\labs\\l02\\scb_h60l02\\parta\\parta\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|c:\\users\\2026996\\desktop\\f2024\\web vi\\labs\\l02\\scb_h60l02\\parta\\parta\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|solutionrelative:parta\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|d:\\temp\\f2024\\web vi\\labs\\l02\\scb_h60l02\\parta\\parta\\controllers\\citiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|c:\\users\\2026996\\desktop\\f2024\\web vi\\labs\\l02\\scb_h60l02\\parta\\parta\\views\\people\\peoplefromgatineau.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|solutionrelative:parta\\views\\people\\peoplefromgatineau.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|c:\\users\\2026996\\desktop\\f2024\\web vi\\labs\\l02\\scb_h60l02\\parta\\parta\\views\\people\\jammepets.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|solutionrelative:parta\\views\\people\\jammepets.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|c:\\users\\2026996\\desktop\\f2024\\web vi\\labs\\l02\\scb_h60l02\\parta\\parta\\controllers\\citiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|solutionrelative:parta\\controllers\\citiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|c:\\users\\2026996\\desktop\\f2024\\web vi\\labs\\l02\\scb_h60l02\\parta\\parta\\views\\people\\peoplewithcats.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|solutionrelative:parta\\views\\people\\peoplewithcats.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|c:\\users\\2026996\\desktop\\f2024\\web vi\\labs\\l02\\scb_h60l02\\parta\\parta\\views\\cities\\allcities.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|solutionrelative:parta\\views\\cities\\allcities.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|c:\\users\\2026996\\desktop\\f2024\\web vi\\labs\\l02\\scb_h60l02\\parta\\parta\\models\\city.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D2FD807-F502-4D4B-9095-AFB00693D2B8}|PartA\\PartA.csproj|solutionrelative:parta\\models\\city.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,43 +46,69 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PersonPet.cs",
-              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Models\\PersonPet.cs",
-              "RelativeDocumentMoniker": "PartA\\Models\\PersonPet.cs",
-              "ToolTip": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Models\\PersonPet.cs",
-              "RelativeToolTip": "PartA\\Models\\PersonPet.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-30T14:33:38.539Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Pet.cs",
-              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Models\\Pet.cs",
-              "RelativeDocumentMoniker": "PartA\\Models\\Pet.cs",
-              "ToolTip": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Models\\Pet.cs",
-              "RelativeToolTip": "PartA\\Models\\Pet.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-30T14:33:36.223Z",
+              "Title": "NoPets.cshtml",
+              "DocumentMoniker": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Views\\People\\NoPets.cshtml",
+              "RelativeDocumentMoniker": "PartA\\Views\\People\\NoPets.cshtml",
+              "ToolTip": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Views\\People\\NoPets.cshtml",
+              "RelativeToolTip": "PartA\\Views\\People\\NoPets.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-30T18:37:23.304Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
+              "Title": "JammePets.cshtml",
+              "DocumentMoniker": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Views\\People\\JammePets.cshtml",
+              "RelativeDocumentMoniker": "PartA\\Views\\People\\JammePets.cshtml",
+              "ToolTip": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Views\\People\\JammePets.cshtml",
+              "RelativeToolTip": "PartA\\Views\\People\\JammePets.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-30T18:27:03.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PeopleController.cs",
+              "DocumentMoniker": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Controllers\\PeopleController.cs",
+              "RelativeDocumentMoniker": "PartA\\Controllers\\PeopleController.cs",
+              "ToolTip": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Controllers\\PeopleController.cs",
+              "RelativeToolTip": "PartA\\Controllers\\PeopleController.cs",
+              "ViewState": "AQIAAHUAAAAAAAAAAAAAwJMAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T14:27:31.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PeopleWithCats.cshtml",
+              "DocumentMoniker": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Views\\People\\PeopleWithCats.cshtml",
+              "RelativeDocumentMoniker": "PartA\\Views\\People\\PeopleWithCats.cshtml",
+              "ToolTip": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Views\\People\\PeopleWithCats.cshtml",
+              "RelativeToolTip": "PartA\\Views\\People\\PeopleWithCats.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-30T18:22:42.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "City.cs",
-              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Models\\City.cs",
+              "DocumentMoniker": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Models\\City.cs",
               "RelativeDocumentMoniker": "PartA\\Models\\City.cs",
-              "ToolTip": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Models\\City.cs",
+              "ToolTip": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Models\\City.cs",
               "RelativeToolTip": "PartA\\Models\\City.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-30T14:30:01.695Z",
               "EditorCaption": ""
@@ -90,77 +116,51 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Person.cs",
-              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Models\\Person.cs",
-              "RelativeDocumentMoniker": "PartA\\Models\\Person.cs",
-              "ToolTip": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Models\\Person.cs",
-              "RelativeToolTip": "PartA\\Models\\Person.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-30T14:29:13.228Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PeopleController.cs",
-              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Controllers\\PeopleController.cs",
-              "RelativeDocumentMoniker": "PartA\\Controllers\\PeopleController.cs",
-              "ToolTip": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Controllers\\PeopleController.cs",
-              "RelativeToolTip": "PartA\\Controllers\\PeopleController.cs",
-              "ViewState": "AgIAAJoAAAAAAAAAAAAkwKUAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-30T14:27:31.187Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Views\\Home\\Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "PartA\\Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "PartA\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAGAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAACGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-08-30T14:25:55.357Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "AllCities.cshtml",
-              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Views\\Cities\\AllCities.cshtml",
+              "DocumentMoniker": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Views\\Cities\\AllCities.cshtml",
               "RelativeDocumentMoniker": "PartA\\Views\\Cities\\AllCities.cshtml",
-              "ToolTip": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Views\\Cities\\AllCities.cshtml",
+              "ToolTip": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Views\\Cities\\AllCities.cshtml",
               "RelativeToolTip": "PartA\\Views\\Cities\\AllCities.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAGAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-08-30T14:25:19.617Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "PeopleFromGatineau.cshtml",
-              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Views\\People\\PeopleFromGatineau.cshtml",
+              "DocumentMoniker": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Views\\People\\PeopleFromGatineau.cshtml",
               "RelativeDocumentMoniker": "PartA\\Views\\People\\PeopleFromGatineau.cshtml",
-              "ToolTip": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Views\\People\\PeopleFromGatineau.cshtml",
+              "ToolTip": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Views\\People\\PeopleFromGatineau.cshtml",
               "RelativeToolTip": "PartA\\Views\\People\\PeopleFromGatineau.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-08-30T14:25:18.099Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
               "Title": "CitiesController.cs",
-              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Controllers\\CitiesController.cs",
+              "DocumentMoniker": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Controllers\\CitiesController.cs",
               "RelativeDocumentMoniker": "PartA\\Controllers\\CitiesController.cs",
-              "ToolTip": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Controllers\\CitiesController.cs",
+              "ToolTip": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartA\\PartA\\Controllers\\CitiesController.cs",
               "RelativeToolTip": "PartA\\Controllers\\CitiesController.cs",
-              "ViewState": "AgIAAJEAAAAAAAAAAAAYwJwAAAAJAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-30T14:25:02.07Z",
               "EditorCaption": ""
