@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Product>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Description</th>
+            <th>Stock</th>
+            <th>Sell Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model.OrderBy(p => p.Description))
+        {
+            <tr>
+                <td>@product.Description</td>
+                <td>@product.Stock</td>
+                <td>@product.SellPrice.ToString()</td>
+            </tr>
+        }
+    </tbody>
+</table>

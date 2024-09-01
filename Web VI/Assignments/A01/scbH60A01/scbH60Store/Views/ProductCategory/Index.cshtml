@@ -1,0 +1,17 @@
+﻿@model IEnumerable<ProductCategory>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Category Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model.OrderBy(c => c.ProdCat))
+        {
+            <tr>
+                <td>@category.ProdCat</td>
+            </tr>
+        }
+    </tbody>
+</table>
