@@ -1,0 +1,15 @@
+﻿@model scbH60Store.Models.Product
+
+<h2>Product Details</h2>
+
+<div>
+    <h3>@Model.Description</h3>
+    <p><strong>Manufacturer:</strong> @Model.Manufacturer</p>
+    <p><strong>Category:</strong> @Model.ProdCat.ProdCat</p>
+    <p><strong>Stock:</strong> @Model.Stock</p>
+    <p><strong>Price:</strong> @Model.SellPrice?.ToString("C")</p>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

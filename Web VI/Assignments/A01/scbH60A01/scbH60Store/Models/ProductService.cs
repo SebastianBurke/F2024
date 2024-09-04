@@ -26,8 +26,11 @@ namespace scbH60Store.Models
 
         public async Task<Product> GetProductByIdAsync(int id)
         {
-            return await _context.Products.FindAsync(id);
+            return await _context.Products
+                                 .Include(p => p.ProdCat)
+                                 .FirstOrDefaultAsync(p => p.ProductId == id);
         }
+
 
         // Update
         public async Task UpdateProductAsync(Product product)

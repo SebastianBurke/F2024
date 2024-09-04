@@ -1,30 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartB\\",
+  "WorkspaceRootPath": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartB\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6E3D03A2-20FE-4943-B15C-E509CF3EE2A7}|PartB\\PartB.csproj|c:\\users\\2026996\\desktop\\f2024\\web vi\\labs\\l02\\scb_h60l02\\partb\\partb\\models\\moviegenre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E3D03A2-20FE-4943-B15C-E509CF3EE2A7}|PartB\\PartB.csproj|solutionrelative:partb\\models\\moviegenre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E3D03A2-20FE-4943-B15C-E509CF3EE2A7}|PartB\\PartB.csproj|c:\\users\\2026996\\desktop\\f2024\\web vi\\labs\\l02\\scb_h60l02\\partb\\partb\\models\\moviecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6E3D03A2-20FE-4943-B15C-E509CF3EE2A7}|PartB\\PartB.csproj|d:\\temp\\f2024\\web vi\\labs\\l02\\scb_h60l02\\partb\\partb\\models\\moviecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6E3D03A2-20FE-4943-B15C-E509CF3EE2A7}|PartB\\PartB.csproj|solutionrelative:partb\\models\\moviecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E3D03A2-20FE-4943-B15C-E509CF3EE2A7}|PartB\\PartB.csproj|c:\\users\\2026996\\desktop\\f2024\\web vi\\labs\\l02\\scb_h60l02\\partb\\partb\\models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6E3D03A2-20FE-4943-B15C-E509CF3EE2A7}|PartB\\PartB.csproj|d:\\temp\\f2024\\web vi\\labs\\l02\\scb_h60l02\\partb\\partb\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E3D03A2-20FE-4943-B15C-E509CF3EE2A7}|PartB\\PartB.csproj|solutionrelative:partb\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E3D03A2-20FE-4943-B15C-E509CF3EE2A7}|PartB\\PartB.csproj|d:\\temp\\f2024\\web vi\\labs\\l02\\scb_h60l02\\partb\\partb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E3D03A2-20FE-4943-B15C-E509CF3EE2A7}|PartB\\PartB.csproj|solutionrelative:partb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E3D03A2-20FE-4943-B15C-E509CF3EE2A7}|PartB\\PartB.csproj|d:\\temp\\f2024\\web vi\\labs\\l02\\scb_h60l02\\partb\\partb\\models\\moviegenre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E3D03A2-20FE-4943-B15C-E509CF3EE2A7}|PartB\\PartB.csproj|solutionrelative:partb\\models\\moviegenre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E3D03A2-20FE-4943-B15C-E509CF3EE2A7}|PartB\\PartB.csproj|d:\\temp\\f2024\\web vi\\labs\\l02\\scb_h60l02\\partb\\partb\\models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6E3D03A2-20FE-4943-B15C-E509CF3EE2A7}|PartB\\PartB.csproj|solutionrelative:partb\\models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E3D03A2-20FE-4943-B15C-E509CF3EE2A7}|PartB\\PartB.csproj|c:\\users\\2026996\\desktop\\f2024\\web vi\\labs\\l02\\scb_h60l02\\partb\\partb\\models\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6E3D03A2-20FE-4943-B15C-E509CF3EE2A7}|PartB\\PartB.csproj|d:\\temp\\f2024\\web vi\\labs\\l02\\scb_h60l02\\partb\\partb\\models\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6E3D03A2-20FE-4943-B15C-E509CF3EE2A7}|PartB\\PartB.csproj|solutionrelative:partb\\models\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E3D03A2-20FE-4943-B15C-E509CF3EE2A7}|PartB\\PartB.csproj|c:\\users\\2026996\\desktop\\f2024\\web vi\\labs\\l02\\scb_h60l02\\partb\\partb\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{6E3D03A2-20FE-4943-B15C-E509CF3EE2A7}|PartB\\PartB.csproj|d:\\temp\\f2024\\web vi\\labs\\l02\\scb_h60l02\\partb\\partb\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{6E3D03A2-20FE-4943-B15C-E509CF3EE2A7}|PartB\\PartB.csproj|solutionrelative:partb\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E3D03A2-20FE-4943-B15C-E509CF3EE2A7}|PartB\\PartB.csproj|c:\\users\\2026996\\desktop\\f2024\\web vi\\labs\\l02\\scb_h60l02\\partb\\partb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E3D03A2-20FE-4943-B15C-E509CF3EE2A7}|PartB\\PartB.csproj|solutionrelative:partb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,81 +42,88 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Movie.cs",
-              "DocumentMoniker": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartB\\PartB\\Models\\Movie.cs",
-              "RelativeDocumentMoniker": "PartB\\Models\\Movie.cs",
-              "ToolTip": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartB\\PartB\\Models\\Movie.cs",
-              "RelativeToolTip": "PartB\\Models\\Movie.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAYAAAA",
+              "DocumentIndex": 1,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartB\\PartB\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "PartB\\Models\\ErrorViewModel.cs",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartB\\PartB\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "PartB\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-30T15:51:46.533Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-02T19:01:38.782Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
+              "Title": "Movie.cs",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartB\\PartB\\Models\\Movie.cs",
+              "RelativeDocumentMoniker": "PartB\\Models\\Movie.cs",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartB\\PartB\\Models\\Movie.cs",
+              "RelativeToolTip": "PartB\\Models\\Movie.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T15:51:46.533Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "MovieContext.cs",
-              "DocumentMoniker": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartB\\PartB\\Models\\MovieContext.cs",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartB\\PartB\\Models\\MovieContext.cs",
               "RelativeDocumentMoniker": "PartB\\Models\\MovieContext.cs",
-              "ToolTip": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartB\\PartB\\Models\\MovieContext.cs",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartB\\PartB\\Models\\MovieContext.cs",
               "RelativeToolTip": "PartB\\Models\\MovieContext.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAIwBsAAABNAAAA",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-30T15:52:14.987Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MovieGenre.cs",
-              "DocumentMoniker": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartB\\PartB\\Models\\MovieGenre.cs",
-              "RelativeDocumentMoniker": "PartB\\Models\\MovieGenre.cs",
-              "ToolTip": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartB\\PartB\\Models\\MovieGenre.cs",
-              "RelativeToolTip": "PartB\\Models\\MovieGenre.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-30T15:52:02.541Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Genre.cs",
-              "DocumentMoniker": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartB\\PartB\\Models\\Genre.cs",
-              "RelativeDocumentMoniker": "PartB\\Models\\Genre.cs",
-              "ToolTip": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartB\\PartB\\Models\\Genre.cs",
-              "RelativeToolTip": "PartB\\Models\\Genre.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "MovieGenre.cs",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartB\\PartB\\Models\\MovieGenre.cs",
+              "RelativeDocumentMoniker": "PartB\\Models\\MovieGenre.cs",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartB\\PartB\\Models\\MovieGenre.cs",
+              "RelativeToolTip": "PartB\\Models\\MovieGenre.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-30T15:51:55.243Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-30T15:52:02.541Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartB\\PartB\\Program.cs",
-              "RelativeDocumentMoniker": "PartB\\Program.cs",
-              "ToolTip": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartB\\PartB\\Program.cs",
-              "RelativeToolTip": "PartB\\Program.cs",
+              "Title": "Genre.cs",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartB\\PartB\\Models\\Genre.cs",
+              "RelativeDocumentMoniker": "PartB\\Models\\Genre.cs",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartB\\PartB\\Models\\Genre.cs",
+              "RelativeToolTip": "PartB\\Models\\Genre.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-30T14:48:33.044Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-30T15:51:55.243Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartB\\PartB\\Program.cs",
+              "RelativeDocumentMoniker": "PartB\\Program.cs",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartB\\PartB\\Program.cs",
+              "RelativeToolTip": "PartB\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T14:48:33.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartB\\PartB\\appsettings.json",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartB\\PartB\\appsettings.json",
               "RelativeDocumentMoniker": "PartB\\appsettings.json",
-              "ToolTip": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartB\\PartB\\appsettings.json",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Labs\\L02\\scb_H60L02\\PartB\\PartB\\appsettings.json",
               "RelativeToolTip": "PartB\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-08-30T15:43:41.464Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-30T15:43:41.464Z"
             }
           ]
         }

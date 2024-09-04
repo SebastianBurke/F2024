@@ -13,6 +13,7 @@ public partial class H60AssignmentDbContext : DbContext
     public H60AssignmentDbContext(DbContextOptions<H60AssignmentDbContext> options)
         : base(options)
     {
+        Database.EnsureCreated();  // this has to be commented out for migrations to be run
     }
 
     public virtual DbSet<Product> Products { get; set; }
@@ -58,6 +59,47 @@ public partial class H60AssignmentDbContext : DbContext
                 .HasMaxLength(60)
                 .IsUnicode(false);
         });
+
+        // Seed data
+        modelBuilder.Entity<ProductCategory>().HasData(
+            new ProductCategory { CategoryId = 1, ProdCat = "Superhero" },
+            new ProductCategory { CategoryId = 2, ProdCat = "Manga" },
+            new ProductCategory { CategoryId = 3, ProdCat = "Graphic Novels" },
+            new ProductCategory { CategoryId = 4, ProdCat = "Indie Comics" },
+            new ProductCategory { CategoryId = 5, ProdCat = "Kids' Comics" }
+        );
+
+        modelBuilder.Entity<Product>().HasData(
+            // Superhero Category Products
+            new Product { ProductId = 1, ProdCatId = 1, Description = "Spider-Man: Homecoming", Manufacturer = "Marvel", Stock = 100, BuyPrice = 10.00m, SellPrice = 15.00m },
+            new Product { ProductId = 2, ProdCatId = 1, Description = "Batman: The Killing Joke", Manufacturer = "DC", Stock = 50, BuyPrice = 8.00m, SellPrice = 12.00m },
+            new Product { ProductId = 3, ProdCatId = 1, Description = "Wonder Woman: Blood", Manufacturer = "DC", Stock = 70, BuyPrice = 9.00m, SellPrice = 13.00m },
+            new Product { ProductId = 4, ProdCatId = 1, Description = "The Avengers: Endgame", Manufacturer = "Marvel", Stock = 80, BuyPrice = 12.00m, SellPrice = 18.00m },
+
+            // Manga Category Products
+            new Product { ProductId = 5, ProdCatId = 2, Description = "Naruto: Volume 1", Manufacturer = "Shonen Jump", Stock = 120, BuyPrice = 5.00m, SellPrice = 7.00m },
+            new Product { ProductId = 6, ProdCatId = 2, Description = "Attack on Titan: Volume 1", Manufacturer = "Kodansha", Stock = 90, BuyPrice = 6.00m, SellPrice = 8.00m },
+            new Product { ProductId = 7, ProdCatId = 2, Description = "Dragon Ball Z: Volume 1", Manufacturer = "Viz Media", Stock = 110, BuyPrice = 5.50m, SellPrice = 8.50m },
+            new Product { ProductId = 8, ProdCatId = 2, Description = "One Piece: Volume 1", Manufacturer = "Shonen Jump", Stock = 130, BuyPrice = 6.00m, SellPrice = 9.00m },
+
+            // Graphic Novels Category Products
+            new Product { ProductId = 9, ProdCatId = 3, Description = "Maus", Manufacturer = "Pantheon", Stock = 60, BuyPrice = 15.00m, SellPrice = 20.00m },
+            new Product { ProductId = 10, ProdCatId = 3, Description = "Watchmen", Manufacturer = "DC", Stock = 40, BuyPrice = 18.00m, SellPrice = 25.00m },
+            new Product { ProductId = 11, ProdCatId = 3, Description = "Persepolis", Manufacturer = "Pantheon", Stock = 30, BuyPrice = 12.00m, SellPrice = 17.00m },
+            new Product { ProductId = 12, ProdCatId = 3, Description = "Sandman", Manufacturer = "Vertigo", Stock = 50, BuyPrice = 20.00m, SellPrice = 30.00m },
+
+            // Indie Comics Category Products
+            new Product { ProductId = 13, ProdCatId = 4, Description = "Saga", Manufacturer = "Image Comics", Stock = 70, BuyPrice = 10.00m, SellPrice = 14.00m },
+            new Product { ProductId = 14, ProdCatId = 4, Description = "The Walking Dead", Manufacturer = "Image Comics", Stock = 60, BuyPrice = 9.00m, SellPrice = 13.00m },
+            new Product { ProductId = 15, ProdCatId = 4, Description = "Black Hammer", Manufacturer = "Dark Horse", Stock = 40, BuyPrice = 11.00m, SellPrice = 16.00m },
+            new Product { ProductId = 16, ProdCatId = 4, Description = "Y: The Last Man", Manufacturer = "Vertigo", Stock = 50, BuyPrice = 13.00m, SellPrice = 18.00m },
+
+            // Kids' Comics Category Products
+            new Product { ProductId = 17, ProdCatId = 5, Description = "Dog Man", Manufacturer = "Scholastic", Stock = 80, BuyPrice = 5.00m, SellPrice = 8.00m },
+            new Product { ProductId = 18, ProdCatId = 5, Description = "The Adventures of Tintin", Manufacturer = "Little, Brown", Stock = 70, BuyPrice = 7.00m, SellPrice = 10.00m },
+            new Product { ProductId = 19, ProdCatId = 5, Description = "Bone", Manufacturer = "Graphix", Stock = 90, BuyPrice = 6.00m, SellPrice = 9.00m },
+            new Product { ProductId = 20, ProdCatId = 5, Description = "Amulet", Manufacturer = "Scholastic", Stock = 100, BuyPrice = 8.00m, SellPrice = 12.00m }
+        );
 
         OnModelCreatingPartial(modelBuilder);
     }
