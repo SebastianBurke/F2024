@@ -21,7 +21,7 @@ namespace scbH60Store.Models
         // Read
         public async Task<List<ProductCategory>> GetAllCategoriesAsync()
         {
-            return await _context.ProductCategories.ToListAsync(); //Gets a list of product categories in an asynchronous manner. 
+            return await _context.ProductCategories.ToListAsync();
         }
 
         public async Task<ProductCategory> GetCategoryByIdAsync(int id)

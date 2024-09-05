@@ -1,0 +1,12 @@
+﻿@model scbH60Store.Models.ProductCategory
+
+<h2>Create Product Category</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="ProdCat" class="control-label"></label>
+        <input asp-for="ProdCat" class="form-control" />
+        <span asp-validation-for="ProdCat" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>

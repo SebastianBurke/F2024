@@ -1,22 +1,36 @@
-﻿@model IEnumerable<Product>
+﻿@model IEnumerable<scbH60Store.Models.Product>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Product Name</th>
-            <th>Description</th>
-            <th>Stock</th>
-            <th>Sell Price</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var product in Model.OrderBy(p => p.Description))
-        {
+<h2>Products</h2>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table">
+        <thead>
             <tr>
-                <td>@product.Description</td>
-                <td>@product.Stock</td>
-                <td>@product.SellPrice.ToString()</td>
+                <th>Description</th>
+                <th>Manufacturer</th>
+                <th>Stock</th>
+                <th>Actions</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.Description</td>
+                    <td>@product.Manufacturer</td>
+                    <td>@product.Stock</td>
+                    <td>
+                        <a asp-action="Details" asp-route-productId="@product.ProductId">Details</a> |
+                        <a asp-action="Delete" asp-route-productId="@product.ProductId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No products available.</p>
+}
+<a asp-action="Create">Create New Product</a>
