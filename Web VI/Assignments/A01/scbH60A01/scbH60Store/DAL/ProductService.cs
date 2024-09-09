@@ -25,6 +25,11 @@ namespace scbH60Store.Models
             return await _context.Products.ToListAsync();
         }
 
+        public async Task<List<ProductCategory>> GetAllProductsByCategory()
+        {
+            return await _context.ProductCategories.Include(p => p.Products).ToListAsync();
+        }
+
         public async Task<Product> GetProductById(int id)
         {
             return await _context.Products.Include(p => p.ProdCat)
@@ -49,12 +54,12 @@ namespace scbH60Store.Models
             await _context.SaveChangesAsync();
         }
 
-        public async Task EditStock(int productId, int newStock)
+        public async Task EditStock(int productId, int stockChange)
         {
             var product = await _context.Products.FindAsync(productId);
             if (product == null) throw new ArgumentException("Product not found");
 
-            product.Stock = newStock;
+            product.Stock += stockChange;
             if (product.Stock < 0) throw new ArgumentException("Stock cannot be negative");
 
             _context.Products.Update(product);

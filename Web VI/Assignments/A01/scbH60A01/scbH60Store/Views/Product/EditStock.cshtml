@@ -2,8 +2,10 @@
 
 <form asp-action="EditStock" method="post">
     <div class="form-group">
-        <label for="Stock">Stock:</label>
-        <input type="number" asp-for="Stock" class="form-control" />
+        <label for="Stock">Current Stock:</label>
+        <input type="number" class="form-control" value="@Model.Stock" readonly/>
+        <label for="Stock">Stock change:</label>
+        <input type="number" asp-for="Stock" class="form-control" value=""/>
         <span asp-validation-for="Stock" class="text-danger"></span>
     </div>
     <input type="hidden" asp-for="ProductId" />

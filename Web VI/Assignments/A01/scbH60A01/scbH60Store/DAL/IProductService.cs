@@ -7,6 +7,7 @@ namespace scbH60Store.Models
     {
         Task AddProduct(Product product);
         Task<List<Product>> GetAllProducts();
+        Task<List<ProductCategory>> GetAllProductsByCategory();
         Task<Product> GetProductById(int id);
         Task Edit(Product product);
         Task EditStock(int productId, int stockChange);

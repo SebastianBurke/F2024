@@ -8,21 +8,20 @@
         <thead>
             <tr>
                 <th>Description</th>
-                <th>Manufacturer</th>
                 <th>Stock</th>
-                <th>Actions</th>
+                <th>Price</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var product in Model)
+            @foreach (var product in Model.OrderBy(p => p.Description))
             {
                 <tr>
                     <td>@product.Description</td>
-                    <td>@product.Manufacturer</td>
                     <td>@product.Stock</td>
+                    <td>@product.SellPrice?.ToString("C")</td>
                     <td>
-                        <a asp-action="Details" asp-route-productId="@product.ProductId">Details</a> |
-                        <a asp-action="Delete" asp-route-productId="@product.ProductId">Delete</a>
+                        <a asp-action="Details" asp-route-productId="@product.ProductId">Details</a>
                     </td>
                 </tr>
             }

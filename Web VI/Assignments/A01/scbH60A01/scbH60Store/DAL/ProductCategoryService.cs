@@ -29,6 +29,12 @@ namespace scbH60Store.Models
         {
             return await _context.ProductCategories.FindAsync(id);
         }
+        public async Task<List<Product>> GetCategoryProducts(int id)
+        {
+            return await _context.Products
+                       .Where(p => p.ProdCatId == id)
+                       .ToListAsync();
+        }
 
         public async Task UpdateCategory(ProductCategory category)
         {

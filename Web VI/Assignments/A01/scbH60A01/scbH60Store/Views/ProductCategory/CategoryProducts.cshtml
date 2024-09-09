@@ -1,0 +1,25 @@
+﻿@model IEnumerable<scbH60Store.Models.Product>
+
+<h2>Products in @ViewBag.CategoryName</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Description)</th>
+            <th>@Html.DisplayNameFor(model => model.SellPrice)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Description</td>
+                <td>@product.SellPrice</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@product.ProductId">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
