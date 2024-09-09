@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "D:\\temp\\F2024\\Web VI\\Assignments\\A01\\scbH60A01\\scbH60Store\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|d:\\temp\\f2024\\web vi\\assignments\\a01\\scbh60a01\\scbh60store\\models\\h60assignmentdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|solutionrelative:models\\h60assignmentdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|d:\\temp\\f2024\\web vi\\assignments\\a01\\scbh60a01\\scbh60store\\migrations\\h60assignmentdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|solutionrelative:migrations\\h60assignmentdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|d:\\temp\\f2024\\web vi\\assignments\\a01\\scbh60a01\\scbh60store\\views\\productcategory\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|solutionrelative:views\\productcategory\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -30,11 +38,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "H60AssignmentDbContextModelSnapshot.cs",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A01\\scbH60A01\\scbH60Store\\Migrations\\H60AssignmentDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Migrations\\H60AssignmentDbContextModelSnapshot.cs",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A01\\scbH60A01\\scbH60Store\\Migrations\\H60AssignmentDbContextModelSnapshot.cs",
+              "RelativeToolTip": "Migrations\\H60AssignmentDbContextModelSnapshot.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T21:16:17.047Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "H60AssignmentDbContext.cs",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A01\\scbH60A01\\scbH60Store\\Models\\H60AssignmentDbContext.cs",
+              "RelativeDocumentMoniker": "Models\\H60AssignmentDbContext.cs",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A01\\scbH60A01\\scbH60Store\\Models\\H60AssignmentDbContext.cs",
+              "RelativeToolTip": "Models\\H60AssignmentDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T21:13:19.944Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "ProductCategoryController.cs",
               "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A01\\scbH60A01\\scbH60Store\\Controllers\\ProductCategoryController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProductCategoryController.cs",
@@ -42,12 +76,11 @@
               "RelativeToolTip": "Controllers\\ProductCategoryController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-04T20:01:08.734Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-04T20:01:08.734Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A01\\scbH60A01\\scbH60Store\\Views\\ProductCategory\\Details.cshtml",
               "RelativeDocumentMoniker": "Views\\ProductCategory\\Details.cshtml",
@@ -55,12 +88,11 @@
               "RelativeToolTip": "Views\\ProductCategory\\Details.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-04T20:01:02.734Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-04T20:01:02.734Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A01\\scbH60A01\\scbH60Store\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
@@ -68,25 +100,24 @@
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-04T20:00:20.866Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-04T20:00:20.866Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A01\\scbH60A01\\scbH60Store\\Views\\ProductCategory\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\ProductCategory\\Index.cshtml",
               "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A01\\scbH60A01\\scbH60Store\\Views\\ProductCategory\\Index.cshtml",
               "RelativeToolTip": "Views\\ProductCategory\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-09-04T20:00:09.673Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A01\\scbH60A01\\scbH60Store\\Views\\ProductCategory\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\ProductCategory\\Create.cshtml",
@@ -94,8 +125,7 @@
               "RelativeToolTip": "Views\\ProductCategory\\Create.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-04T20:00:07.178Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-04T20:00:07.178Z"
             }
           ]
         }

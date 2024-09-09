@@ -12,8 +12,8 @@ using scbH60Store.Models;
 namespace scbH60Store.Migrations
 {
     [DbContext(typeof(H60AssignmentDbContext))]
-    [Migration("20240904020851_SeedComicBookData")]
-    partial class SeedComicBookData
+    [Migration("20240904211606_InitializeDB")]
+    partial class InitializeDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
