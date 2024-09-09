@@ -70,9 +70,12 @@ namespace scbH60Store.Models
         {
             var product = await _context.Products.FindAsync(productId);
             if (product == null) throw new ArgumentException("Product not found");
-
             if (buyPrice < 0 || sellPrice < 0) throw new ArgumentException("Price cannot be negative");
             if (sellPrice < buyPrice) throw new ArgumentException("Sell price cannot be less than buy price");
+
+            // Round prices to 2 decimal places
+            buyPrice = Math.Round(buyPrice, 2, MidpointRounding.AwayFromZero);
+            sellPrice = Math.Round(sellPrice, 2, MidpointRounding.AwayFromZero);
 
             product.BuyPrice = buyPrice;
             product.SellPrice = sellPrice;

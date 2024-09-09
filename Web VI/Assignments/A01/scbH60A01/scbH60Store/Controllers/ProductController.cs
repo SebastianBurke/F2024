@@ -52,6 +52,13 @@ namespace scbH60Store.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> ProductsByCategory()
+        {
+            var products = await _productService.GetAllProductsByCategory();
+            return View(products);
+        }
+
+        [HttpGet]
         public async Task<IActionResult> Details(int productId)
         {
             var product = await  _productService.GetProductById(productId);
@@ -59,6 +66,8 @@ namespace scbH60Store.Controllers
 
             return View(product);
         }
+
+
 
         // Update
         [HttpGet]

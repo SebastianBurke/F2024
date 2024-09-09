@@ -1,34 +1,38 @@
 ﻿@model IEnumerable<scbH60Store.Models.ProductCategory>
 
 <h2>Products by Category</h2>
-
-@foreach (var category in Model)
+@if (Model != null && Model.Any())
 {
-    <h3>@category.ProdCat</h3> <!-- Category Name -->
+    @foreach (var category in Model.OrderBy(c => c.ProdCat))
+    {
+        <h3>@category.ProdCat</h3>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Stock</th>
-                <th>Sell Price</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var product in category.Products)
-            {
+        <table class="table">
+            <thead>
                 <tr>
-                    <td>@product.Name</td>
-                    <td>@product.Stock</td>
-                    <td>@product.SellPrice</td>
-                    <td>
-                        <a asp-action="Details" asp-route-id="@product.ProductId">Details</a> |
-                        <a asp-action="Edit" asp-route-id="@product.ProductId">Edit</a> |
-                        <a asp-action="Delete" asp-route-id="@product.ProductId">Delete</a>
-                    </td>
+                    <th>Name</th>
+                    <th>Stock</th>
+                    <th>Sell Price</th>
+                    <th></th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var product in category.Products.OrderBy(p => p.Description))
+                {
+                    <tr>
+                        <td>@product.Description</td>
+                        <td>@product.Stock</td>
+                        <td>@product.SellPrice</td>
+                        <td>
+                            <a asp-action="Details" asp-route-productId="@product.ProductId">Details</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}
+else
+{
+    <p>No products available.</p>
 }
