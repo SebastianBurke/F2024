@@ -5,8 +5,8 @@ using scbH60Store.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<ProductService>();
-builder.Services.AddScoped<ProductCategoryService>();
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IProductCategoryService, ProductCategoryService>();
 
 builder.Services.AddDbContext<H60AssignmentDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("MyConnection")));

@@ -11,5 +11,8 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    <a asp-action="Edit" asp-route-productId="@Model.ProductId" class="btn btn-primary">Edit Product</a>
+    <a asp-action="EditStock" asp-route-productId="@Model.ProductId" class="btn btn-warning">Edit Stock</a>
+    <a asp-action="EditPrice" asp-route-productId="@Model.ProductId" class="btn btn-info">Edit Price</a>
 </div>

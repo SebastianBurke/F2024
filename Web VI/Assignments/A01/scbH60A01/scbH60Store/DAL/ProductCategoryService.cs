@@ -1,8 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace scbH60Store.Models
 {
-    public class ProductCategoryService
+    public class ProductCategoryService : IProductCategoryService
     {
         private readonly H60AssignmentDbContext _context;
 
@@ -11,33 +14,29 @@ namespace scbH60Store.Models
             _context = context;
         }
 
-        // Create
-        public async Task AddCategoryAsync(ProductCategory category)
+        public async Task AddCategory(ProductCategory category)
         {
             _context.ProductCategories.Add(category);
             await _context.SaveChangesAsync();
         }
 
-        // Read
-        public async Task<List<ProductCategory>> GetAllCategoriesAsync()
+        public async Task<List<ProductCategory>> GetAllCategories()
         {
             return await _context.ProductCategories.ToListAsync();
         }
 
-        public async Task<ProductCategory> GetCategoryByIdAsync(int id)
+        public async Task<ProductCategory> GetCategoryById(int id)
         {
             return await _context.ProductCategories.FindAsync(id);
         }
 
-        // Update
-        public async Task UpdateCategoryAsync(ProductCategory category)
+        public async Task UpdateCategory(ProductCategory category)
         {
             _context.ProductCategories.Update(category);
             await _context.SaveChangesAsync();
         }
 
-        // Delete
-        public async Task DeleteCategoryAsync(int id)
+        public async Task DeleteCategory(int id)
         {
             var category = await _context.ProductCategories.FindAsync(id);
             if (category == null) throw new ArgumentException("Category not found");
@@ -46,5 +45,4 @@ namespace scbH60Store.Models
             await _context.SaveChangesAsync();
         }
     }
-
 }
