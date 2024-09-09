@@ -6,22 +6,20 @@ namespace scbH60Store.Controllers
 {
     public class ProductController : Controller
     {
-        private readonly ProductService _productService;
-        private readonly ProductCategoryService _categoryService;
+        private readonly IProductService _productService;
+        private readonly IProductCategoryService _categoryService;
 
-        public ProductController(ProductService productService, ProductCategoryService categoryService)
+        public ProductController(IProductService productService, IProductCategoryService categoryService)
         {
             _productService = productService;
             _categoryService = categoryService;
         }
 
-
-
         // Create
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            var categories = await _categoryService.GetAllCategoriesAsync();
+            var categories = await _categoryService.GetAllCategories();
             ViewBag.CategoryList = new SelectList(categories, "CategoryId", "ProdCat");
             return View();
         }
@@ -36,11 +34,11 @@ namespace scbH60Store.Controllers
 
             if (ModelState.IsValid)
             {
-                await _productService.AddProductAsync(product);
+                await _productService.AddProduct(product);
                 return RedirectToAction("Index");
             }
 
-            var categories = await _categoryService.GetAllCategoriesAsync();
+            var categories = await _categoryService.GetAllCategories();
             ViewBag.CategoryList = new SelectList(categories, "CategoryId", "ProdCat");
 
             return View(product);
@@ -49,14 +47,14 @@ namespace scbH60Store.Controllers
         // Read
         public async Task<IActionResult> Index()
         {
-            var products = await _productService.GetAllProductsAsync();
+            var products = await _productService.GetAllProducts();
             return View(products);
         }
 
         [HttpGet]
         public async Task<IActionResult> Details(int productId)
         {
-            var product = await  _productService.GetProductByIdAsync(productId);
+            var product = await  _productService.GetProductById(productId);
             if (product == null) return NotFound();
 
             return View(product);
@@ -64,58 +62,113 @@ namespace scbH60Store.Controllers
 
         // Update
         [HttpGet]
-        public async Task<IActionResult> UpdateStock(int productId)
+        public async Task<IActionResult> Edit(int productId)
         {
-            var product = await _productService.GetProductByIdAsync(productId);
+            var product = await _productService.GetProductById(productId);
             if (product == null) return NotFound();
+
+            var categories = await _categoryService.GetAllCategories();
+            ViewBag.CategoryList = new SelectList(categories, "CategoryId", "ProdCat");
 
             return View(product);
         }
 
         [HttpPost]
-        public async Task<IActionResult> UpdateStock(int productId, int stockChange)
+        public async Task<IActionResult> Edit(Product product)
         {
-            try
+            if (ModelState.ContainsKey("ProdCat"))
             {
-                await _productService.UpdateStockAsync(productId, stockChange);
-                return RedirectToAction("Index");
+                ModelState.Remove("ProdCat");
             }
-            catch (ArgumentException ex)
+
+            if (ModelState.IsValid)
             {
-                ModelState.AddModelError("", ex.Message);
-                return View();
+                try
+                {
+                    await _productService.Edit(product);
+                    return RedirectToAction("Index");
+                }
+                catch (ArgumentException ex)
+                {
+                    ModelState.AddModelError("", ex.Message);
+                }
             }
+
+            var categories = await _categoryService.GetAllCategories();
+            ViewBag.CategoryList = new SelectList(categories, "CategoryId", "ProdCat");
+
+            return View(product);
         }
 
         [HttpGet]
-        public async Task<IActionResult> UpdatePrice(int productId)
+        public async Task<IActionResult> EditStock(int productId)
         {
-            var product = await _productService.GetProductByIdAsync(productId);
+            var product = await _productService.GetProductById(productId);
             if (product == null) return NotFound();
 
             return View(product);
         }
 
         [HttpPost]
-        public async Task<IActionResult> UpdatePrice(Product product)
+        public async Task<IActionResult> EditStock(Product product)
         {
-            try
+            if (ModelState.ContainsKey("ProdCat"))
             {
-                await _productService.UpdatePriceAsync(product.ProductId, product.BuyPrice ?? 0, product.SellPrice ?? 0);
-                return RedirectToAction("Index");
+                ModelState.Remove("ProdCat");
             }
-            catch (ArgumentException ex)
+            if (ModelState.IsValid)
             {
-                ModelState.AddModelError("", ex.Message);
-                return View(product);
+                try
+                {
+                    await _productService.EditStock(product.ProductId, product.Stock);
+                    return RedirectToAction("Index");
+                }
+                catch (ArgumentException ex)
+                {
+                    ModelState.AddModelError("", ex.Message);
+                }
             }
+            return View(product);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> EditPrice(int productId)
+        {
+            var product = await _productService.GetProductById(productId);
+            if (product == null) return NotFound();
+
+            return View(product);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditPrice(Product product)
+        {
+            if (ModelState.ContainsKey("ProdCat"))
+            {
+                ModelState.Remove("ProdCat");
+            }
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    await _productService.EditPrice(product.ProductId, product.BuyPrice ?? 0, product.SellPrice ?? 0);
+                    return RedirectToAction("Index");
+                }
+                catch (ArgumentException ex)
+                {
+                    ModelState.AddModelError("", ex.Message);
+                }
+            }
+            return View(product);
+        }
+
+
 
         // Delete
         [HttpGet]
         public async Task<IActionResult> Delete(int productId)
         {
-            var product = await _productService.GetProductByIdAsync(productId);
+            var product = await _productService.GetProductById(productId);
             if (product == null) return NotFound();
 
             return View(product);
@@ -124,7 +177,7 @@ namespace scbH60Store.Controllers
         [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int productId)
         {
-            await _productService.DeleteProductAsync(productId);
+            await _productService.DeleteProduct(productId);
             return RedirectToAction("Index");
         }
 
