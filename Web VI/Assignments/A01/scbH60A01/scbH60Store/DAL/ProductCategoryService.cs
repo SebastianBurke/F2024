@@ -44,11 +44,24 @@ namespace scbH60Store.Models
 
         public async Task DeleteCategory(int id)
         {
-            var category = await _context.ProductCategories.FindAsync(id);
-            if (category == null) throw new ArgumentException("Category not found");
+            var category = await _context.ProductCategories
+                                         .Include(c => c.Products)
+                                         .FirstOrDefaultAsync(c => c.CategoryId == id);
+
+            if (category == null)
+            {
+                throw new ArgumentException("Category not found");
+            }
+
+            if (category.Products != null && category.Products.Any())
+            {
+                _context.Products.RemoveRange(category.Products);
+            }
 
             _context.ProductCategories.Remove(category);
+
             await _context.SaveChangesAsync();
         }
+
     }
 }

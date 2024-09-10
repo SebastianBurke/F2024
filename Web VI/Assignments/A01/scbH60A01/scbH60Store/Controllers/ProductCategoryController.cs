@@ -92,8 +92,14 @@ namespace scbH60Store.Controllers
             {
                 return NotFound();
             }
+
+            var products = await _categoryService.GetCategoryProducts(id);
+
+            ViewBag.ProductsToDelete = products;
+
             return View(category);
         }
+
 
         [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -101,5 +107,6 @@ namespace scbH60Store.Controllers
             await _categoryService.DeleteCategory(id);
             return RedirectToAction("Index");
         }
+
     }
 }

@@ -24,9 +24,19 @@ namespace scbH60Store.Controllers
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult Error(int? statusCode = null)
         {
+            if (statusCode.HasValue)
+            {
+                if (statusCode == 404)
+                {
+                    return View("NotFound"); // 404 specific view
+                }
+            }
+
+            // Default error view
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
     }
 }
