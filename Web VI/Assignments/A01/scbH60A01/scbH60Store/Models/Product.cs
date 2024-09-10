@@ -15,7 +15,7 @@ public partial class Product
     public int MaximumStock { get; set; }
     public decimal? BuyPrice { get; set; }
     public decimal? SellPrice { get; set; }
-    public string EmployeeNotes { get; set; }
-    public string ImageUrl { get; set; }
+    public string? EmployeeNotes { get; set; }
+    public string? ImageUrl { get; set; }
     public virtual ProductCategory ProdCat { get; set; } = null!;
 }

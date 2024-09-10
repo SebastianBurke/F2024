@@ -92,6 +92,7 @@ namespace scbH60Store.Models
 
             if (existingProduct == null) throw new ArgumentException("Product not found");
 
+            // Update all fields including ImageUrl if changed
             existingProduct.Description = product.Description;
             existingProduct.Manufacturer = product.Manufacturer;
             existingProduct.Stock = product.Stock;
@@ -99,9 +100,16 @@ namespace scbH60Store.Models
             existingProduct.SellPrice = product.SellPrice;
             existingProduct.ProdCatId = product.ProdCatId;
 
+            // Ensure the ImageUrl is updated only if a new file was uploaded
+            if (!string.IsNullOrEmpty(product.ImageUrl))
+            {
+                existingProduct.ImageUrl = product.ImageUrl;
+            }
+
             _context.Products.Update(existingProduct);
             await _context.SaveChangesAsync();
         }
+
 
         public async Task EditStock(int productId, int stockChange)
         {

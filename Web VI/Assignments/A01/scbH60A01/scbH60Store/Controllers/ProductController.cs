@@ -109,17 +109,23 @@ namespace scbH60Store.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(Product product, IFormFile imageFile)
+        public async Task<IActionResult> Edit([Bind("ProductId, ProdCatId, Description, Manufacturer, Stock, BuyPrice, SellPrice, EmployeeNotes, ImageUrl")] Product product, IFormFile imageFile)
         {
             if (ModelState.ContainsKey("ProdCat"))
             {
                 ModelState.Remove("ProdCat");
             }
 
+            if (imageFile == null && string.IsNullOrEmpty(product.ImageUrl))
+            {
+                ModelState.AddModelError("ImageUrl", "An image is required.");
+            }
+
             if (ModelState.IsValid)
             {
                 if (imageFile != null && imageFile.Length > 0)
                 {
+                    ModelState.Clear();
                     var imagePath = Path.Combine("wwwroot/images", imageFile.FileName);
                     using (var stream = new FileStream(imagePath, FileMode.Create))
                     {
