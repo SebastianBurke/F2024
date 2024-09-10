@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using scbH60Store.Models;
 
@@ -11,9 +12,11 @@ using scbH60Store.Models;
 namespace scbH60Store.Migrations
 {
     [DbContext(typeof(H60AssignmentDbContext))]
-    partial class H60AssignmentDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240910153404_AddCategoryImage")]
+    partial class AddCategoryImage
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -39,24 +42,10 @@ namespace scbH60Store.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(80)");
 
-                    b.Property<string>("EmployeeNotes")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Manufacturer")
                         .HasMaxLength(80)
                         .IsUnicode(false)
                         .HasColumnType("varchar(80)");
-
-                    b.Property<int>("MaximumStock")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MinimumStock")
-                        .HasColumnType("int");
 
                     b.Property<int>("ProdCatId")
                         .HasColumnType("int");
@@ -79,11 +68,7 @@ namespace scbH60Store.Migrations
                             ProductId = 1,
                             BuyPrice = 10.00m,
                             Description = "Spider-Man: Homecoming",
-                            EmployeeNotes = "In demand",
-                            ImageUrl = "image.jpg",
                             Manufacturer = "Marvel",
-                            MaximumStock = 200,
-                            MinimumStock = 5,
                             ProdCatId = 1,
                             SellPrice = 15.00m,
                             Stock = 100
@@ -93,11 +78,7 @@ namespace scbH60Store.Migrations
                             ProductId = 2,
                             BuyPrice = 8.00m,
                             Description = "Batman: The Killing Joke",
-                            EmployeeNotes = "In demand",
-                            ImageUrl = "image.jpg",
                             Manufacturer = "DC",
-                            MaximumStock = 200,
-                            MinimumStock = 5,
                             ProdCatId = 1,
                             SellPrice = 12.00m,
                             Stock = 50
@@ -107,11 +88,7 @@ namespace scbH60Store.Migrations
                             ProductId = 3,
                             BuyPrice = 9.00m,
                             Description = "Wonder Woman: Blood",
-                            EmployeeNotes = "In demand",
-                            ImageUrl = "image.jpg",
                             Manufacturer = "DC",
-                            MaximumStock = 200,
-                            MinimumStock = 5,
                             ProdCatId = 1,
                             SellPrice = 13.00m,
                             Stock = 70
@@ -121,11 +98,7 @@ namespace scbH60Store.Migrations
                             ProductId = 4,
                             BuyPrice = 12.00m,
                             Description = "The Avengers: Endgame",
-                            EmployeeNotes = "In demand",
-                            ImageUrl = "image.jpg",
                             Manufacturer = "Marvel",
-                            MaximumStock = 200,
-                            MinimumStock = 5,
                             ProdCatId = 1,
                             SellPrice = 18.00m,
                             Stock = 80
@@ -135,11 +108,7 @@ namespace scbH60Store.Migrations
                             ProductId = 5,
                             BuyPrice = 5.00m,
                             Description = "Naruto: Volume 1",
-                            EmployeeNotes = "In demand",
-                            ImageUrl = "image.jpg",
                             Manufacturer = "Shonen Jump",
-                            MaximumStock = 200,
-                            MinimumStock = 5,
                             ProdCatId = 2,
                             SellPrice = 7.00m,
                             Stock = 120
@@ -149,11 +118,7 @@ namespace scbH60Store.Migrations
                             ProductId = 6,
                             BuyPrice = 6.00m,
                             Description = "Attack on Titan: Volume 1",
-                            EmployeeNotes = "In demand",
-                            ImageUrl = "image.jpg",
                             Manufacturer = "Kodansha",
-                            MaximumStock = 200,
-                            MinimumStock = 5,
                             ProdCatId = 2,
                             SellPrice = 8.00m,
                             Stock = 90
@@ -163,11 +128,7 @@ namespace scbH60Store.Migrations
                             ProductId = 7,
                             BuyPrice = 5.50m,
                             Description = "Dragon Ball Z: Volume 1",
-                            EmployeeNotes = "In demand",
-                            ImageUrl = "image.jpg",
                             Manufacturer = "Viz Media",
-                            MaximumStock = 200,
-                            MinimumStock = 5,
                             ProdCatId = 2,
                             SellPrice = 8.50m,
                             Stock = 110
@@ -177,11 +138,7 @@ namespace scbH60Store.Migrations
                             ProductId = 8,
                             BuyPrice = 6.00m,
                             Description = "One Piece: Volume 1",
-                            EmployeeNotes = "In demand",
-                            ImageUrl = "image.jpg",
                             Manufacturer = "Shonen Jump",
-                            MaximumStock = 200,
-                            MinimumStock = 5,
                             ProdCatId = 2,
                             SellPrice = 9.00m,
                             Stock = 130
@@ -191,11 +148,7 @@ namespace scbH60Store.Migrations
                             ProductId = 9,
                             BuyPrice = 15.00m,
                             Description = "Maus",
-                            EmployeeNotes = "In demand",
-                            ImageUrl = "image.jpg",
                             Manufacturer = "Pantheon",
-                            MaximumStock = 200,
-                            MinimumStock = 5,
                             ProdCatId = 3,
                             SellPrice = 20.00m,
                             Stock = 60
@@ -205,11 +158,7 @@ namespace scbH60Store.Migrations
                             ProductId = 10,
                             BuyPrice = 18.00m,
                             Description = "Watchmen",
-                            EmployeeNotes = "In demand",
-                            ImageUrl = "image.jpg",
                             Manufacturer = "DC",
-                            MaximumStock = 200,
-                            MinimumStock = 5,
                             ProdCatId = 3,
                             SellPrice = 25.00m,
                             Stock = 40
@@ -219,11 +168,7 @@ namespace scbH60Store.Migrations
                             ProductId = 11,
                             BuyPrice = 12.00m,
                             Description = "Persepolis",
-                            EmployeeNotes = "In demand",
-                            ImageUrl = "image.jpg",
                             Manufacturer = "Pantheon",
-                            MaximumStock = 200,
-                            MinimumStock = 5,
                             ProdCatId = 3,
                             SellPrice = 17.00m,
                             Stock = 30
@@ -233,11 +178,7 @@ namespace scbH60Store.Migrations
                             ProductId = 12,
                             BuyPrice = 20.00m,
                             Description = "Sandman",
-                            EmployeeNotes = "In demand",
-                            ImageUrl = "image.jpg",
                             Manufacturer = "Vertigo",
-                            MaximumStock = 200,
-                            MinimumStock = 5,
                             ProdCatId = 3,
                             SellPrice = 30.00m,
                             Stock = 50
@@ -247,11 +188,7 @@ namespace scbH60Store.Migrations
                             ProductId = 13,
                             BuyPrice = 10.00m,
                             Description = "Saga",
-                            EmployeeNotes = "In demand",
-                            ImageUrl = "image.jpg",
                             Manufacturer = "Image Comics",
-                            MaximumStock = 200,
-                            MinimumStock = 5,
                             ProdCatId = 4,
                             SellPrice = 14.00m,
                             Stock = 70
@@ -261,11 +198,7 @@ namespace scbH60Store.Migrations
                             ProductId = 14,
                             BuyPrice = 9.00m,
                             Description = "The Walking Dead",
-                            EmployeeNotes = "In demand",
-                            ImageUrl = "image.jpg",
                             Manufacturer = "Image Comics",
-                            MaximumStock = 200,
-                            MinimumStock = 5,
                             ProdCatId = 4,
                             SellPrice = 13.00m,
                             Stock = 60
@@ -275,11 +208,7 @@ namespace scbH60Store.Migrations
                             ProductId = 15,
                             BuyPrice = 11.00m,
                             Description = "Black Hammer",
-                            EmployeeNotes = "In demand",
-                            ImageUrl = "image.jpg",
                             Manufacturer = "Dark Horse",
-                            MaximumStock = 200,
-                            MinimumStock = 5,
                             ProdCatId = 4,
                             SellPrice = 16.00m,
                             Stock = 40
@@ -289,11 +218,7 @@ namespace scbH60Store.Migrations
                             ProductId = 16,
                             BuyPrice = 13.00m,
                             Description = "Y: The Last Man",
-                            EmployeeNotes = "In demand",
-                            ImageUrl = "image.jpg",
                             Manufacturer = "Vertigo",
-                            MaximumStock = 200,
-                            MinimumStock = 5,
                             ProdCatId = 4,
                             SellPrice = 18.00m,
                             Stock = 50
@@ -303,11 +228,7 @@ namespace scbH60Store.Migrations
                             ProductId = 17,
                             BuyPrice = 5.00m,
                             Description = "Dog Man",
-                            EmployeeNotes = "In demand",
-                            ImageUrl = "image.jpg",
                             Manufacturer = "Scholastic",
-                            MaximumStock = 200,
-                            MinimumStock = 5,
                             ProdCatId = 5,
                             SellPrice = 8.00m,
                             Stock = 80
@@ -317,11 +238,7 @@ namespace scbH60Store.Migrations
                             ProductId = 18,
                             BuyPrice = 7.00m,
                             Description = "The Adventures of Tintin",
-                            EmployeeNotes = "In demand",
-                            ImageUrl = "image.jpg",
                             Manufacturer = "Little, Brown",
-                            MaximumStock = 200,
-                            MinimumStock = 5,
                             ProdCatId = 5,
                             SellPrice = 10.00m,
                             Stock = 70
@@ -331,11 +248,7 @@ namespace scbH60Store.Migrations
                             ProductId = 19,
                             BuyPrice = 6.00m,
                             Description = "Bone",
-                            EmployeeNotes = "In demand",
-                            ImageUrl = "image.jpg",
                             Manufacturer = "Graphix",
-                            MaximumStock = 200,
-                            MinimumStock = 5,
                             ProdCatId = 5,
                             SellPrice = 9.00m,
                             Stock = 90
@@ -345,11 +258,7 @@ namespace scbH60Store.Migrations
                             ProductId = 20,
                             BuyPrice = 8.00m,
                             Description = "Amulet",
-                            EmployeeNotes = "In demand",
-                            ImageUrl = "image.jpg",
                             Manufacturer = "Scholastic",
-                            MaximumStock = 200,
-                            MinimumStock = 5,
                             ProdCatId = 5,
                             SellPrice = 12.00m,
                             Stock = 100

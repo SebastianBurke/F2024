@@ -14,11 +14,14 @@ namespace scbH60Store.Models
             _context = context;
         }
 
+        // Create
         public async Task AddProduct(Product product)
         {
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
         }
+
+        // Read
 
         public async Task<List<Product>> GetAllProducts()
         {
@@ -30,11 +33,57 @@ namespace scbH60Store.Models
             return await _context.ProductCategories.Include(p => p.Products).ToListAsync();
         }
 
+        public async Task<List<Product>> GetProductsByPartialName(string partialName)
+        {
+            return await _context.Products
+                .Where(p => p.Description.Contains(partialName, StringComparison.OrdinalIgnoreCase))
+                .ToListAsync();
+        }
+
+        public async Task<List<Product>> GetProductsByPrice(decimal? equalTo = null, decimal? lessThan = null, decimal? greaterThan = null)
+        {
+            var query = _context.Products.AsQueryable();
+
+            if (equalTo.HasValue)
+                query = query.Where(p => p.SellPrice == equalTo.Value);
+
+            if (lessThan.HasValue)
+                query = query.Where(p => p.SellPrice < lessThan.Value);
+
+            if (greaterThan.HasValue)
+                query = query.Where(p => p.SellPrice > greaterThan.Value);
+
+            return await query.ToListAsync();
+        }
+        public async Task<List<Product>> GetProductsSorted(string sortBy, bool ascending = true)
+        {
+            var query = _context.Products.AsQueryable();
+
+            switch (sortBy.ToLower())
+            {
+                case "price":
+                    query = ascending ? query.OrderBy(p => p.SellPrice) : query.OrderByDescending(p => p.SellPrice);
+                    break;
+                case "stock":
+                    query = ascending ? query.OrderBy(p => p.Stock) : query.OrderByDescending(p => p.Stock);
+                    break;
+                case "markup":
+                    query = ascending ? query.OrderBy(p => p.SellPrice - p.BuyPrice) : query.OrderByDescending(p => p.SellPrice - p.BuyPrice);
+                    break;
+                default:
+                    throw new ArgumentException("Invalid sort parameter");
+            }
+
+            return await query.ToListAsync();
+        }
+
         public async Task<Product> GetProductById(int id)
         {
             return await _context.Products.Include(p => p.ProdCat)
                 .FirstOrDefaultAsync(p => p.ProductId == id);
         }
+
+        // Update
 
         public async Task Edit(Product product)
         {
@@ -83,6 +132,8 @@ namespace scbH60Store.Models
             _context.Products.Update(product);
             await _context.SaveChangesAsync();
         }
+
+        // Delete
 
         public async Task DeleteProduct(int id)
         {

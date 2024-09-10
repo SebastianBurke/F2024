@@ -30,7 +30,7 @@ namespace scbH60Store.Controllers
             {
                 if (statusCode == 404)
                 {
-                    return View("NotFound"); // 404 specific view
+                    return View("NotFound");
                 }
             }
 

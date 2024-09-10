@@ -25,7 +25,7 @@ namespace scbH60Store.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Product product)
+        public async Task<IActionResult> Create(Product product, IFormFile imageFile)
         {
             if (ModelState.ContainsKey("ProdCat"))
             {
@@ -34,13 +34,22 @@ namespace scbH60Store.Controllers
 
             if (ModelState.IsValid)
             {
+                if (imageFile != null && imageFile.Length > 0)
+                {
+                    var imagePath = Path.Combine("wwwroot/images", imageFile.FileName);
+                    using (var stream = new FileStream(imagePath, FileMode.Create))
+                    {
+                        await imageFile.CopyToAsync(stream);
+                    }
+                    product.ImageUrl = $"/images/{imageFile.FileName}";
+                }
+
                 await _productService.AddProduct(product);
                 return RedirectToAction("Index");
             }
 
             var categories = await _categoryService.GetAllCategories();
             ViewBag.CategoryList = new SelectList(categories, "CategoryId", "ProdCat");
-
             return View(product);
         }
 
@@ -62,11 +71,28 @@ namespace scbH60Store.Controllers
         public async Task<IActionResult> Details(int productId)
         {
             var product = await  _productService.GetProductById(productId);
-            if (product == null) return NotFound();
+            if (product == null) return RedirectToAction("NotFound", "Home");
 
             return View(product);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Filter(string partialName, decimal? equalTo, decimal? lessThan, decimal? greaterThan)
+        {
+            var products = await _productService.GetProductsByPrice(equalTo, lessThan, greaterThan);
+            if (!string.IsNullOrWhiteSpace(partialName))
+            {
+                products = products.Where(p => p.Description.Contains(partialName, StringComparison.OrdinalIgnoreCase)).ToList();
+            }
+            return View("Index", products);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Sort(string sortBy, bool ascending = true)
+        {
+            var products = await _productService.GetProductsSorted(sortBy, ascending);
+            return View("Index", products);
+        }
 
 
         // Update
@@ -74,7 +100,7 @@ namespace scbH60Store.Controllers
         public async Task<IActionResult> Edit(int productId)
         {
             var product = await _productService.GetProductById(productId);
-            if (product == null) return NotFound();
+            if (product == null) return RedirectToAction("NotFound", "Home");
 
             var categories = await _categoryService.GetAllCategories();
             ViewBag.CategoryList = new SelectList(categories, "CategoryId", "ProdCat");
@@ -83,7 +109,7 @@ namespace scbH60Store.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(Product product)
+        public async Task<IActionResult> Edit(Product product, IFormFile imageFile)
         {
             if (ModelState.ContainsKey("ProdCat"))
             {
@@ -92,6 +118,16 @@ namespace scbH60Store.Controllers
 
             if (ModelState.IsValid)
             {
+                if (imageFile != null && imageFile.Length > 0)
+                {
+                    var imagePath = Path.Combine("wwwroot/images", imageFile.FileName);
+                    using (var stream = new FileStream(imagePath, FileMode.Create))
+                    {
+                        await imageFile.CopyToAsync(stream);
+                    }
+                    product.ImageUrl = $"/images/{imageFile.FileName}";
+                }
+
                 try
                 {
                     await _productService.Edit(product);
@@ -105,7 +141,6 @@ namespace scbH60Store.Controllers
 
             var categories = await _categoryService.GetAllCategories();
             ViewBag.CategoryList = new SelectList(categories, "CategoryId", "ProdCat");
-
             return View(product);
         }
 
@@ -113,7 +148,7 @@ namespace scbH60Store.Controllers
         public async Task<IActionResult> EditStock(int productId)
         {
             var product = await _productService.GetProductById(productId);
-            if (product == null) return NotFound();
+            if (product == null) return RedirectToAction("NotFound", "Home");
 
             return View(product);
         }
@@ -144,7 +179,7 @@ namespace scbH60Store.Controllers
         public async Task<IActionResult> EditPrice(int productId)
         {
             var product = await _productService.GetProductById(productId);
-            if (product == null) return NotFound();
+            if (product == null) return RedirectToAction("NotFound", "Home");
 
             return View(product);
         }
@@ -178,7 +213,7 @@ namespace scbH60Store.Controllers
         public async Task<IActionResult> Delete(int productId)
         {
             var product = await _productService.GetProductById(productId);
-            if (product == null) return NotFound();
+            if (product == null) return RedirectToAction("NotFound", "Home");
 
             return View(product);
         }

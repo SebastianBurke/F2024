@@ -33,6 +33,7 @@
         <select asp-for="ProdCatId" class="form-control" asp-items="ViewBag.CategoryList"></select>
         <span asp-validation-for="ProdCatId" class="text-danger"></span>
     </div>
+    <input type="file" name="ImageFile" />
     <input type="hidden" asp-for="ProductId"/>
     <button type="submit" class="btn btn-primary">Update</button>
 </form>

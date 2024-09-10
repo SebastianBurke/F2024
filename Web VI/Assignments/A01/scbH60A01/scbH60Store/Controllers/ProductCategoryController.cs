@@ -22,10 +22,20 @@ namespace scbH60Store.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(ProductCategory category)
+        public async Task<IActionResult> Create(ProductCategory category, IFormFile imageFile)
         {
             if (ModelState.IsValid)
             {
+                if (imageFile != null && imageFile.Length > 0)
+                {
+                    var imagePath = Path.Combine("wwwroot/images", imageFile.FileName);
+                    using (var stream = new FileStream(imagePath, FileMode.Create))
+                    {
+                        await imageFile.CopyToAsync(stream);
+                    }
+                    category.ImageUrl = $"/images/{imageFile.FileName}";
+                }
+
                 await _categoryService.AddCategory(category);
                 return RedirectToAction("Index");
             }
@@ -55,7 +65,7 @@ namespace scbH60Store.Controllers
             var category = await _categoryService.GetCategoryById(id);
             if (category == null)
             {
-                return NotFound();
+                return RedirectToAction("NotFound", "Home");
             }
             return View(category);
         }
@@ -67,16 +77,26 @@ namespace scbH60Store.Controllers
             var category = await _categoryService.GetCategoryById(id);
             if (category == null)
             {
-                return NotFound();
+                return RedirectToAction("NotFound", "Home");
             }
             return View(category);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(ProductCategory category)
+        public async Task<IActionResult> Edit(ProductCategory category, IFormFile imageFile)
         {
             if (ModelState.IsValid)
             {
+                if (imageFile != null && imageFile.Length > 0)
+                {
+                    var imagePath = Path.Combine("wwwroot/images", imageFile.FileName);
+                    using (var stream = new FileStream(imagePath, FileMode.Create))
+                    {
+                        await imageFile.CopyToAsync(stream);
+                    }
+                    category.ImageUrl = $"/images/{imageFile.FileName}";
+                }
+
                 await _categoryService.UpdateCategory(category);
                 return RedirectToAction("Index");
             }
@@ -90,7 +110,7 @@ namespace scbH60Store.Controllers
             var category = await _categoryService.GetCategoryById(id);
             if (category == null)
             {
-                return NotFound();
+                return RedirectToAction("NotFound", "Home");
             }
 
             var products = await _categoryService.GetCategoryProducts(id);

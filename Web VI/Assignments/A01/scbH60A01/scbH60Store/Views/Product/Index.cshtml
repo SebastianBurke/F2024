@@ -2,32 +2,38 @@
 
 <h2>Products</h2>
 <a asp-action="ProductsByCategory" class="btn btn-info">View by category</a>
+<form asp-action="Filter" method="get">
+    <input type="text" name="partialName" placeholder="Search by name" />
+    <input type="number" name="equalTo" placeholder="Price equal to" />
+    <input type="number" name="lessThan" placeholder="Price less than" />
+    <input type="number" name="greaterThan" placeholder="Price greater than" />
+    <button type="submit">Filter</button>
+</form>
+<form asp-action="Sort" method="get">
+    <select name="sortBy">
+        <option value="price">Price</option>
+        <option value="stock">Stock</option>
+        <option value="markup">Markup</option>
+    </select>
+    <input type="checkbox" name="ascending" checked="checked" /> Ascending
+    <button type="submit">Sort</button>
+</form>
 
 @if (Model != null && Model.Any())
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Description</th>
-                <th>Stock</th>
-                <th>Price</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var product in Model.OrderBy(p => p.Description))
+    @foreach (var product in Model.OrderBy(p => p.Description))
+    {
+        <div class="product-item @(product.Stock < 0 ? "out-of-stock" : "")">
+            <img src="@product.ImageUrl" alt="@product.Description" />
+            <p>@product.Description</p>
+            <p>Price: @product.SellPrice</p>
+            <p>Stock: @product.Stock</p>
+            @if (product.Stock < 0)
             {
-                <tr>
-                    <td>@product.Description</td>
-                    <td>@product.Stock</td>
-                    <td>@product.SellPrice?.ToString("C")</td>
-                    <td>
-                        <a asp-action="Details" asp-route-productId="@product.ProductId">Details</a>
-                    </td>
-                </tr>
+                <p class="text-danger">Out of Stock</p>
             }
-        </tbody>
-    </table>
+        </div>
+    }
 }
 else
 {
