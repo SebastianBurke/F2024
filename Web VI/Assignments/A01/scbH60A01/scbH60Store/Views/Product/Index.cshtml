@@ -2,29 +2,62 @@
 
 <h2>Products</h2>
 <a asp-action="ProductsByCategory" class="btn btn-info">View by category</a>
-<form asp-action="Filter" method="get">
-    <input type="text" name="partialName" placeholder="Search by name" />
-    <input type="number" name="equalTo" placeholder="Price equal to" />
-    <input type="number" name="lessThan" placeholder="Price less than" />
-    <input type="number" name="greaterThan" placeholder="Price greater than" />
-    <button type="submit">Filter</button>
-</form>
-<form asp-action="Sort" method="get">
-    <select name="sortBy">
-        <option value="price">Price</option>
-        <option value="stock">Stock</option>
-        <option value="markup">Markup</option>
+<form asp-action="FilterAndSort" method="get">
+    <input type="text" name="partialName" placeholder="Search by name" value="@ViewBag.PartialName" />
+    <input type="number" name="equalTo" placeholder="Price equal to" value="@ViewBag.EqualTo" />
+    <input type="number" name="lessThan" placeholder="Price less than" value="@ViewBag.LessThan" />
+    <input type="number" name="greaterThan" placeholder="Price greater than" value="@ViewBag.GreaterThan" />
+
+    <select name="sortBy" class="form-control">
+        @if (ViewBag.CurrentSort == "description")
+        {
+            <option value="description" selected>Alphabetical (Description)</option>
+        }
+        else
+        {
+            <option value="description">Alphabetical (Description)</option>
+        }
+
+        @if (ViewBag.CurrentSort == "price")
+        {
+            <option value="price" selected>Price</option>
+        }
+        else
+        {
+            <option value="price">Price</option>
+        }
+
+        @if (ViewBag.CurrentSort == "stock")
+        {
+            <option value="stock" selected>Stock</option>
+        }
+        else
+        {
+            <option value="stock">Stock</option>
+        }
+
+        @if (ViewBag.CurrentSort == "markup")
+        {
+            <option value="markup" selected>Markup</option>
+        }
+        else
+        {
+            <option value="markup">Markup</option>
+        }
     </select>
-    <input type="checkbox" name="ascending" checked="checked" /> Ascending
-    <button type="submit">Sort</button>
+    <button type="submit" class="btn btn-primary">Apply</button>
 </form>
+
+
+
+
 
 @if (Model != null && Model.Any())
 {
-    @foreach (var product in Model.OrderBy(p => p.Description))
+    @foreach (var product in Model)
     {
         <div class="product-item @(product.Stock < 0 ? "out-of-stock" : "")">
-            <img src="@product.ImageUrl" alt="@product.Description" />
+            <img src="@product.ImageUrl" alt="@product.Description" width="150" />
             <p>@product.Description</p>
             <p>Price: @product.SellPrice</p>
             <p>Stock: @product.Stock</p>
@@ -32,7 +65,7 @@
             {
                 <p class="text-danger">Out of Stock</p>
             }
-            <a asp-action="Details" asp-route-productId="@product.ProductId" class="btn btn-primary">Details</a> |
+            <a asp-action="Details" asp-route-productId="@product.ProductId" class="btn btn-primary">Details</a>
         </div>
     }
 }

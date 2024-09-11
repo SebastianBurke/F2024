@@ -25,7 +25,7 @@ namespace scbH60Store.Models
 
         public async Task<List<Product>> GetAllProducts()
         {
-            return await _context.Products.ToListAsync();
+            return await _context.Products.OrderBy(p => p.Description).ToListAsync();
         }
 
         public async Task<List<ProductCategory>> GetAllProductsByCategory()
@@ -33,49 +33,49 @@ namespace scbH60Store.Models
             return await _context.ProductCategories.Include(p => p.Products).ToListAsync();
         }
 
-        public async Task<List<Product>> GetProductsByPartialName(string partialName)
-        {
-            return await _context.Products
-                .Where(p => p.Description.Contains(partialName, StringComparison.OrdinalIgnoreCase))
-                .ToListAsync();
-        }
-
-        public async Task<List<Product>> GetProductsByPrice(decimal? equalTo = null, decimal? lessThan = null, decimal? greaterThan = null)
+        public async Task<List<Product>> GetProductsFilteredAndSorted(
+            string partialName,
+            decimal? equalTo = null,
+            decimal? lessThan = null,
+            decimal? greaterThan = null,
+            string sortBy = "description")
         {
             var query = _context.Products.AsQueryable();
 
-            if (equalTo.HasValue)
-                query = query.Where(p => p.SellPrice == equalTo.Value);
-
-            if (lessThan.HasValue)
-                query = query.Where(p => p.SellPrice < lessThan.Value);
-
-            if (greaterThan.HasValue)
-                query = query.Where(p => p.SellPrice > greaterThan.Value);
-
-            return await query.ToListAsync();
-        }
-        public async Task<List<Product>> GetProductsSorted(string sortBy, bool ascending = true)
-        {
-            var query = _context.Products.AsQueryable();
-
-            switch (sortBy.ToLower())
+            // Apply partial name filter
+            if (!string.IsNullOrWhiteSpace(partialName))
             {
-                case "price":
-                    query = ascending ? query.OrderBy(p => p.SellPrice) : query.OrderByDescending(p => p.SellPrice);
-                    break;
-                case "stock":
-                    query = ascending ? query.OrderBy(p => p.Stock) : query.OrderByDescending(p => p.Stock);
-                    break;
-                case "markup":
-                    query = ascending ? query.OrderBy(p => p.SellPrice - p.BuyPrice) : query.OrderByDescending(p => p.SellPrice - p.BuyPrice);
-                    break;
-                default:
-                    throw new ArgumentException("Invalid sort parameter");
+                query = query.Where(p => p.Description.Contains(partialName));
             }
 
+            // Apply price filters
+            if (equalTo.HasValue)
+            {
+                query = query.Where(p => p.SellPrice == equalTo.Value);
+            }
+
+            if (lessThan.HasValue)
+            {
+                query = query.Where(p => p.SellPrice < lessThan.Value);
+            }
+
+            if (greaterThan.HasValue)
+            {
+                query = query.Where(p => p.SellPrice > greaterThan.Value);
+            }
+
+            // Apply sorting
+            query = sortBy.ToLower() switch
+            {
+                "price" => query.OrderBy(p => p.SellPrice ?? 0),
+                "stock" => query.OrderBy(p => p.Stock),
+                "markup" => query.OrderBy(p => (p.SellPrice ?? 0) - (p.BuyPrice ?? 0)),
+                _ => query.OrderBy(p => p.Description),
+            };
+
             return await query.ToListAsync();
         }
+
 
         public async Task<Product> GetProductById(int id)
         {
@@ -92,7 +92,6 @@ namespace scbH60Store.Models
 
             if (existingProduct == null) throw new ArgumentException("Product not found");
 
-            // Update all fields including ImageUrl if changed
             existingProduct.Description = product.Description;
             existingProduct.Manufacturer = product.Manufacturer;
             existingProduct.Stock = product.Stock;

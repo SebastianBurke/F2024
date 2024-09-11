@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using scbH60Store.Models;
 
 namespace scbH60Store.Controllers
@@ -77,23 +78,25 @@ namespace scbH60Store.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Filter(string partialName, decimal? equalTo, decimal? lessThan, decimal? greaterThan)
+        public async Task<IActionResult> FilterAndSort(
+            string partialName,
+            decimal? equalTo,
+            decimal? lessThan,
+            decimal? greaterThan,
+            string sortBy = "description")
         {
-            var products = await _productService.GetProductsByPrice(equalTo, lessThan, greaterThan);
-            if (!string.IsNullOrWhiteSpace(partialName))
-            {
-                products = products.Where(p => p.Description.Contains(partialName, StringComparison.OrdinalIgnoreCase)).ToList();
-            }
+            Console.WriteLine($"partialName: {partialName}, equalTo: {equalTo}, lessThan: {lessThan}, greaterThan: {greaterThan}, sortBy: {sortBy}");
+
+            var products = await _productService.GetProductsFilteredAndSorted(partialName, equalTo, lessThan, greaterThan, sortBy);
+
+            ViewBag.PartialName = partialName;
+            ViewBag.EqualTo = equalTo;
+            ViewBag.LessThan = lessThan;
+            ViewBag.GreaterThan = greaterThan;
+            ViewBag.CurrentSort = sortBy;
+
             return View("Index", products);
         }
-
-        [HttpGet]
-        public async Task<IActionResult> Sort(string sortBy, bool ascending = true)
-        {
-            var products = await _productService.GetProductsSorted(sortBy, ascending);
-            return View("Index", products);
-        }
-
 
         // Update
         [HttpGet]
