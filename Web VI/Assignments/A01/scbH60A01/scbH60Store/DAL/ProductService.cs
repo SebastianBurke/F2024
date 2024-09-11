@@ -145,10 +145,24 @@ namespace scbH60Store.Models
         public async Task DeleteProduct(int id)
         {
             var product = await _context.Products.FindAsync(id);
-            if (product == null) throw new ArgumentException("Product not found");
+            if (product == null)
+            {
+                throw new ArgumentException("Product not found");
+            }
+
+            // Delete image file if it's not the default image
+            if (product.ImageUrl != "/images/default-image.png")
+            {
+                var imagePath = Path.Combine("wwwroot", product.ImageUrl.TrimStart('/'));
+                if (System.IO.File.Exists(imagePath))
+                {
+                    System.IO.File.Delete(imagePath);
+                }
+            }
 
             _context.Products.Remove(product);
             await _context.SaveChangesAsync();
         }
+
     }
 }

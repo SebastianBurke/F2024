@@ -32,9 +32,13 @@ namespace scbH60Store.Controllers
             {
                 ModelState.Remove("ProdCat");
             }
-
+            if (ModelState.ContainsKey("ImageFile"))
+            {
+                ModelState.Remove("ImageFile");
+            }
             if (ModelState.IsValid)
             {
+                // Handle the image file
                 if (imageFile != null && imageFile.Length > 0)
                 {
                     var imagePath = Path.Combine("wwwroot/images", imageFile.FileName);
@@ -44,15 +48,23 @@ namespace scbH60Store.Controllers
                     }
                     product.ImageUrl = $"/images/{imageFile.FileName}";
                 }
+                else
+                {
+                    // Set a default image if none is provided
+                    product.ImageUrl = "/images/default-image.png";
+                }
 
+                // Save the product to the database
                 await _productService.AddProduct(product);
                 return RedirectToAction("Index");
             }
 
+            // Re-populate category list for dropdown in case of a validation error
             var categories = await _categoryService.GetAllCategories();
             ViewBag.CategoryList = new SelectList(categories, "CategoryId", "ProdCat");
             return View(product);
         }
+
 
         // Read
         public async Task<IActionResult> Index()
@@ -117,6 +129,10 @@ namespace scbH60Store.Controllers
             if (ModelState.ContainsKey("ProdCat"))
             {
                 ModelState.Remove("ProdCat");
+            }
+            if (ModelState.ContainsKey("ImageFile"))
+            {
+                ModelState.Remove("ImageFile");
             }
 
             if (imageFile == null && string.IsNullOrEmpty(product.ImageUrl))
@@ -230,9 +246,27 @@ namespace scbH60Store.Controllers
         [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int productId)
         {
+            var product = await _productService.GetProductById(productId);
+
+            if (product == null)
+            {
+                return RedirectToAction("NotFound", "Home");
+            }
+
+            // Delete image file if it's not the default image
+            if (product.ImageUrl != "/images/default-image.png")
+            {
+                var imagePath = Path.Combine("wwwroot", product.ImageUrl.TrimStart('/'));
+                if (System.IO.File.Exists(imagePath))
+                {
+                    System.IO.File.Delete(imagePath);
+                }
+            }
+
             await _productService.DeleteProduct(productId);
             return RedirectToAction("Index");
         }
+
 
     }
 }

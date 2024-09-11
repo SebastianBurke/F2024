@@ -38,6 +38,7 @@
         <input asp-for="EmployeeNotes" class="form-control" />
         <span asp-validation-for="EmployeeNotes" class="text-danger"></span>
     </div>
+
     @if (!string.IsNullOrEmpty(Model.ImageUrl))
     {
         <div>
@@ -45,8 +46,19 @@
             <img src="@Model.ImageUrl" alt="Product Image" width="150" />
         </div>
     }
+    else
+    {
+        <div>
+            <label>Default Image</label>
+            <img src="/images/default-image.png" alt="Default Image" width="150" />
+        </div>
+    }
+
+    <!-- Hidden field to store the existing ImageUrl -->
+    <input type="hidden" asp-for="ImageUrl" />
+
     <input type="file" name="ImageFile" />
-    <input type="hidden" asp-for="ProductId"/>
+    <input type="hidden" asp-for="ProductId" />
     <button type="submit" class="btn btn-primary">Update</button>
 </form>
 
