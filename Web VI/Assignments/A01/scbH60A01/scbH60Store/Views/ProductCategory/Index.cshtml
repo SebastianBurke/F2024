@@ -17,7 +17,7 @@
                     <a asp-action="CategoryProducts" asp-route-id="@item.CategoryId">@item.ProdCat</a>
                 </td>
                 <td>
-                    <a asp-action="Delete" asp-route-id="@item.CategoryId">Delete</a>
+                    <a asp-action="Details" asp-route-CategoryId="@item.CategoryId">Details</a>
                 </td>
             </tr>
         }

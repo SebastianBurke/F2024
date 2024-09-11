@@ -142,9 +142,18 @@ namespace scbH60Store.Controllers
 
             if (ModelState.IsValid)
             {
+
                 if (imageFile != null && imageFile.Length > 0)
                 {
-                    ModelState.Clear();
+                    // Delete old image if it is not the default image
+                    if (product.ImageUrl != "/images/default-image.png")
+                    {
+                        var oldImagePath = Path.Combine("wwwroot", product.ImageUrl.TrimStart('/'));
+                        if (System.IO.File.Exists(oldImagePath))
+                        {
+                            System.IO.File.Delete(oldImagePath);
+                        }
+                    }
                     var imagePath = Path.Combine("wwwroot/images", imageFile.FileName);
                     using (var stream = new FileStream(imagePath, FileMode.Create))
                     {

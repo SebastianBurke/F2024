@@ -2,12 +2,15 @@
 
 <h2>Create Product Category</h2>
 
-<form asp-action="Create">
+<form asp-action="Create" enctype="multipart/form-data">
     <div class="form-group">
         <label asp-for="ProdCat" class="control-label"></label>
         <input asp-for="ProdCat" class="form-control" />
         <span asp-validation-for="ProdCat" class="text-danger"></span>
     </div>
-    <input type="file" name="ImageFile" />
+    <div class="form-group">
+        <label for="ImageFile">Category Image</label>
+        <input type="file" name="ImageFile">
+    </div>
     <button type="submit" class="btn btn-primary">Create</button>
 </form>
