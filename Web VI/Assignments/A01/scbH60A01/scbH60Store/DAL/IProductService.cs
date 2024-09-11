@@ -5,7 +5,7 @@ namespace scbH60Store.Models
 {
     public interface IProductService
     {
-        Task AddProduct(Product product);
+        Task<string> AddProduct(Product product);
         Task<List<Product>> GetAllProducts();
         Task<List<ProductCategory>> GetAllProductsByCategory();
         Task<List<Product>> GetProductsFilteredAndSorted(
@@ -15,7 +15,7 @@ namespace scbH60Store.Models
                 decimal? greaterThan,
                 string sortBy);
         Task<Product> GetProductById(int id);
-        Task Edit(Product product);
+        Task<string> Edit(Product product, IFormFile imageFile);
         Task EditStock(int productId, int stockChange);
         Task EditPrice(int productId, decimal buyPrice, decimal sellPrice);
         Task DeleteProduct(int id);

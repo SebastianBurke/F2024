@@ -11,8 +11,6 @@ public partial class Product
     public string? Description { get; set; }
     public string? Manufacturer { get; set; }
     public int Stock { get; set; }
-    public int MinimumStock { get; set; }
-    public int MaximumStock { get; set; }
     public decimal? BuyPrice { get; set; }
     public decimal? SellPrice { get; set; }
     public string? EmployeeNotes { get; set; }

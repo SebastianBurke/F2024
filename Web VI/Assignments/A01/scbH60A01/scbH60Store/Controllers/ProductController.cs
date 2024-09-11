@@ -24,7 +24,6 @@ namespace scbH60Store.Controllers
             ViewBag.CategoryList = new SelectList(categories, "CategoryId", "ProdCat");
             return View();
         }
-
         [HttpPost]
         public async Task<IActionResult> Create(Product product, IFormFile imageFile)
         {
@@ -36,6 +35,7 @@ namespace scbH60Store.Controllers
             {
                 ModelState.Remove("ImageFile");
             }
+
             if (ModelState.IsValid)
             {
                 // Handle the image file
@@ -54,9 +54,15 @@ namespace scbH60Store.Controllers
                     product.ImageUrl = "/images/default-image.png";
                 }
 
-                // Save the product to the database
-                await _productService.AddProduct(product);
-                return RedirectToAction("Index");
+                // Add the product
+                var resultMessage = await _productService.AddProduct(product);
+                if (resultMessage.Contains("successfully"))
+                {
+                    return RedirectToAction("Index");
+                }
+
+                // Add error message to ModelState
+                ModelState.AddModelError("", resultMessage);
             }
 
             // Re-populate category list for dropdown in case of a validation error
@@ -115,7 +121,10 @@ namespace scbH60Store.Controllers
         public async Task<IActionResult> Edit(int productId)
         {
             var product = await _productService.GetProductById(productId);
-            if (product == null) return RedirectToAction("NotFound", "Home");
+            if (product == null)
+            {
+                return RedirectToAction("NotFound", "Home");
+            }
 
             var categories = await _categoryService.GetAllCategories();
             ViewBag.CategoryList = new SelectList(categories, "CategoryId", "ProdCat");
@@ -142,35 +151,14 @@ namespace scbH60Store.Controllers
 
             if (ModelState.IsValid)
             {
-
-                if (imageFile != null && imageFile.Length > 0)
+                var resultMessage = await _productService.Edit(product, imageFile);
+                if (resultMessage.Contains("successfully"))
                 {
-                    // Delete old image if it is not the default image
-                    if (product.ImageUrl != "/images/default-image.png")
-                    {
-                        var oldImagePath = Path.Combine("wwwroot", product.ImageUrl.TrimStart('/'));
-                        if (System.IO.File.Exists(oldImagePath))
-                        {
-                            System.IO.File.Delete(oldImagePath);
-                        }
-                    }
-                    var imagePath = Path.Combine("wwwroot/images", imageFile.FileName);
-                    using (var stream = new FileStream(imagePath, FileMode.Create))
-                    {
-                        await imageFile.CopyToAsync(stream);
-                    }
-                    product.ImageUrl = $"/images/{imageFile.FileName}";
-                }
-
-                try
-                {
-                    await _productService.Edit(product);
                     return RedirectToAction("Index");
                 }
-                catch (ArgumentException ex)
-                {
-                    ModelState.AddModelError("", ex.Message);
-                }
+
+                // Add error message to ModelState
+                ModelState.AddModelError("", resultMessage);
             }
 
             var categories = await _categoryService.GetAllCategories();

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using scbH60Store.DAL;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -8,19 +9,29 @@ namespace scbH60Store.Models
     public class ProductService : IProductService
     {
         private readonly H60AssignmentDbContext _context;
+        private readonly IGlobalSettingsService _globalSettingsService;
 
-        public ProductService(H60AssignmentDbContext context)
+        public ProductService(H60AssignmentDbContext context, IGlobalSettingsService globalSettingsService)
         {
             _context = context;
+            _globalSettingsService = globalSettingsService;
         }
 
         // Create
-        public async Task AddProduct(Product product)
+        public async Task<string> AddProduct(Product product)
         {
+            var settings = await _globalSettingsService.GetGlobalSettingsAsync();
+
+            // Check if product stock adheres to global settings
+            if (product.Stock < settings.MinStockLimit || product.Stock > settings.MaxStockLimit)
+            {
+                return $"Product stock must be between {settings.MinStockLimit} and {settings.MaxStockLimit}.";
+            }
+
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
+            return "Product added successfully!";
         }
-
         // Read
 
         public async Task<List<Product>> GetAllProducts()
@@ -85,12 +96,23 @@ namespace scbH60Store.Models
 
         // Update
 
-        public async Task Edit(Product product)
+        public async Task<string> Edit(Product product, IFormFile imageFile)
         {
+            var settings = await _globalSettingsService.GetGlobalSettingsAsync();
+
+            // Check if product stock adheres to global settings
+            if (product.Stock < settings.MinStockLimit || product.Stock > settings.MaxStockLimit)
+            {
+                return $"Product stock must be between {settings.MinStockLimit} and {settings.MaxStockLimit}.";
+            }
+
             var existingProduct = await _context.Products
                 .FirstOrDefaultAsync(p => p.ProductId == product.ProductId);
 
-            if (existingProduct == null) throw new ArgumentException("Product not found");
+            if (existingProduct == null)
+            {
+                return "Product not found.";
+            }
 
             existingProduct.Description = product.Description;
             existingProduct.Manufacturer = product.Manufacturer;
@@ -98,16 +120,34 @@ namespace scbH60Store.Models
             existingProduct.BuyPrice = product.BuyPrice;
             existingProduct.SellPrice = product.SellPrice;
             existingProduct.ProdCatId = product.ProdCatId;
+            existingProduct.EmployeeNotes = product.EmployeeNotes;
 
-            // Ensure the ImageUrl is updated only if a new file was uploaded
-            if (!string.IsNullOrEmpty(product.ImageUrl))
+            // Update image if a new file is uploaded
+            if (imageFile != null && imageFile.Length > 0)
             {
-                existingProduct.ImageUrl = product.ImageUrl;
+                // Delete old image if it is not the default image
+                if (existingProduct.ImageUrl != "/images/default-image.png")
+                {
+                    var oldImagePath = Path.Combine("wwwroot", existingProduct.ImageUrl.TrimStart('/'));
+                    if (System.IO.File.Exists(oldImagePath))
+                    {
+                        System.IO.File.Delete(oldImagePath);
+                    }
+                }
+
+                var imagePath = Path.Combine("wwwroot/images", imageFile.FileName);
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    await imageFile.CopyToAsync(stream);
+                }
+                existingProduct.ImageUrl = $"/images/{imageFile.FileName}";
             }
 
             _context.Products.Update(existingProduct);
             await _context.SaveChangesAsync();
+            return "Product updated successfully!";
         }
+
 
 
         public async Task EditStock(int productId, int stockChange)
@@ -141,7 +181,6 @@ namespace scbH60Store.Models
         }
 
         // Delete
-
         public async Task DeleteProduct(int id)
         {
             var product = await _context.Products.FindAsync(id);

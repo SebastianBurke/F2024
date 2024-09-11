@@ -1,8 +1,18 @@
 ﻿@model scbH60Store.Models.Product
 
 <h2>Create Product</h2>
+@{
+    var errorMessage = ViewData["ErrorMessage"] as string;
+}
 
 <form asp-action="Create" enctype="multipart/form-data">
+
+    @if (!string.IsNullOrEmpty(errorMessage))
+    {
+        <div class="alert alert-danger">
+            @errorMessage
+        </div>
+    }
     <div class="form-group">
         <label asp-for="Description"></label>
         <input asp-for="Description" class="form-control" />
@@ -33,8 +43,11 @@
         <select asp-for="ProdCatId" class="form-control" asp-items="ViewBag.CategoryList"></select>
         <span asp-validation-for="ProdCatId" class="text-danger"></span>
     </div>
-
-    <!-- Input for Image File -->
+    <div class="form-group">
+        <label asp-for="EmployeeNotes"></label>
+        <input asp-for="EmployeeNotes" class="form-control" />
+        <span asp-validation-for="EmployeeNotes" class="text-danger"></span>
+    </div>
     <div class="form-group">
         <label>Product Image</label>
         <input type="file" name="ImageFile" />

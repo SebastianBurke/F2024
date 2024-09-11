@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using scbH60Store.Models;
 
@@ -11,9 +12,11 @@ using scbH60Store.Models;
 namespace scbH60Store.Migrations
 {
     [DbContext(typeof(H60AssignmentDbContext))]
-    partial class H60AssignmentDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240911204339_AddedGlobalSettings")]
+    partial class AddedGlobalSettings
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,33 +24,6 @@ namespace scbH60Store.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("scbH60Store.Models.GlobalSettings", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("MaxStockLimit")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MinStockLimit")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("GlobalSettings");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            MaxStockLimit = 100,
-                            MinStockLimit = 10
-                        });
-                });
 
             modelBuilder.Entity("scbH60Store.Models.Product", b =>
                 {

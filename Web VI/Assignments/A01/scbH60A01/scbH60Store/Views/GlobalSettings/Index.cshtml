@@ -1,0 +1,26 @@
+﻿@model GlobalSettings
+
+@{
+    var message = TempData["Message"] as string;
+}
+
+@if (!string.IsNullOrEmpty(message))
+{
+    <div class="alert alert-info">
+        @message
+    </div>
+}
+
+<form asp-action="Update" method="post">
+    <div class="form-group">
+        <label asp-for="MinStockLimit" class="control-label"></label>
+        <input asp-for="MinStockLimit" class="form-control" />
+        <span asp-validation-for="MinStockLimit" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="MaxStockLimit" class="control-label"></label>
+        <input asp-for="MaxStockLimit" class="form-control" />
+        <span asp-validation-for="MaxStockLimit" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
