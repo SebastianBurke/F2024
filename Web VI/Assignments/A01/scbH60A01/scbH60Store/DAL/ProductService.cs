@@ -126,7 +126,7 @@ namespace scbH60Store.Models
             if (imageFile != null && imageFile.Length > 0)
             {
                 // Delete old image if it is not the default image
-                if (existingProduct.ImageUrl != "/images/default-image.png")
+                if (existingProduct.ImageUrl != "/images/default-image.png" && !string.IsNullOrEmpty(existingProduct.ImageUrl))
                 {
                     var oldImagePath = Path.Combine("wwwroot", existingProduct.ImageUrl.TrimStart('/'));
                     if (System.IO.File.Exists(oldImagePath))
@@ -135,6 +135,7 @@ namespace scbH60Store.Models
                     }
                 }
 
+                // Save new image
                 var imagePath = Path.Combine("wwwroot/images", imageFile.FileName);
                 using (var stream = new FileStream(imagePath, FileMode.Create))
                 {
@@ -147,20 +148,31 @@ namespace scbH60Store.Models
             await _context.SaveChangesAsync();
             return "Product updated successfully!";
         }
-
-
-
         public async Task EditStock(int productId, int stockChange)
         {
             var product = await _context.Products.FindAsync(productId);
             if (product == null) throw new ArgumentException("Product not found");
 
-            product.Stock += stockChange;
-            if (product.Stock < 0) throw new ArgumentException("Stock cannot be negative");
+            // Calculate the new stock value
+            var newStock = product.Stock + stockChange;
 
+            // Retrieve global settings
+            var settings = await _globalSettingsService.GetGlobalSettingsAsync();
+
+            // Validate the new stock value
+            if (newStock < settings.MinStockLimit || newStock > settings.MaxStockLimit)
+            {
+                throw new ArgumentException($"Stock must be between {settings.MinStockLimit} and {settings.MaxStockLimit}.");
+            }
+
+            // Update stock with the change
+            product.Stock = newStock;
+
+            // Update and save changes
             _context.Products.Update(product);
             await _context.SaveChangesAsync();
         }
+
 
         public async Task EditPrice(int productId, decimal buyPrice, decimal sellPrice)
         {

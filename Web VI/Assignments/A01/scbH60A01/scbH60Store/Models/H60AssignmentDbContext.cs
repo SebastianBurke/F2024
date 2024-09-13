@@ -21,6 +21,11 @@ public partial class H60AssignmentDbContext : DbContext
     public virtual DbSet<ProductCategory> ProductCategories { get; set; }
 
     public virtual DbSet<GlobalSettings> GlobalSettings { get; set; }
+    public DbSet<Customer> Customers { get; set; }
+    public DbSet<ShoppingCart> ShoppingCarts { get; set; }
+    public DbSet<Order> Orders { get; set; }
+    public DbSet<OrderItem> OrderItems { get; set; }
+    public DbSet<CartItem> CartItems { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
@@ -28,6 +33,7 @@ public partial class H60AssignmentDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+
         modelBuilder.Entity<Product>(entity =>
         {
             entity.ToTable("Product");
@@ -126,9 +132,28 @@ public partial class H60AssignmentDbContext : DbContext
 
         // Seed default global settings
         modelBuilder.Entity<GlobalSettings>().HasData(
-            new GlobalSettings { Id = 1, MinStockLimit = 10, MaxStockLimit = 100 }
+            new GlobalSettings { Id = 1, MinStockLimit = 10, MaxStockLimit = 300 }
         );
-
+        modelBuilder.Entity<Customer>().HasData(
+            new Customer() { CustomerId = 1, FirstName = "Sebastian", LastName = "Burke", Email = "sebastian@ipf-mail.com", PhoneNumber = "81923020002", Province = "QC", CreditCard = "1234123412341234" },
+            new Customer() { CustomerId = 2, FirstName = "Richard", LastName = "Chan", Email = "rchan@email.com", PhoneNumber = "1234567890", Province = "QC", CreditCard = "1234123412341234" },
+            new Customer() { CustomerId = 3, FirstName = "Zach", LastName = "Fortier", Email = "zach@email.com", PhoneNumber = "1234567890", Province = "QC", CreditCard = "1234123412341234" }
+            );
+        modelBuilder.Entity<ShoppingCart>().HasData(
+            new ShoppingCart() { ShoppingCartId = 1, CustomerId = 1, DateCreated = new DateTime(2023, 9, 16) }
+            );
+        modelBuilder.Entity<CartItem>().HasData(
+            new CartItem() { CartItemId = 1, CartId = 1, ProductId = 1, Quantity = 1, Price = 50 },
+            new CartItem() { CartItemId = 2, CartId = 1, ProductId = 9, Quantity = 2, Price = 34 }
+            );
+        modelBuilder.Entity<Order>().HasData(
+            new Order() { OrderId = 1, CustomerId = 2, DateCreated = new DateTime(2023, 9, 16), DateFufilled = new DateTime(2023, 9, 21), Total = 423, Taxes = 282 }
+            );
+        modelBuilder.Entity<OrderItem>().HasData(
+            new OrderItem() { OrderItemId = 1, OrderId = 1, ProductId = 1, Quantity = 1, Price = 25 },
+            new OrderItem() { OrderItemId = 2, OrderId = 1, ProductId = 10, Quantity = 2, Price = 250 },
+            new OrderItem() { OrderItemId = 3, OrderId = 1, ProductId = 3, Quantity = 1, Price = 13 }
+            );
         OnModelCreatingPartial(modelBuilder);
     }
 

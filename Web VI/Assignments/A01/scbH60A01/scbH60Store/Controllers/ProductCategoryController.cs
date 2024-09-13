@@ -8,10 +8,12 @@ namespace scbH60Store.Controllers
     public class ProductCategoryController : Controller
     {
         private readonly IProductCategoryService _categoryService;
+        private readonly IProductService _productService;
 
-        public ProductCategoryController(IProductCategoryService categoryService)
+        public ProductCategoryController(IProductCategoryService categoryService, IProductService productService)
         {
             _categoryService = categoryService;
+            _productService = productService;
         }
 
         // Create

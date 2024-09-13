@@ -12,6 +12,12 @@ namespace scbH60Store.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+            name: "Product");
+
+            migrationBuilder.DropTable(
+                name: "ProductCategory");
+
             migrationBuilder.CreateTable(
                 name: "GlobalSettings",
                 columns: table => new
@@ -68,7 +74,7 @@ namespace scbH60Store.Migrations
             migrationBuilder.InsertData(
                 table: "GlobalSettings",
                 columns: new[] { "Id", "MaxStockLimit", "MinStockLimit" },
-                values: new object[] { 1, 100, 10 });
+                values: new object[] { 1, 300, 10 });
 
             migrationBuilder.InsertData(
                 table: "ProductCategory",

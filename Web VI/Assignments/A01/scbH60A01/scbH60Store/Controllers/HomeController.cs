@@ -7,14 +7,28 @@ namespace scbH60Store.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IProductService _productService;
+        private readonly IProductCategoryService _categoryService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IProductService productService, IProductCategoryService categoryService)
         {
             _logger = logger;
+            _productService = productService;
+            _categoryService = categoryService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            // Fetch categories and include related products
+            var categories = await _productService.GetAllProductsByCategory();
+
+
+            // Select a random category
+            var randomCategory = categories.OrderBy(c => Guid.NewGuid()).FirstOrDefault();
+
+            // Pass the data to the view
+            ViewBag.Categories = categories;
+            ViewBag.RandomCategory = randomCategory;
             return View();
         }
 

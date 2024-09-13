@@ -31,9 +31,10 @@
 
         <div>
             <label asp-for="Stock" class="block text-gray-700 font-medium mb-2"></label>
-            <input asp-for="Stock" class="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-blue-300" />
+            <input asp-for="Stock" placeholder="0" class="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-blue-300" value="0" />
             <span asp-validation-for="Stock" class="text-red-600"></span>
         </div>
+
 
         <div>
             <label asp-for="BuyPrice" class="block text-gray-700 font-medium mb-2"></label>

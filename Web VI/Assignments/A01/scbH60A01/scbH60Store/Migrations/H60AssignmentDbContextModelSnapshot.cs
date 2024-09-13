@@ -22,6 +22,118 @@ namespace scbH60Store.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("scbH60Store.Models.CartItem", b =>
+                {
+                    b.Property<int>("CartItemId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CartItemId"));
+
+                    b.Property<int>("CartId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("CartItemId");
+
+                    b.ToTable("CartItems");
+
+                    b.HasData(
+                        new
+                        {
+                            CartItemId = 1,
+                            CartId = 1,
+                            Price = 50m,
+                            ProductId = 1,
+                            Quantity = 1
+                        },
+                        new
+                        {
+                            CartItemId = 2,
+                            CartId = 1,
+                            Price = 34m,
+                            ProductId = 9,
+                            Quantity = 2
+                        });
+                });
+
+            modelBuilder.Entity("scbH60Store.Models.Customer", b =>
+                {
+                    b.Property<int>("CustomerId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomerId"));
+
+                    b.Property<string>("CreditCard")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Province")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CustomerId");
+
+                    b.ToTable("Customers");
+
+                    b.HasData(
+                        new
+                        {
+                            CustomerId = 1,
+                            CreditCard = "1234123412341234",
+                            Email = "sebastian@ipf-mail.com",
+                            FirstName = "Sebastian",
+                            LastName = "Burke",
+                            PhoneNumber = "81923020002",
+                            Province = "QC"
+                        },
+                        new
+                        {
+                            CustomerId = 2,
+                            CreditCard = "1234123412341234",
+                            Email = "rchan@email.com",
+                            FirstName = "Richard",
+                            LastName = "Chan",
+                            PhoneNumber = "1234567890",
+                            Province = "QC"
+                        },
+                        new
+                        {
+                            CustomerId = 3,
+                            CreditCard = "1234123412341234",
+                            Email = "zach@email.com",
+                            FirstName = "Zach",
+                            LastName = "Fortier",
+                            PhoneNumber = "1234567890",
+                            Province = "QC"
+                        });
+                });
+
             modelBuilder.Entity("scbH60Store.Models.GlobalSettings", b =>
                 {
                     b.Property<int>("Id")
@@ -49,6 +161,96 @@ namespace scbH60Store.Migrations
                         });
                 });
 
+            modelBuilder.Entity("scbH60Store.Models.Order", b =>
+                {
+                    b.Property<int>("OrderId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderId"));
+
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateFufilled")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal>("Taxes")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("Total")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("OrderId");
+
+                    b.ToTable("Orders");
+
+                    b.HasData(
+                        new
+                        {
+                            OrderId = 1,
+                            CustomerId = 2,
+                            DateCreated = new DateTime(2023, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateFufilled = new DateTime(2023, 9, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Taxes = 282m,
+                            Total = 423m
+                        });
+                });
+
+            modelBuilder.Entity("scbH60Store.Models.OrderItem", b =>
+                {
+                    b.Property<int>("OrderItemId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderItemId"));
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("OrderItemId");
+
+                    b.ToTable("OrderItems");
+
+                    b.HasData(
+                        new
+                        {
+                            OrderItemId = 1,
+                            OrderId = 1,
+                            Price = 25m,
+                            ProductId = 1,
+                            Quantity = 1
+                        },
+                        new
+                        {
+                            OrderItemId = 2,
+                            OrderId = 1,
+                            Price = 250m,
+                            ProductId = 10,
+                            Quantity = 2
+                        },
+                        new
+                        {
+                            OrderItemId = 3,
+                            OrderId = 1,
+                            Price = 13m,
+                            ProductId = 3,
+                            Quantity = 1
+                        });
+                });
+
             modelBuilder.Entity("scbH60Store.Models.Product", b =>
                 {
                     b.Property<int>("ProductId")
@@ -62,12 +264,14 @@ namespace scbH60Store.Migrations
                         .HasColumnType("numeric(8, 2)");
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasMaxLength(80)
                         .IsUnicode(false)
                         .HasColumnType("varchar(80)");
 
                     b.Property<string>("EmployeeNotes")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
 
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
@@ -639,6 +843,33 @@ namespace scbH60Store.Migrations
                             CategoryId = 5,
                             ImageUrl = "/images/seinen_manga.jpg",
                             ProdCat = "Seinen"
+                        });
+                });
+
+            modelBuilder.Entity("scbH60Store.Models.ShoppingCart", b =>
+                {
+                    b.Property<int>("ShoppingCartId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ShoppingCartId"));
+
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("ShoppingCartId");
+
+                    b.ToTable("ShoppingCarts");
+
+                    b.HasData(
+                        new
+                        {
+                            ShoppingCartId = 1,
+                            CustomerId = 1,
+                            DateCreated = new DateTime(2023, 9, 16, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 

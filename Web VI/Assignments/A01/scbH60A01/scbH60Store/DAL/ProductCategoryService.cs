@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using scbH60Store.DAL;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -8,10 +9,13 @@ namespace scbH60Store.Models
     public class ProductCategoryService : IProductCategoryService
     {
         private readonly H60AssignmentDbContext _context;
+        private readonly IGlobalSettingsService _globalSettingsService;
 
-        public ProductCategoryService(H60AssignmentDbContext context)
+
+        public ProductCategoryService(H60AssignmentDbContext context, IGlobalSettingsService globalSettingsService)
         {
             _context = context;
+            _globalSettingsService = globalSettingsService;
         }
 
         public async Task AddCategory(ProductCategory category)
@@ -55,13 +59,29 @@ namespace scbH60Store.Models
 
             if (category.Products != null && category.Products.Any())
             {
+                foreach (var product in category.Products)
+                {
+                    // Delete image file if it's not the default image
+                    if (product.ImageUrl != "/images/default-image.png")
+                    {
+                        var imagePath = Path.Combine("wwwroot", product.ImageUrl.TrimStart('/'));
+                        if (System.IO.File.Exists(imagePath))
+                        {
+                            System.IO.File.Delete(imagePath);
+                        }
+                    }
+                }
+
+                // Remove all products associated with the category
                 _context.Products.RemoveRange(category.Products);
             }
 
+            // Remove the category itself
             _context.ProductCategories.Remove(category);
 
             await _context.SaveChangesAsync();
         }
+
 
     }
 }

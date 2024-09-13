@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using scbH60Store.DAL;
 using scbH60Store.Models;
 
 namespace scbH60Store.Controllers
@@ -9,11 +10,13 @@ namespace scbH60Store.Controllers
     {
         private readonly IProductService _productService;
         private readonly IProductCategoryService _categoryService;
+        private readonly IGlobalSettingsService _globalSettingsService;
 
-        public ProductController(IProductService productService, IProductCategoryService categoryService)
+        public ProductController(IProductService productService, IProductCategoryService categoryService, IGlobalSettingsService globalSettingsService)
         {
             _productService = productService;
             _categoryService = categoryService;
+            _globalSettingsService = globalSettingsService;
         }
 
         // Create
@@ -27,6 +30,7 @@ namespace scbH60Store.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Product product, IFormFile imageFile)
         {
+
             if (ModelState.ContainsKey("ProdCat"))
             {
                 ModelState.Remove("ProdCat");
@@ -34,6 +38,14 @@ namespace scbH60Store.Controllers
             if (ModelState.ContainsKey("ImageFile"))
             {
                 ModelState.Remove("ImageFile");
+            }
+            // Retrieve global settings
+            var settings = await _globalSettingsService.GetGlobalSettingsAsync();
+
+            // Check if Stock is within the global settings limits
+            if (product.Stock < settings.MinStockLimit || product.Stock > settings.MaxStockLimit)
+            {
+                ModelState.AddModelError("Stock", $"Stock must be between {settings.MinStockLimit} and {settings.MaxStockLimit}.");
             }
 
             if (ModelState.IsValid)
@@ -143,6 +155,10 @@ namespace scbH60Store.Controllers
             {
                 ModelState.Remove("ImageFile");
             }
+            if (ModelState.ContainsKey("ImageUrl"))
+            {
+                ModelState.Remove("ImageUrl");
+            }
 
             if (imageFile == null && string.IsNullOrEmpty(product.ImageUrl))
             {
@@ -166,6 +182,8 @@ namespace scbH60Store.Controllers
             return View(product);
         }
 
+
+
         [HttpGet]
         public async Task<IActionResult> EditStock(int productId)
         {
@@ -176,17 +194,34 @@ namespace scbH60Store.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> EditStock(Product product)
+        public async Task<IActionResult> EditStock(int ProductId, int StockChange)
         {
-            if (ModelState.ContainsKey("ProdCat"))
+            // Retrieve global settings
+            var settings = await _globalSettingsService.GetGlobalSettingsAsync();
+
+            // Find the product
+            var product = await _productService.GetProductById(ProductId);
+            if (product == null)
             {
-                ModelState.Remove("ProdCat");
+                ModelState.AddModelError("", "Product not found.");
+                return View(product);
             }
+
+            // Calculate the new stock value
+            var newStock = product.Stock + StockChange;
+
+            // Validate new stock value against global settings
+            if (newStock < settings.MinStockLimit || newStock > settings.MaxStockLimit)
+            {
+                ModelState.AddModelError("", $"Stock after adjustment must be between {settings.MinStockLimit} and {settings.MaxStockLimit}.");
+            }
+
             if (ModelState.IsValid)
             {
                 try
                 {
-                    await _productService.EditStock(product.ProductId, product.Stock);
+                    // Update stock
+                    await _productService.EditStock(ProductId, StockChange);
                     return RedirectToAction("Index");
                 }
                 catch (ArgumentException ex)
@@ -196,6 +231,7 @@ namespace scbH60Store.Controllers
             }
             return View(product);
         }
+
 
         [HttpGet]
         public async Task<IActionResult> EditPrice(int productId)
@@ -212,6 +248,10 @@ namespace scbH60Store.Controllers
             if (ModelState.ContainsKey("ProdCat"))
             {
                 ModelState.Remove("ProdCat");
+            }
+            if (ModelState.ContainsKey("Description"))
+            {
+                ModelState.Remove("Description");
             }
             if (ModelState.IsValid)
             {
