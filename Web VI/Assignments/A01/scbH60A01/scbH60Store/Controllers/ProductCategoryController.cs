@@ -67,18 +67,8 @@ namespace scbH60Store.Controllers
             var products = await _categoryService.GetCategoryProducts(id);
             var category = await _categoryService.GetCategoryById(id);
             ViewBag.CategoryName = category != null ? category.ProdCat : "Unknown Category";
+            ViewBag.CategoryId = category.CategoryId;
             return View(products);
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> Details(int categoryId)
-        {
-            var category = await _categoryService.GetCategoryById(categoryId);
-            if (category == null)
-            {
-                return RedirectToAction("NotFound", "Home");
-            }
-            return View(category);
         }
 
         // Update
