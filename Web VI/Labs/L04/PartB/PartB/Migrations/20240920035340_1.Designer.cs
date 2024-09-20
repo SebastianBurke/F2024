@@ -11,8 +11,8 @@ using PartB.Models;
 namespace PartB.Migrations
 {
     [DbContext(typeof(MovieContext))]
-    [Migration("20240920030253_Initial")]
-    partial class Initial
+    [Migration("20240920035340_1")]
+    partial class _1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -65,6 +65,11 @@ namespace PartB.Migrations
                         {
                             GenreId = 5L,
                             GenreName = "Sci-Fi"
+                        },
+                        new
+                        {
+                            GenreId = 6L,
+                            GenreName = "Romance"
                         });
                 });
 
@@ -183,6 +188,152 @@ namespace PartB.Migrations
                     b.HasIndex("MovieId");
 
                     b.ToTable("MovieGenres");
+
+                    b.HasData(
+                        new
+                        {
+                            MovieGenreId = 1L,
+                            GenreId = 1L,
+                            MovieId = 1L
+                        },
+                        new
+                        {
+                            MovieGenreId = 2L,
+                            GenreId = 5L,
+                            MovieId = 1L
+                        },
+                        new
+                        {
+                            MovieGenreId = 3L,
+                            GenreId = 1L,
+                            MovieId = 3L
+                        },
+                        new
+                        {
+                            MovieGenreId = 4L,
+                            GenreId = 5L,
+                            MovieId = 3L
+                        },
+                        new
+                        {
+                            MovieGenreId = 5L,
+                            GenreId = 1L,
+                            MovieId = 5L
+                        },
+                        new
+                        {
+                            MovieGenreId = 6L,
+                            GenreId = 5L,
+                            MovieId = 5L
+                        },
+                        new
+                        {
+                            MovieGenreId = 7L,
+                            GenreId = 1L,
+                            MovieId = 7L
+                        },
+                        new
+                        {
+                            MovieGenreId = 8L,
+                            GenreId = 5L,
+                            MovieId = 7L
+                        },
+                        new
+                        {
+                            MovieGenreId = 9L,
+                            GenreId = 1L,
+                            MovieId = 9L
+                        },
+                        new
+                        {
+                            MovieGenreId = 10L,
+                            GenreId = 5L,
+                            MovieId = 9L
+                        },
+                        new
+                        {
+                            MovieGenreId = 11L,
+                            GenreId = 1L,
+                            MovieId = 11L
+                        },
+                        new
+                        {
+                            MovieGenreId = 12L,
+                            GenreId = 5L,
+                            MovieId = 11L
+                        },
+                        new
+                        {
+                            MovieGenreId = 13L,
+                            GenreId = 3L,
+                            MovieId = 2L
+                        },
+                        new
+                        {
+                            MovieGenreId = 14L,
+                            GenreId = 6L,
+                            MovieId = 2L
+                        },
+                        new
+                        {
+                            MovieGenreId = 15L,
+                            GenreId = 3L,
+                            MovieId = 4L
+                        },
+                        new
+                        {
+                            MovieGenreId = 16L,
+                            GenreId = 6L,
+                            MovieId = 4L
+                        },
+                        new
+                        {
+                            MovieGenreId = 17L,
+                            GenreId = 3L,
+                            MovieId = 6L
+                        },
+                        new
+                        {
+                            MovieGenreId = 18L,
+                            GenreId = 6L,
+                            MovieId = 6L
+                        },
+                        new
+                        {
+                            MovieGenreId = 19L,
+                            GenreId = 3L,
+                            MovieId = 8L
+                        },
+                        new
+                        {
+                            MovieGenreId = 20L,
+                            GenreId = 6L,
+                            MovieId = 8L
+                        },
+                        new
+                        {
+                            MovieGenreId = 21L,
+                            GenreId = 3L,
+                            MovieId = 10L
+                        },
+                        new
+                        {
+                            MovieGenreId = 22L,
+                            GenreId = 6L,
+                            MovieId = 10L
+                        },
+                        new
+                        {
+                            MovieGenreId = 23L,
+                            GenreId = 3L,
+                            MovieId = 12L
+                        },
+                        new
+                        {
+                            MovieGenreId = 24L,
+                            GenreId = 6L,
+                            MovieId = 12L
+                        });
                 });
 
             modelBuilder.Entity("PartB.Models.MovieGenre", b =>

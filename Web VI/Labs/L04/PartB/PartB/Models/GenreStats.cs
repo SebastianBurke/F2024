@@ -1,20 +1,32 @@
-﻿namespace PartB.Models
+﻿using System.Linq;
+using Microsoft.EntityFrameworkCore;
+
+namespace PartB.Models
 {
     public class GenreStats
     {
-        public long GenreId { get; set; }
-        public string GenreName { get; set; }
-        public int MovieCount { get; set; }
-        public decimal AvgRating { get; set; }
+        public string GenreName { get; private set; }
+        public int Count { get; private set; }
+        public decimal AvgRating { get; private set; }
 
-        public GenreStats(Genre genre)
+        // Constructor that accepts MovieContext and genreId
+        public GenreStats(MovieContext context, long genreId)
         {
-            GenreId = genre.GenreId;
-            GenreName = genre.GenreName;
+            var genre = context.Genres
+                .Include(g => g.MovieGenres)
+                .ThenInclude(mg => mg.Movie)
+                .FirstOrDefault(g => g.GenreId == genreId);
 
-            MovieCount = genre.MovieGenres.Count;
-            AvgRating = genre.MovieGenres.Any()
-                ? Math.Round(genre.MovieGenres.Average(mg => mg.Movie.Rating), 2)
+            if (genre == null)
+            {
+                throw new System.Exception("Genre not found");
+            }
+
+            GenreName = genre.GenreName;
+            Count = genre.MovieGenres.Count;
+
+            AvgRating = Count > 0
+                ? genre.MovieGenres.Average(mg => mg.Movie.Rating)
                 : 0m;
         }
     }

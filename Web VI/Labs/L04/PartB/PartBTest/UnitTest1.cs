@@ -1,69 +1,58 @@
 using Microsoft.EntityFrameworkCore;
 using PartB.Models;
-using System;
 
-namespace PartBTest
+namespace DatabaseContextTest
 {
-    public class UnitTest1
+    public class GenreStatsTestsInMemoryDb
     {
-        private DbContextOptions<MovieContext> GetInMemoryDbContextOptions()
-        {
-            return new DbContextOptionsBuilder<MovieContext>()
-                .UseInMemoryDatabase(databaseName: "TestDatabase")
-                .Options;
-        }
-
-        //[Fact]
-        //public void GenreStats_Constructor_ShouldThrowNotImplementedException()
-        //{
-        //    // Arrange
-        //    var genre = new Genre
-        //    {
-        //        GenreId = 1,
-        //        GenreName = "Comedy",
-        //        MovieGenres = new List<MovieGenre>() // Can be left empty for this test
-        //    };
-
-        //    // Act & Assert
-        //    Assert.Throws<NotImplementedException>(() => new GenreStats(genre));
-        //}
-
         [Theory]
-        [InlineData("Comedy", 2, 4.5)] 
-        [InlineData("Drama", 3, 3.67)] 
-        [InlineData("Action", 0, 0)] 
-        public void GenreStats_ShouldCalculateMovieCountAndAvgRating(string genreName, int expectedCount, decimal expectedAvgRating)
+        // (Genre Id, Count, AvgRating)
+        [InlineData(1, 2, (90.0 + 85.0) / 2)]
+        [InlineData(4, 0, 0.0)]
+        public void GetGenreStatesInMemoryDB(long genreId, int expectedCount, decimal expectedAvgRating)
         {
-            // Arrange
-            var options = GetInMemoryDbContextOptions();
+            // Arrange.
+            var contextOptions = (
+                new DbContextOptionsBuilder<MovieContext>()
+                .UseInMemoryDatabase(databaseName: "testDb_L03b")
+                .Options
+            );
 
-            using (var context = new MovieContext(options))
+            // Seed test data.
+            var _db = new MovieContext(contextOptions);
+            _db.Database.EnsureDeleted();
+
+            _db.Genres.Add(new Genre { GenreId = 1, GenreName = "Action" });
+            _db.Genres.Add(new Genre { GenreId = 2, GenreName = "Science-Fiction" });
+            _db.Genres.Add(new Genre { GenreId = 3, GenreName = "Adventure" });
+            _db.Genres.Add(new Genre { GenreId = 4, GenreName = "Romance" });
+
+            _db.Movies.Add(new Movie { MovieId = 1, Title = "The Incredibles", Rating = 90.0m });
+            _db.Movies.Add(new Movie { MovieId = 2, Title = "The Super Mario Bros. Movie", Rating = 85.0m });
+            _db.Movies.Add(new Movie { MovieId = 3, Title = "WALL-E", Rating = 90.0m });
+
+            _db.MovieGenres.Add(new MovieGenre { MovieGenreId = 1, MovieId = 1, GenreId = 1 });
+            _db.MovieGenres.Add(new MovieGenre { MovieGenreId = 2, MovieId = 2, GenreId = 1 });
+            _db.MovieGenres.Add(new MovieGenre { MovieGenreId = 3, MovieId = 2, GenreId = 3 });
+            _db.MovieGenres.Add(new MovieGenre { MovieGenreId = 4, MovieId = 3, GenreId = 2 });
+
+            _db.SaveChanges();
+
+            // Act.
+            try
             {
-                // Create a genre with no movies if movie count is 0
-                var genre = new Genre
-                {
-                    GenreName = genreName,
-                    MovieGenres = expectedCount > 0
-                        ? new List<MovieGenre>
-                        {
-                    new MovieGenre { Movie = new Movie { Title = "Movie1", Rating = 4.0m } },
-                    new MovieGenre { Movie = new Movie { Title = "Movie2", Rating = 5.0m } },
-                    genreName == "Drama" ? new MovieGenre { Movie = new Movie { Title = "Movie3", Rating = 2.0m } } : null
-                        }.Where(mg => mg != null).ToList()
-                        : new List<MovieGenre>() // No movies for the genre
-                };
+                GenreStats genreStats = new(_db, genreId);
 
-                context.Genres.Add(genre);
-                context.SaveChanges();
-
-                // Act
-                var genreStats = new GenreStats(genre);
-
-                // Assert
-                Assert.Equal(expectedCount, genreStats.MovieCount);
+                Assert.Equal(expectedCount, genreStats.Count);
                 Assert.Equal(expectedAvgRating, genreStats.AvgRating);
             }
-        }
+            catch
+            {
+                Assert.False(true); // NOT OK!
+            }
 
+            // Assert.
+            Assert.True(true); // OK!
+        }
     }
 }
