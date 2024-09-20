@@ -1,0 +1,23 @@
+﻿@model IEnumerable<PartB.Models.GenreStats>
+
+<h2>Genre Stats</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Genre Name</th>
+            <th>Movie Count</th>
+            <th>Average Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var genreStats in Model)
+        {
+            <tr>
+                <td>@genreStats.GenreName</td>
+                <td>@genreStats.MovieCount</td>
+                <td>@genreStats.AvgRating.ToString("F2")</td> <!-- Display with 2 decimal places -->
+            </tr>
+        }
+    </tbody>
+</table>
