@@ -7934,19 +7934,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sebas\\.nuget\\packages\\": {}
+    "C:\\Users\\2026996\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\temp\\F2024\\Web VI\\Labs\\L04\\PartB\\PartBTest\\PartBTest.csproj",
+      "projectUniqueName": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L04\\PartB\\PartBTest\\PartBTest.csproj",
       "projectName": "PartBTest",
-      "projectPath": "D:\\temp\\F2024\\Web VI\\Labs\\L04\\PartB\\PartBTest\\PartBTest.csproj",
-      "packagesPath": "C:\\Users\\sebas\\.nuget\\packages\\",
-      "outputPath": "D:\\temp\\F2024\\Web VI\\Labs\\L04\\PartB\\PartBTest\\obj\\",
+      "projectPath": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L04\\PartB\\PartBTest\\PartBTest.csproj",
+      "packagesPath": "C:\\Users\\2026996\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L04\\PartB\\PartBTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\sebas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\2026996\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7961,8 +7961,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\temp\\F2024\\Web VI\\Labs\\L04\\PartB\\PartB\\PartB.csproj": {
-              "projectPath": "D:\\temp\\F2024\\Web VI\\Labs\\L04\\PartB\\PartB\\PartB.csproj"
+            "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L04\\PartB\\PartB\\PartB.csproj": {
+              "projectPath": "C:\\Users\\2026996\\Desktop\\F2024\\Web VI\\Labs\\L04\\PartB\\PartB\\PartB.csproj"
             }
           }
         }
@@ -8019,7 +8019,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
