@@ -21,7 +21,7 @@ public class MovieContext : DbContext
             new Genre { GenreId = 3, GenreName = "Drama" },
             new Genre { GenreId = 4, GenreName = "Horror" },
             new Genre { GenreId = 5, GenreName = "Sci-Fi" },
-            new Genre { GenreId = 6, GenreName = "Romance" } // Added Romance genre
+            new Genre { GenreId = 6, GenreName = "Romance" }
         );
 
         // Seed Movies
@@ -43,32 +43,32 @@ public class MovieContext : DbContext
         // Seed MovieGenres (link movies to genres)
         modelBuilder.Entity<MovieGenre>().HasData(
             // Inception series -> Action, Sci-Fi
-            new MovieGenre { MovieGenreId = 1, MovieId = 1, GenreId = 1 }, // Inception -> Action
-            new MovieGenre { MovieGenreId = 2, MovieId = 1, GenreId = 5 }, // Inception -> Sci-Fi
-            new MovieGenre { MovieGenreId = 3, MovieId = 3, GenreId = 1 }, // Inception 2 -> Action
-            new MovieGenre { MovieGenreId = 4, MovieId = 3, GenreId = 5 }, // Inception 2 -> Sci-Fi
-            new MovieGenre { MovieGenreId = 5, MovieId = 5, GenreId = 1 }, // Inception 3 -> Action
-            new MovieGenre { MovieGenreId = 6, MovieId = 5, GenreId = 5 }, // Inception 3 -> Sci-Fi
-            new MovieGenre { MovieGenreId = 7, MovieId = 7, GenreId = 1 }, // Inception 4 -> Action
-            new MovieGenre { MovieGenreId = 8, MovieId = 7, GenreId = 5 }, // Inception 4 -> Sci-Fi
-            new MovieGenre { MovieGenreId = 9, MovieId = 9, GenreId = 1 }, // Inception 5 -> Action
-            new MovieGenre { MovieGenreId = 10, MovieId = 9, GenreId = 5 }, // Inception 5 -> Sci-Fi
-            new MovieGenre { MovieGenreId = 11, MovieId = 11, GenreId = 1 }, // Inception 6 -> Action
-            new MovieGenre { MovieGenreId = 12, MovieId = 11, GenreId = 5 }, // Inception 6 -> Sci-Fi
+            new MovieGenre { MovieGenreId = 1, MovieId = 1, GenreId = 1 },
+            new MovieGenre { MovieGenreId = 2, MovieId = 1, GenreId = 5 },
+            new MovieGenre { MovieGenreId = 3, MovieId = 3, GenreId = 1 },
+            new MovieGenre { MovieGenreId = 4, MovieId = 3, GenreId = 5 },
+            new MovieGenre { MovieGenreId = 5, MovieId = 5, GenreId = 1 },
+            new MovieGenre { MovieGenreId = 6, MovieId = 5, GenreId = 5 }, 
+            new MovieGenre { MovieGenreId = 7, MovieId = 7, GenreId = 1 },
+            new MovieGenre { MovieGenreId = 8, MovieId = 7, GenreId = 5 },
+            new MovieGenre { MovieGenreId = 9, MovieId = 9, GenreId = 1 },
+            new MovieGenre { MovieGenreId = 10, MovieId = 9, GenreId = 5 },
+            new MovieGenre { MovieGenreId = 11, MovieId = 11, GenreId = 1 },
+            new MovieGenre { MovieGenreId = 12, MovieId = 11, GenreId = 5 },
 
             // Titanic series -> Drama, Romance
-            new MovieGenre { MovieGenreId = 13, MovieId = 2, GenreId = 3 }, // Titanic -> Drama
-            new MovieGenre { MovieGenreId = 14, MovieId = 2, GenreId = 6 }, // Titanic -> Romance
-            new MovieGenre { MovieGenreId = 15, MovieId = 4, GenreId = 3 }, // Titanic 2 -> Drama
-            new MovieGenre { MovieGenreId = 16, MovieId = 4, GenreId = 6 }, // Titanic 2 -> Romance
-            new MovieGenre { MovieGenreId = 17, MovieId = 6, GenreId = 3 }, // Titanic 3 -> Drama
-            new MovieGenre { MovieGenreId = 18, MovieId = 6, GenreId = 6 }, // Titanic 3 -> Romance
-            new MovieGenre { MovieGenreId = 19, MovieId = 8, GenreId = 3 }, // Titanic 4 -> Drama
-            new MovieGenre { MovieGenreId = 20, MovieId = 8, GenreId = 6 }, // Titanic 4 -> Romance
-            new MovieGenre { MovieGenreId = 21, MovieId = 10, GenreId = 3 }, // Titanic 5 -> Drama
-            new MovieGenre { MovieGenreId = 22, MovieId = 10, GenreId = 6 }, // Titanic 5 -> Romance
-            new MovieGenre { MovieGenreId = 23, MovieId = 12, GenreId = 3 }, // Titanic 6 -> Drama
-            new MovieGenre { MovieGenreId = 24, MovieId = 12, GenreId = 6 }  // Titanic 6 -> Romance
+            new MovieGenre { MovieGenreId = 13, MovieId = 2, GenreId = 3 },
+            new MovieGenre { MovieGenreId = 14, MovieId = 2, GenreId = 6 },
+            new MovieGenre { MovieGenreId = 15, MovieId = 4, GenreId = 3 },
+            new MovieGenre { MovieGenreId = 16, MovieId = 4, GenreId = 6 },
+            new MovieGenre { MovieGenreId = 17, MovieId = 6, GenreId = 3 },
+            new MovieGenre { MovieGenreId = 18, MovieId = 6, GenreId = 6 },
+            new MovieGenre { MovieGenreId = 19, MovieId = 8, GenreId = 3 },
+            new MovieGenre { MovieGenreId = 20, MovieId = 8, GenreId = 6 },
+            new MovieGenre { MovieGenreId = 21, MovieId = 10, GenreId = 3 },
+            new MovieGenre { MovieGenreId = 22, MovieId = 10, GenreId = 6 },
+            new MovieGenre { MovieGenreId = 23, MovieId = 12, GenreId = 3 },
+            new MovieGenre { MovieGenreId = 24, MovieId = 12, GenreId = 6 }
         );
     }
 

@@ -1,0 +1,7 @@
+@scbH60Services_HostAddress = http://localhost:21905
+
+### Get all products
+GET {{scbH60Services_HostAddress}}/api/product
+Accept: application/json
+
+

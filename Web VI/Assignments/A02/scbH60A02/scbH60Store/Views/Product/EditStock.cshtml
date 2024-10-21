@@ -1,0 +1,21 @@
+﻿@model scbH60Store.Models.Product
+
+<form asp-action="EditStock" method="post" class="space-y-4 max-w-sm mx-auto">
+    <div class="form-group">
+        <label for="CurrentStock" class="block text-sm font-medium text-gray-700">Current Stock:</label>
+        <input type="number" id="CurrentStock" class="border border-gray-300 rounded-lg px-3 py-1.5 w-full bg-gray-100 text-gray-500 text-sm" value="@Model.Stock" readonly />
+
+        <label for="StockChange" class="block text-sm font-medium text-gray-700 mt-2">Stock Change:</label>
+        <input type="number" id="StockChange" name="StockChange" class="border border-gray-300 rounded-lg px-3 py-1.5 w-full focus:ring-2 focus:ring-blue-300 text-sm" />
+    </div>
+
+    <input type="hidden" name="ProductId" value="@Model.ProductId" />
+    <button type="submit" class="bg-blue-500 text-white px-3 py-1.5 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 text-sm">Update Stock</button>
+</form>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="text-red-500 text-sm mt-2">
+        @Html.ValidationSummary()
+    </div>
+}
