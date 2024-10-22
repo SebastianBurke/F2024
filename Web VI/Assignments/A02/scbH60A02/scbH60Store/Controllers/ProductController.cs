@@ -6,6 +6,7 @@ using scbH60Store.DAL;
 using scbH60Store.Models;
 using System.Net.Http;
 using Newtonsoft.Json;
+using System.Text;
 
 namespace scbH60Store.Controllers
 {
@@ -25,18 +26,27 @@ namespace scbH60Store.Controllers
             _httpClient = httpClient;
         }
 
-        // Create
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            var categories = await _categoryService.GetAllCategories();
+            var response = await _httpClient.GetAsync("http://localhost:21905/api/ProductCategory");
+
+            if (!response.IsSuccessStatusCode)
+            {
+                return View("Error");
+            }
+
+            var responseData = await response.Content.ReadAsStringAsync();
+            var categories = JsonConvert.DeserializeObject<List<ProductCategory>>(responseData);
+
             ViewBag.CategoryList = new SelectList(categories, "CategoryId", "ProdCat");
+
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> Create(Product product, IFormFile imageFile)
         {
-
             if (ModelState.ContainsKey("ProdCat"))
             {
                 ModelState.Remove("ProdCat");
@@ -45,10 +55,16 @@ namespace scbH60Store.Controllers
             {
                 ModelState.Remove("ImageFile");
             }
-            // Retrieve global settings
-            var settings = await _globalSettingsService.GetGlobalSettingsAsync();
 
-            // Check if Stock is within the global settings limits
+            var settingsResponse = await _httpClient.GetAsync("http://localhost:21905/api/globalsettings");
+            if (!settingsResponse.IsSuccessStatusCode)
+            {
+                return View("Error");
+            }
+
+            var settingsData = await settingsResponse.Content.ReadAsStringAsync();
+            var settings = JsonConvert.DeserializeObject<GlobalSettings>(settingsData);
+
             if (product.Stock < settings.MinStockLimit || product.Stock > settings.MaxStockLimit)
             {
                 ModelState.AddModelError("Stock", $"Stock must be between {settings.MinStockLimit} and {settings.MaxStockLimit}.");
@@ -56,7 +72,6 @@ namespace scbH60Store.Controllers
 
             if (ModelState.IsValid)
             {
-                // Handle the image file
                 if (imageFile != null && imageFile.Length > 0)
                 {
                     var imagePath = Path.Combine("wwwroot/images", imageFile.FileName);
@@ -68,27 +83,31 @@ namespace scbH60Store.Controllers
                 }
                 else
                 {
-                    // Set a default image if none is provided
                     product.ImageUrl = "/images/default-image.png";
                 }
 
-                // Add the product
-                var resultMessage = await _productService.AddProduct(product);
-                if (resultMessage.Contains("successfully"))
+                var productContent = new StringContent(JsonConvert.SerializeObject(product), Encoding.UTF8, "application/json");
+
+                var apiResponse = await _httpClient.PostAsync("http://localhost:21905/api/products", productContent);
+                if (apiResponse.IsSuccessStatusCode)
                 {
                     return RedirectToAction("Index");
                 }
 
-                // Add error message to ModelState
+                var resultMessage = await apiResponse.Content.ReadAsStringAsync();
                 ModelState.AddModelError("", resultMessage);
             }
 
-            // Re-populate category list for dropdown in case of a validation error
-            var categories = await _categoryService.GetAllCategories();
-            ViewBag.CategoryList = new SelectList(categories, "CategoryId", "ProdCat");
+            var categoriesResponse = await _httpClient.GetAsync("http://localhost:21905/api/ProductCategory");
+            if (categoriesResponse.IsSuccessStatusCode)
+            {
+                var categoriesData = await categoriesResponse.Content.ReadAsStringAsync();
+                var categories = JsonConvert.DeserializeObject<List<ProductCategory>>(categoriesData);
+                ViewBag.CategoryList = new SelectList(categories, "CategoryId", "ProdCat");
+            }
+
             return View(product);
         }
-
 
         // Read
         public async Task<IActionResult> Index()

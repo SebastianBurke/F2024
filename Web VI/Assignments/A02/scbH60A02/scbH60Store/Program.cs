@@ -43,6 +43,7 @@ builder.Services.AddAuthentication();
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
+app.UseCors("AllowSpecificOrigins");
 
 if (!app.Environment.IsDevelopment())
 {
@@ -57,8 +58,13 @@ else
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
+app.UseCors(policy =>
+    policy.WithOrigins("http://localhost:21905")
+          .AllowAnyHeader()
+          .AllowAnyMethod());
 app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapControllerRoute(
     name: "default",

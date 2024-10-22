@@ -90,9 +90,11 @@ namespace scbH60Services.DAL
 
         public async Task<Product> GetProductById(int id)
         {
-            return await _context.Products.Include(p => p.ProdCat)
+            return await _context.Products
+                .Include(p => p.ProdCat)
                 .FirstOrDefaultAsync(p => p.ProductId == id);
         }
+
 
         // Update
 

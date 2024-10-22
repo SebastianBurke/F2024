@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace scbH60Services.Models
 {
@@ -29,10 +31,10 @@ namespace scbH60Services.Models
         [StringLength(2000, ErrorMessage = "Employee notes cannot exceed 1000 characters.")]
         public string? EmployeeNotes { get; set; }
 
-        [Url(ErrorMessage = "Please enter a valid URL.")]
         public string? ImageUrl { get; set; }
 
-        public virtual ProductCategory ProdCat { get; set; } = null!;
+        [BindNever]
+        public virtual ProductCategory? ProdCat { get; set; } = null!;
     }
 
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FAsCKK5aOc7wZM3yZhzs0e5FmydDL5Z0httzG8n0V5Y=",
+  "Hash": "pbfSQeOqrtfNNjfDr/YBO0rOdmTmv2GnPKA6tayQdtg=",
   "Source": "scbH60Store",
   "BasePath": "_content/scbH60Store",
   "Mode": "Default",
@@ -547,6 +547,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\image_comics.jpg"
+    },
+    {
+      "Identity": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\wwwroot\\images\\IMG_0625.jpg",
+      "SourceId": "scbH60Store",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\wwwroot\\",
+      "BasePath": "_content/scbH60Store",
+      "RelativePath": "images/IMG_0625.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\IMG_0625.jpg"
     },
     {
       "Identity": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\wwwroot\\images\\invincible_1.jpg",

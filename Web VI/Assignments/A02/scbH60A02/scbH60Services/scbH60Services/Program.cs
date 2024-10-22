@@ -46,6 +46,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseRouting();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
+
+
 app.UseCors("AllowAll"); // Apply CORS policy
 
 app.UseAuthorization();

@@ -10,7 +10,6 @@ namespace scbH60Services.Models
         [StringLength(100, ErrorMessage = "Product category name cannot exceed 100 characters.")]
         public string ProdCat { get; set; } = null!;
 
-        [Url(ErrorMessage = "Please enter a valid URL.")]
         public string? ImageUrl { get; set; }
 
         // Navigation property

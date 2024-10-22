@@ -9,11 +9,27 @@ namespace scbH60Services.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly IProductService _productService;
+        private readonly IProductCategoryService _productCategoryService;
 
-        public ProductsController(IProductService productService)
+        public ProductsController(IProductService productService, IProductCategoryService productCategoryService)
         {
             _productService = productService;
+            _productCategoryService = productCategoryService;
         }
+
+        [HttpPost] 
+        public async Task<IActionResult> AddProduct([FromBody] Product product)
+        {
+            var resultMessage = await _productService.AddProduct(product);
+
+            if (resultMessage.Contains("successfully"))
+            {
+                return Ok(resultMessage);
+            }
+
+            return BadRequest(resultMessage);
+        }
+
 
         [HttpGet]
         public async Task<IActionResult> GetAllProducts()
@@ -52,6 +68,14 @@ namespace scbH60Services.Controllers
 
             return Ok(products);
         }
+
+        [HttpGet("categories")]
+        public async Task<IActionResult> GetAllCategories()
+        {
+            var categories = await _productCategoryService.GetAllCategories();
+            return Ok(categories);
+        }
+
 
     }
 }
