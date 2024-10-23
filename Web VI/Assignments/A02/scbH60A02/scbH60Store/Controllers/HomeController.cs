@@ -22,7 +22,7 @@ namespace scbH60Store.Controllers
         public async Task<IActionResult> Index()
         {
             // Fetch categories and include related products
-            var categories = await _productService.GetAllProductsByCategory();
+            var categories = await _productService.GetAllProductsByCategoryAsync();
 
 
             // Select a random category

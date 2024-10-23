@@ -17,8 +17,28 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\wwwroot\\images\\IMG_0619.jpg",
+      "PackagePath": "staticwebassets\\images\\IMG_0619.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\wwwroot\\images\\IMG_0620.jpg",
+      "PackagePath": "staticwebassets\\images\\IMG_0620.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\wwwroot\\images\\IMG_0622.jpg",
+      "PackagePath": "staticwebassets\\images\\IMG_0622.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\wwwroot\\images\\IMG_0624_a97da3e0-8e4f-4e9e-ad11-7abb1768fa6b.jpg",
+      "PackagePath": "staticwebassets\\images\\IMG_0624_a97da3e0-8e4f-4e9e-ad11-7abb1768fa6b.jpg"
+    },
+    {
       "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\wwwroot\\images\\IMG_0625.jpg",
       "PackagePath": "staticwebassets\\images\\IMG_0625.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\wwwroot\\images\\IMG_0626.jpg",
+      "PackagePath": "staticwebassets\\images\\IMG_0626.jpg"
     },
     {
       "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\wwwroot\\images\\Screenshot 2021-10-04 213751.png",
@@ -31,6 +51,10 @@
     {
       "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\wwwroot\\images\\SovietUnion.jpg",
       "PackagePath": "staticwebassets\\images\\SovietUnion.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\wwwroot\\images\\WallpaperEngineLockOverride_randomGLFXWL.jpg",
+      "PackagePath": "staticwebassets\\images\\WallpaperEngineLockOverride_randomGLFXWL.jpg"
     },
     {
       "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\wwwroot\\images\\Wolverine_2024_1.jpg",

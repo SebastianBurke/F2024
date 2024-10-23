@@ -1,12 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using scbH60Store.DAL;
 using scbH60Store.Models;
-using System.Net.Http;
-using Newtonsoft.Json;
-using System.Text;
 
 namespace scbH60Store.Controllers
 {
@@ -14,113 +10,64 @@ namespace scbH60Store.Controllers
     public class ProductController : Controller
     {
         private readonly IProductService _productService;
-        private readonly IProductCategoryService _categoryService;
-        private readonly IGlobalSettingsService _globalSettingsService;
-        private readonly HttpClient _httpClient;
+        private readonly IImageService _imageService;
+        private readonly IProductValidator _productValidator;
+        private readonly IProductQueryService _productQueryService;
 
-        public ProductController(IProductService productService, IProductCategoryService categoryService, IGlobalSettingsService globalSettingsService, HttpClient httpClient)
+        public ProductController(IProductService productService, IImageService imageService, IProductValidator productValidator, IProductQueryService productQueryService)
         {
             _productService = productService;
-            _categoryService = categoryService;
-            _globalSettingsService = globalSettingsService;
-            _httpClient = httpClient;
+            _imageService = imageService;
+            _productValidator = productValidator;
+            _productQueryService = productQueryService;
         }
 
+        // Create
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            var response = await _httpClient.GetAsync("http://localhost:21905/api/ProductCategory");
-
-            if (!response.IsSuccessStatusCode)
+            var categories = await _productService.GetProductCategoriesAsync();
+            if (categories != null)
             {
-                return View("Error");
+                ViewBag.CategoryList = new SelectList(categories, "CategoryId", "ProdCat");
             }
-
-            var responseData = await response.Content.ReadAsStringAsync();
-            var categories = JsonConvert.DeserializeObject<List<ProductCategory>>(responseData);
-
-            ViewBag.CategoryList = new SelectList(categories, "CategoryId", "ProdCat");
-
             return View();
         }
 
         [HttpPost]
         public async Task<IActionResult> Create(Product product, IFormFile imageFile)
         {
-            if (ModelState.ContainsKey("ProdCat"))
-            {
-                ModelState.Remove("ProdCat");
-            }
-            if (ModelState.ContainsKey("ImageFile"))
-            {
-                ModelState.Remove("ImageFile");
-            }
+            RemoveModelStateEntries("ProdCat", "ImageFile");
 
-            var settingsResponse = await _httpClient.GetAsync("http://localhost:21905/api/globalsettings");
-            if (!settingsResponse.IsSuccessStatusCode)
-            {
-                return View("Error");
-            }
+            var settings = await _productService.GetGlobalSettingsAsync();
+            if (settings == null) return View("Error");
 
-            var settingsData = await settingsResponse.Content.ReadAsStringAsync();
-            var settings = JsonConvert.DeserializeObject<GlobalSettings>(settingsData);
+            ValidateStock(product, settings);
 
-            if (product.Stock < settings.MinStockLimit || product.Stock > settings.MaxStockLimit)
-            {
-                ModelState.AddModelError("Stock", $"Stock must be between {settings.MinStockLimit} and {settings.MaxStockLimit}.");
-            }
+            product.ImageUrl = await SaveProductImage(imageFile, null);
 
             if (ModelState.IsValid)
             {
-                if (imageFile != null && imageFile.Length > 0)
-                {
-                    var imagePath = Path.Combine("wwwroot/images", imageFile.FileName);
-                    using (var stream = new FileStream(imagePath, FileMode.Create))
-                    {
-                        await imageFile.CopyToAsync(stream);
-                    }
-                    product.ImageUrl = $"/images/{imageFile.FileName}";
-                }
-                else
-                {
-                    product.ImageUrl = "/images/default-image.png";
-                }
-
-                var productContent = new StringContent(JsonConvert.SerializeObject(product), Encoding.UTF8, "application/json");
-
-                var apiResponse = await _httpClient.PostAsync("http://localhost:21905/api/products", productContent);
-                if (apiResponse.IsSuccessStatusCode)
+                var response = await _productService.CreateProductAsync(product);
+                if (response.IsSuccessStatusCode)
                 {
                     return RedirectToAction("Index");
                 }
 
-                var resultMessage = await apiResponse.Content.ReadAsStringAsync();
-                ModelState.AddModelError("", resultMessage);
+                AddApiErrorToModelState(response);
             }
 
-            var categoriesResponse = await _httpClient.GetAsync("http://localhost:21905/api/ProductCategory");
-            if (categoriesResponse.IsSuccessStatusCode)
-            {
-                var categoriesData = await categoriesResponse.Content.ReadAsStringAsync();
-                var categories = JsonConvert.DeserializeObject<List<ProductCategory>>(categoriesData);
-                ViewBag.CategoryList = new SelectList(categories, "CategoryId", "ProdCat");
-            }
+            await PrepareCategoryListForView();
 
             return View(product);
         }
 
         // Read
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var response = await _httpClient.GetAsync("http://localhost:21905/api/products");
-
-            if (!response.IsSuccessStatusCode)
-            {
-                return View("Error");
-            }
-
-            var responseData = await response.Content.ReadAsStringAsync();
-            var products = JsonConvert.DeserializeObject<List<Product>>(responseData);
+            var products = await _productQueryService.GetAllProductsAsync();
+            if (products == null) return View("Error");
 
             return View(products);
         }
@@ -128,73 +75,26 @@ namespace scbH60Store.Controllers
         [HttpGet]
         public async Task<IActionResult> ProductsByCategory()
         {
-            var response = await _httpClient.GetAsync("http://localhost:21905/api/products/bycategory");
-
-            if (!response.IsSuccessStatusCode)
-            {
-                return View("Error");
-            }
-
-            var responseData = await response.Content.ReadAsStringAsync();
-            var productCategories = JsonConvert.DeserializeObject<List<ProductCategory>>(responseData);
+            var productCategories = await _productQueryService.GetProductsByCategoryAsync();
+            if (productCategories == null) return View("Error");
 
             return View(productCategories);
         }
 
-
         [HttpGet]
         public async Task<IActionResult> Details(int productId)
         {
-            var response = await _httpClient.GetAsync($"http://localhost:21905/api/products/{productId}");
-
-            if (!response.IsSuccessStatusCode)
-            {
-                return View("Error"); 
-            }
-
-            var responseData = await response.Content.ReadAsStringAsync();
-            var product = JsonConvert.DeserializeObject<Product>(responseData);
+            var product = await _productQueryService.GetProductDetailsAsync(productId);
+            if (product == null) return View("Error");
 
             return View(product);
         }
 
         [HttpGet]
-        public async Task<IActionResult> FilterAndSort(
-            string partialName,
-            decimal? equalTo,
-            decimal? lessThan,
-            decimal? greaterThan,
-            string sortBy = "description")
+        public async Task<IActionResult> FilterAndSort(string partialName, decimal? equalTo, decimal? lessThan, decimal? greaterThan, string sortBy = "description")
         {
-            Console.WriteLine($"partialName: {partialName}, equalTo: {equalTo}, lessThan: {lessThan}, greaterThan: {greaterThan}, sortBy: {sortBy}");
-
-            var queryParams = new List<string>();
-
-            if (!string.IsNullOrEmpty(partialName))
-                queryParams.Add($"partialName={partialName}");
-
-            if (equalTo.HasValue)
-                queryParams.Add($"equalTo={equalTo}");
-
-            if (lessThan.HasValue)
-                queryParams.Add($"lessThan={lessThan}");
-
-            if (greaterThan.HasValue)
-                queryParams.Add($"greaterThan={greaterThan}");
-
-            queryParams.Add($"sortBy={sortBy}");
-
-            var queryString = string.Join("&", queryParams);
-
-            var response = await _httpClient.GetAsync($"http://localhost:21905/api/products/filterandsort?{queryString}");
-
-            if (!response.IsSuccessStatusCode)
-            {
-                return View("Error");
-            }
-
-            var responseData = await response.Content.ReadAsStringAsync();
-            var products = JsonConvert.DeserializeObject<List<Product>>(responseData);
+            var products = await _productQueryService.FilterAndSortProductsAsync(partialName, equalTo, lessThan, greaterThan, sortBy);
+            if (products == null) return View("Error");
 
             ViewBag.PartialName = partialName;
             ViewBag.EqualTo = equalTo;
@@ -205,19 +105,14 @@ namespace scbH60Store.Controllers
             return View("Index", products);
         }
 
-
         // Update
         [HttpGet]
         public async Task<IActionResult> Edit(int productId)
         {
-            var product = await _productService.GetProductById(productId);
-            if (product == null)
-            {
-                return RedirectToAction("NotFound", "Home");
-            }
+            var product = await _productService.GetProductByIdAsync(productId);
+            if (product == null) return View("Error");
 
-            var categories = await _categoryService.GetAllCategories();
-            ViewBag.CategoryList = new SelectList(categories, "CategoryId", "ProdCat");
+            await PrepareCategoryListForView();
 
             return View(product);
         }
@@ -225,96 +120,71 @@ namespace scbH60Store.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit([Bind("ProductId, ProdCatId, Description, Manufacturer, Stock, BuyPrice, SellPrice, EmployeeNotes, ImageUrl")] Product product, IFormFile imageFile)
         {
-            if (ModelState.ContainsKey("ProdCat"))
-            {
-                ModelState.Remove("ProdCat");
-            }
-            if (ModelState.ContainsKey("ImageFile"))
-            {
-                ModelState.Remove("ImageFile");
-            }
-            if (ModelState.ContainsKey("ImageUrl"))
-            {
-                ModelState.Remove("ImageUrl");
-            }
+            RemoveModelStateEntries("ProdCat", "ImageFile", "ImageUrl");
 
             if (imageFile == null && string.IsNullOrEmpty(product.ImageUrl))
             {
                 ModelState.AddModelError("ImageUrl", "An image is required.");
             }
 
+            product.ImageUrl = await SaveProductImage(imageFile, product.ImageUrl);
+
             if (ModelState.IsValid)
             {
-                var resultMessage = await _productService.Edit(product, imageFile);
-                if (resultMessage.Contains("successfully"))
+                var response = await _productService.UpdateProductAsync(product);
+                if (response.IsSuccessStatusCode)
                 {
                     return RedirectToAction("Index");
                 }
 
-                // Add error message to ModelState
-                ModelState.AddModelError("", resultMessage);
+                await AddApiErrorToModelState(response);
             }
 
-            var categories = await _categoryService.GetAllCategories();
-            ViewBag.CategoryList = new SelectList(categories, "CategoryId", "ProdCat");
+            await PrepareCategoryListForView();
+
             return View(product);
         }
-
-
 
         [HttpGet]
         public async Task<IActionResult> EditStock(int productId)
         {
-            var product = await _productService.GetProductById(productId);
-            if (product == null) return RedirectToAction("NotFound", "Home");
+            var product = await _productService.GetProductByIdAsync(productId);
+            if (product == null) return View("Error");
 
             return View(product);
         }
 
+
         [HttpPost]
-        public async Task<IActionResult> EditStock(int ProductId, int StockChange)
+        public async Task<IActionResult> EditStock(int productId, int stockChange)
         {
-            // Retrieve global settings
-            var settings = await _globalSettingsService.GetGlobalSettingsAsync();
+            var product = await _productService.GetProductByIdAsync(productId);
+            var settings = await _productService.GetGlobalSettingsAsync();
+            if (product == null || settings == null) return View("Error");
 
-            // Find the product
-            var product = await _productService.GetProductById(ProductId);
-            if (product == null)
-            {
-                ModelState.AddModelError("", "Product not found.");
-                return View(product);
-            }
-
-            // Calculate the new stock value
-            var newStock = product.Stock + StockChange;
-
-            // Validate new stock value against global settings
-            if (newStock < settings.MinStockLimit || newStock > settings.MaxStockLimit)
-            {
-                ModelState.AddModelError("", $"Stock after adjustment must be between {settings.MinStockLimit} and {settings.MaxStockLimit}.");
-            }
+            product.Stock += stockChange;
+            ValidateStock(product, settings);
 
             if (ModelState.IsValid)
             {
-                try
+                var response = await _productService.UpdateProductStockAsync(productId, stockChange);
+                if (response.IsSuccessStatusCode)
                 {
-                    // Update stock
-                    await _productService.EditStock(ProductId, StockChange);
                     return RedirectToAction("Index");
                 }
-                catch (ArgumentException ex)
-                {
-                    ModelState.AddModelError("", ex.Message);
-                }
+
+                await AddApiErrorToModelState(response);
             }
+
+            // Fetch product again for re-display
+            product = await _productService.GetProductByIdAsync(productId);
             return View(product);
         }
-
 
         [HttpGet]
         public async Task<IActionResult> EditPrice(int productId)
         {
-            var product = await _productService.GetProductById(productId);
+            var product = await _productService.GetProductByIdAsync(productId);
             if (product == null) return RedirectToAction("NotFound", "Home");
 
             return View(product);
@@ -323,36 +193,27 @@ namespace scbH60Store.Controllers
         [HttpPost]
         public async Task<IActionResult> EditPrice(Product product)
         {
-            if (ModelState.ContainsKey("ProdCat"))
-            {
-                ModelState.Remove("ProdCat");
-            }
-            if (ModelState.ContainsKey("Description"))
-            {
-                ModelState.Remove("Description");
-            }
+            RemoveModelStateEntries("ProdCat", "Description");
+
             if (ModelState.IsValid)
             {
-                try
+                var response = await _productService.UpdateProductPriceAsync(product.ProductId, product.BuyPrice, product.SellPrice);
+                if (response.IsSuccessStatusCode)
                 {
-                    await _productService.EditPrice(product.ProductId, product.BuyPrice ?? 0, product.SellPrice ?? 0);
                     return RedirectToAction("Index");
                 }
-                catch (ArgumentException ex)
-                {
-                    ModelState.AddModelError("", ex.Message);
-                }
+
+                await AddApiErrorToModelState(response);
             }
+
             return View(product);
         }
 
-
-
-        // Delete
+        //Delete
         [HttpGet]
         public async Task<IActionResult> Delete(int productId)
         {
-            var product = await _productService.GetProductById(productId);
+            var product = await _productService.GetProductByIdAsync(productId);
             if (product == null) return RedirectToAction("NotFound", "Home");
 
             return View(product);
@@ -361,27 +222,71 @@ namespace scbH60Store.Controllers
         [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int productId)
         {
-            var product = await _productService.GetProductById(productId);
+            var product = await _productService.GetProductByIdAsync(productId);
+            if (product == null) return RedirectToAction("NotFound", "Home");
 
-            if (product == null)
+            DeleteProductImage(product.ImageUrl);
+
+            var response = await _productService.DeleteProductAsync(productId);
+            if (response.IsSuccessStatusCode)
             {
-                return RedirectToAction("NotFound", "Home");
+                return RedirectToAction("Index");
             }
 
-            // Delete image file if it's not the default image
-            if (product.ImageUrl != "/images/default-image.png")
+            return View("Error");
+        }
+
+        // Helper Methods
+        private void RemoveModelStateEntries(params string[] keys)
+        {
+            foreach (var key in keys)
             {
-                var imagePath = Path.Combine("wwwroot", product.ImageUrl.TrimStart('/'));
+                if (ModelState.ContainsKey(key))
+                {
+                    ModelState.Remove(key);
+                }
+            }
+        }
+
+        private void ValidateStock(Product product, GlobalSettings settings)
+        {
+            if (!_productValidator.ValidateStock(product, settings, out var errorMessage))
+            {
+                ModelState.AddModelError("Stock", errorMessage);
+            }
+        }
+
+        private async Task<string> SaveProductImage(IFormFile imageFile, string existingImageUrl)
+        {
+            var defaultImage = "/images/default-image.png";
+            return await _imageService.SaveImageAsync(imageFile, defaultImage, existingImageUrl);
+        }
+
+        private void DeleteProductImage(string imageUrl)
+        {
+            if (imageUrl != "/images/default-image.png")
+            {
+                var imagePath = Path.Combine("wwwroot", imageUrl.TrimStart('/'));
                 if (System.IO.File.Exists(imagePath))
                 {
                     System.IO.File.Delete(imagePath);
                 }
             }
-
-            await _productService.DeleteProduct(productId);
-            return RedirectToAction("Index");
         }
 
+        private async Task AddApiErrorToModelState(HttpResponseMessage response)
+        {
+            var resultMessage = await response.Content.ReadAsStringAsync();
+            ModelState.AddModelError("", resultMessage);
+        }
 
+        private async Task PrepareCategoryListForView()
+        {
+            var categories = await _productService.GetProductCategoriesAsync();
+            if (categories != null)
+            {
+                ViewBag.CategoryList = new SelectList(categories, "CategoryId", "ProdCat");
+            }
+        }
     }
 }

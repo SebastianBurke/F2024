@@ -17,6 +17,9 @@ builder.Services.AddHttpClient();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IProductCategoryService, ProductCategoryService>();
 builder.Services.AddScoped<IGlobalSettingsService, GlobalSettingsService>();
+builder.Services.AddTransient<IImageService, ImageService>();
+builder.Services.AddTransient<IProductValidator, ProductValidator>();
+builder.Services.AddHttpClient<IProductQueryService, ProductQueryService>();
 
 builder.Services.AddDbContext<H60AssignmentDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("MyConnection")));

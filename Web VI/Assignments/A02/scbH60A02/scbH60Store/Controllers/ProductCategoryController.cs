@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Newtonsoft.Json;
 using scbH60Store.Models;
+using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace scbH60Store.Controllers
@@ -9,13 +12,11 @@ namespace scbH60Store.Controllers
     [Authorize(Roles = "Clerk,Manager")]
     public class ProductCategoryController : Controller
     {
-        private readonly IProductCategoryService _categoryService;
-        private readonly IProductService _productService;
+        private readonly HttpClient _httpClient;
 
-        public ProductCategoryController(IProductCategoryService categoryService, IProductService productService)
+        public ProductCategoryController(HttpClient httpClient)
         {
-            _categoryService = categoryService;
-            _productService = productService;
+            _httpClient = httpClient;
         }
 
         // Create
@@ -32,9 +33,12 @@ namespace scbH60Store.Controllers
             {
                 ModelState.Remove("ImageFile");
             }
+            if (ModelState.ContainsKey("ImageUrl"))
+            {
+                ModelState.Remove("ImageUrl");
+            }
             if (ModelState.IsValid)
             {
-                // Handle image file
                 if (imageFile != null && imageFile.Length > 0)
                 {
                     var imagePath = Path.Combine("wwwroot/images", imageFile.FileName);
@@ -46,75 +50,111 @@ namespace scbH60Store.Controllers
                 }
                 else
                 {
-                    // Assign default image if no image is uploaded
                     category.ImageUrl = "/images/default-image.png";
                 }
 
-                await _categoryService.AddCategory(category);
-                return RedirectToAction("Index");
+                var categoryContent = new StringContent(JsonConvert.SerializeObject(category), Encoding.UTF8, "application/json");
+                var apiResponse = await _httpClient.PostAsync("http://localhost:21905/api/productcategory", categoryContent);
+
+                if (apiResponse.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("Index");
+                }
+
+                var resultMessage = await apiResponse.Content.ReadAsStringAsync();
+                ModelState.AddModelError("", resultMessage);
             }
             return View(category);
         }
+
 
 
         // Read
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var categories = await _categoryService.GetAllCategories();
+            var response = await _httpClient.GetAsync("http://localhost:21905/api/productcategory");
+
+            if (!response.IsSuccessStatusCode)
+            {
+                return View("Error");
+            }
+
+            var responseData = await response.Content.ReadAsStringAsync();
+            var categories = JsonConvert.DeserializeObject<List<ProductCategory>>(responseData);
+
             return View(categories);
         }
+
 
         [HttpGet]
         public async Task<IActionResult> CategoryProducts(int id)
         {
-            var products = await _categoryService.GetCategoryProducts(id);
-            var category = await _categoryService.GetCategoryById(id);
-            ViewBag.CategoryName = category != null ? category.ProdCat : "Unknown Category";
-            ViewBag.CategoryId = category.CategoryId;
-            return View(products);
+            // Make an API call to get products by category ID
+            var response = await _httpClient.GetAsync($"http://localhost:21905/api/productcategory/{id}/products");
+
+            if (!response.IsSuccessStatusCode)
+            {
+                return View("Error");
+            }
+
+            // Deserialize the response
+            var responseData = await response.Content.ReadAsStringAsync();
+            var result = JsonConvert.DeserializeObject<CategoryProductsResponse>(responseData);
+
+            if (result == null || result.Products == null)
+            {
+                return View("Error"); // Return error if there's a problem with the API response
+            }
+
+            // Set the category name in ViewBag
+            ViewBag.CategoryName = result.CategoryName ?? "Unknown Category";
+            ViewBag.CategoryId = id;
+
+            // Pass the products list to the view
+            return View(result.Products);
         }
 
-        // Update
+        // Create a matching model for the deserialization
+        public class CategoryProductsResponse
+        {
+            public string CategoryName { get; set; }
+            public List<Product> Products { get; set; }
+        }
+
+
+
         [HttpGet]
         public async Task<IActionResult> Edit(int categoryId)
         {
-            var category = await _categoryService.GetCategoryById(categoryId);
-            if (category == null)
+            var response = await _httpClient.GetAsync($"http://localhost:21905/api/productcategory/{categoryId}");
+
+            if (!response.IsSuccessStatusCode)
             {
-                return RedirectToAction("NotFound", "Home");
+                return View("Error");
             }
+
+            var responseData = await response.Content.ReadAsStringAsync();
+            var category = JsonConvert.DeserializeObject<ProductCategory>(responseData);
+
             return View(category);
         }
+
         [HttpPost]
-        public async Task<IActionResult> Edit([Bind("CategoryId, ProdCat, ImageUrl")] ProductCategory category, IFormFile imageFile)
+        public async Task<IActionResult> Edit(ProductCategory category, IFormFile imageFile)
         {
             if (ModelState.ContainsKey("ImageFile"))
             {
                 ModelState.Remove("ImageFile");
             }
-
-            // If no image is uploaded and no existing image URL is present, add a model error
-            if (imageFile == null && string.IsNullOrEmpty(category.ImageUrl))
+            if (ModelState.ContainsKey("ImageUrl"))
             {
-                ModelState.AddModelError("ImageUrl", "An image is required.");
+                ModelState.Remove("ImageUrl");
             }
-
             if (ModelState.IsValid)
             {
-
                 if (imageFile != null && imageFile.Length > 0)
                 {
-                    // Delete old image if it is not the default image
-                    if (category.ImageUrl != "/images/default-image.png")
-                    {
-                        var oldImagePath = Path.Combine("wwwroot", category.ImageUrl.TrimStart('/'));
-                        if (System.IO.File.Exists(oldImagePath))
-                        {
-                            System.IO.File.Delete(oldImagePath);
-                        }
-                    }
-
                     var imagePath = Path.Combine("wwwroot/images", imageFile.FileName);
                     using (var stream = new FileStream(imagePath, FileMode.Create))
                     {
@@ -123,15 +163,16 @@ namespace scbH60Store.Controllers
                     category.ImageUrl = $"/images/{imageFile.FileName}";
                 }
 
-                try
+                var categoryContent = new StringContent(JsonConvert.SerializeObject(category), Encoding.UTF8, "application/json");
+                var apiResponse = await _httpClient.PutAsync($"http://localhost:21905/api/productcategory/{category.CategoryId}", categoryContent);
+
+                if (apiResponse.IsSuccessStatusCode)
                 {
-                    await _categoryService.UpdateCategory(category);
                     return RedirectToAction("Index");
                 }
-                catch (ArgumentException ex)
-                {
-                    ModelState.AddModelError("", ex.Message);
-                }
+
+                var resultMessage = await apiResponse.Content.ReadAsStringAsync();
+                ModelState.AddModelError("", resultMessage);
             }
 
             return View(category);
@@ -139,17 +180,32 @@ namespace scbH60Store.Controllers
 
 
 
-        // Delete
+
         [HttpGet]
         public async Task<IActionResult> Delete(int categoryId)
         {
-            var category = await _categoryService.GetCategoryById(categoryId);
-            if (category == null)
+            var response = await _httpClient.GetAsync($"http://localhost:21905/api/productcategory/{categoryId}");
+
+            if (!response.IsSuccessStatusCode)
             {
-                return RedirectToAction("NotFound", "Home");
+                return View("Error");
             }
 
-            var products = await _categoryService.GetCategoryProducts(categoryId);
+            var responseData = await response.Content.ReadAsStringAsync();
+            var category = JsonConvert.DeserializeObject<ProductCategory>(responseData);
+
+            var productsResponse = await _httpClient.GetAsync($"http://localhost:21905/api/productcategory/{categoryId}/products");
+
+            if (!productsResponse.IsSuccessStatusCode)
+            {
+                return View("Error");
+            }
+
+            var productsData = await productsResponse.Content.ReadAsStringAsync();
+
+            var result = JsonConvert.DeserializeObject<dynamic>(productsData);
+
+            var products = JsonConvert.DeserializeObject<List<Product>>(Convert.ToString(result.products));
 
             ViewBag.ProductsToDelete = products;
 
@@ -157,28 +213,23 @@ namespace scbH60Store.Controllers
         }
 
 
+
         [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int categoryId)
         {
-            var category = await _categoryService.GetCategoryById(categoryId);
+            var apiResponse = await _httpClient.DeleteAsync($"http://localhost:21905/api/productcategory/{categoryId}");
 
-            if (category == null)
+            if (apiResponse.IsSuccessStatusCode)
             {
-                return RedirectToAction("NotFound", "Home");
+                return RedirectToAction("Index");
             }
 
-            // Delete image file if it's not the default image
-            if (category.ImageUrl != "/images/default-image.png")
-            {
-                var imagePath = Path.Combine("wwwroot", category.ImageUrl.TrimStart('/'));
-                if (System.IO.File.Exists(imagePath))
-                {
-                    System.IO.File.Delete(imagePath);
-                }
-            }
-            await _categoryService.DeleteCategory(categoryId);
-            return RedirectToAction("Index");
+            var resultMessage = await apiResponse.Content.ReadAsStringAsync();
+            ModelState.AddModelError("", resultMessage);
+
+            return View("Error");
         }
+
 
     }
 }

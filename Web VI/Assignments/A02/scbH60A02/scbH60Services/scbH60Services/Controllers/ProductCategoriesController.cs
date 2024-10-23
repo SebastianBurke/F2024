@@ -16,6 +16,18 @@ namespace scbH60Services.Controllers
             _productCategoryService = productCategoryService;
         }
 
+        [HttpPost]
+        public async Task<IActionResult> CreateCategory([FromBody] ProductCategory category)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            await _productCategoryService.AddCategory(category);
+            return Ok("Category created successfully");
+        }
+
         [HttpGet]
         public async Task<IActionResult> GetAllCategories()
         {
@@ -32,6 +44,64 @@ namespace scbH60Services.Controllers
                 return NotFound();
             }
             return Ok(category);
+        }
+
+        // Get Category Products by Category ID (GET)
+        [HttpGet("{id}/products")]
+        public async Task<IActionResult> GetCategoryProducts(int id)
+        {
+            // Retrieve the category
+            var category = await _productCategoryService.GetCategoryById(id);
+            if (category == null)
+            {
+                return NotFound("Category not found.");
+            }
+
+            // Retrieve the products associated with the category
+            var products = await _productCategoryService.GetCategoryProducts(id);
+
+            // Return both the category name and the products as part of the result
+            var result = new
+            {
+                CategoryName = category.ProdCat,
+                Products = products
+            };
+
+            return Ok(result);
+        }
+
+        // Update Category (PUT)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateCategory(int id, [FromBody] ProductCategory category)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                await _productCategoryService.UpdateCategory(category);
+                return Ok("Category updated successfully");
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        // Delete Category (DELETE)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteCategory(int id)
+        {
+            var category = await _productCategoryService.GetCategoryById(id);
+            if (category == null)
+            {
+                return NotFound("Category not found");
+            }
+
+            await _productCategoryService.DeleteCategory(id);
+            return Ok("Category deleted successfully");
         }
     }
 }

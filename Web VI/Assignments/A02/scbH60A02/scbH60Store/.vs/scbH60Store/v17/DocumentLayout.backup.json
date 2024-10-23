@@ -7,24 +7,48 @@
       "RelativeMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|solutionrelative:controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|d:\\temp\\f2024\\web vi\\assignments\\a02\\scbh60a02\\scbh60store\\controllers\\productcategorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|solutionrelative:controllers\\productcategorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|d:\\temp\\f2024\\web vi\\assignments\\a02\\scbh60a02\\scbh60store\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|d:\\temp\\f2024\\web vi\\assignments\\a02\\scbh60a02\\scbh60store\\dal\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|solutionrelative:dal\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|d:\\temp\\f2024\\web vi\\assignments\\a02\\scbh60a02\\scbh60store\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|solutionrelative:models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|d:\\temp\\f2024\\web vi\\assignments\\a02\\scbh60a02\\scbh60store\\dal\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|solutionrelative:dal\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|d:\\temp\\f2024\\web vi\\assignments\\a02\\scbh60a02\\scbh60store\\views\\product\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|solutionrelative:views\\product\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|d:\\temp\\f2024\\web vi\\assignments\\a02\\scbh60a02\\scbh60store\\dal\\iproductqueryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|solutionrelative:dal\\iproductqueryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|d:\\temp\\f2024\\web vi\\assignments\\a02\\scbh60a02\\scbh60store\\dal\\productvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|solutionrelative:dal\\productvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|d:\\temp\\f2024\\web vi\\assignments\\a02\\scbh60a02\\scbh60store\\dal\\iproductvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|solutionrelative:dal\\iproductvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|d:\\temp\\f2024\\web vi\\assignments\\a02\\scbh60a02\\scbh60store\\dal\\iimageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|solutionrelative:dal\\iimageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|d:\\temp\\f2024\\web vi\\assignments\\a02\\scbh60a02\\scbh60store\\dal\\imageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|solutionrelative:dal\\imageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|d:\\temp\\f2024\\web vi\\assignments\\a02\\scbh60a02\\scbh60store\\dal\\productqueryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|solutionrelative:dal\\productqueryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|d:\\temp\\f2024\\web vi\\assignments\\a02\\scbh60a02\\scbh60store\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|d:\\temp\\f2024\\web vi\\assignments\\a02\\scbh60a02\\scbh60store\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|solutionrelative:models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,58 +58,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\Views\\Product\\Details.cshtml",
-              "RelativeDocumentMoniker": "Views\\Product\\Details.cshtml",
-              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\Views\\Product\\Details.cshtml",
-              "RelativeToolTip": "Views\\Product\\Details.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-22T01:44:03.108Z",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T06:45:32.032Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Product.cs",
-              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "Models\\Product.cs",
-              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\Models\\Product.cs",
-              "RelativeToolTip": "Models\\Product.cs",
+              "DocumentIndex": 5,
+              "Title": "ProductValidator.cs",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\DAL\\ProductValidator.cs",
+              "RelativeDocumentMoniker": "DAL\\ProductValidator.cs",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\DAL\\ProductValidator.cs",
+              "RelativeToolTip": "DAL\\ProductValidator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T01:39:40.661Z",
+              "WhenOpened": "2024-10-23T06:32:49.872Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\DAL\\ProductService.cs",
-              "RelativeDocumentMoniker": "DAL\\ProductService.cs",
-              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\DAL\\ProductService.cs",
-              "RelativeToolTip": "DAL\\ProductService.cs",
-              "ViewState": "AgIAAJIAAAAAAAAAAAAAwJwAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "IProductValidator.cs",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\DAL\\IProductValidator.cs",
+              "RelativeDocumentMoniker": "DAL\\IProductValidator.cs",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\DAL\\IProductValidator.cs",
+              "RelativeToolTip": "DAL\\IProductValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T00:18:04.472Z",
+              "WhenOpened": "2024-10-23T06:32:47.634Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProductCategoryController.cs",
-              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\Controllers\\ProductCategoryController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ProductCategoryController.cs",
-              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\Controllers\\ProductCategoryController.cs",
-              "RelativeToolTip": "Controllers\\ProductCategoryController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAowD4AAAAJAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "IImageService.cs",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\DAL\\IImageService.cs",
+              "RelativeDocumentMoniker": "DAL\\IImageService.cs",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\DAL\\IImageService.cs",
+              "RelativeToolTip": "DAL\\IImageService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T01:18:35.497Z",
+              "WhenOpened": "2024-10-23T05:58:44.021Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ImageService.cs",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\DAL\\ImageService.cs",
+              "RelativeDocumentMoniker": "DAL\\ImageService.cs",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\DAL\\ImageService.cs",
+              "RelativeToolTip": "DAL\\ImageService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T05:57:42.115Z",
               "EditorCaption": ""
             },
             {
@@ -96,20 +133,84 @@
               "RelativeDocumentMoniker": "Controllers\\ProductController.cs",
               "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\Controllers\\ProductController.cs",
               "RelativeToolTip": "Controllers\\ProductController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAqwDgAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-22T00:12:56.557Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
+              "Title": "ProductQueryService.cs",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\DAL\\ProductQueryService.cs",
+              "RelativeDocumentMoniker": "DAL\\ProductQueryService.cs",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\DAL\\ProductQueryService.cs",
+              "RelativeToolTip": "DAL\\ProductQueryService.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwDoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T05:36:53.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IProductQueryService.cs",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\DAL\\IProductQueryService.cs",
+              "RelativeDocumentMoniker": "DAL\\IProductQueryService.cs",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\DAL\\IProductQueryService.cs",
+              "RelativeToolTip": "DAL\\IProductQueryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T05:36:32.953Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IProductService.cs",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\DAL\\IProductService.cs",
+              "RelativeDocumentMoniker": "DAL\\IProductService.cs",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\DAL\\IProductService.cs",
+              "RelativeToolTip": "DAL\\IProductService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T05:02:37.53Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\DAL\\ProductService.cs",
+              "RelativeDocumentMoniker": "DAL\\ProductService.cs",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\DAL\\ProductService.cs",
+              "RelativeToolTip": "DAL\\ProductService.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAUwA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T00:18:04.472Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "Models\\Product.cs",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\Models\\Product.cs",
+              "RelativeToolTip": "Models\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T01:39:40.661Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-22T00:14:39.688Z",
               "EditorCaption": ""

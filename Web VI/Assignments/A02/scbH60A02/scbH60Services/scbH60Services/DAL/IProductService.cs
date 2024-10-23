@@ -16,7 +16,7 @@ namespace scbH60Services.DAL
                 decimal? greaterThan,
                 string sortBy);
         Task<Product> GetProductById(int id);
-        Task<string> Edit(Product product, IFormFile imageFile);
+        Task<string> Edit(Product product);
         Task EditStock(int productId, int stockChange);
         Task EditPrice(int productId, decimal buyPrice, decimal sellPrice);
         Task DeleteProduct(int id);

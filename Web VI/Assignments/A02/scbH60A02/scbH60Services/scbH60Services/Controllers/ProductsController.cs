@@ -76,6 +76,102 @@ namespace scbH60Services.Controllers
             return Ok(categories);
         }
 
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateProduct(int id, [FromBody] Product product)
+        {
+            if (id != product.ProductId)
+            {
+                return BadRequest("Product ID mismatch.");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var existingProduct = await _productService.GetProductById(id);
+            if (existingProduct == null)
+            {
+                return NotFound("Product not found.");
+            }
+
+            try
+            {
+                var resultMessage = await _productService.Edit(product);
+                if (resultMessage.Contains("successfully"))
+                {
+                    return Ok(resultMessage);
+                }
+
+                return BadRequest(resultMessage);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
+        [HttpPost("editstock/{productId}")]
+        public async Task<IActionResult> EditStock(int productId, [FromBody] int stockChange)
+        {
+            try
+            {
+                await _productService.EditStock(productId, stockChange);
+                return Ok("Stock updated successfully.");
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+
+        [HttpPut("{productId}/price")]
+        public async Task<IActionResult> UpdatePrice(int productId, [FromBody] ProductPriceUpdateModel priceUpdateModel)
+        {
+            var product = await _productService.GetProductById(productId);
+            if (product == null)
+            {
+                return NotFound("Product not found.");
+            }
+
+            try
+            {
+                await _productService.EditPrice(productId, priceUpdateModel.BuyPrice, priceUpdateModel.SellPrice);
+                return Ok("Price updated successfully.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        // DELETE method in API to delete a product
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteProduct(int id)
+        {
+            var product = await _productService.GetProductById(id);
+            if (product == null)
+            {
+                return NotFound("Product not found");
+            }
+
+            // Assuming DeleteProduct does not return a value (void)
+            await _productService.DeleteProduct(id);
+
+            return Ok("Product deleted successfully");
+        }
+
+
+
+        // DTO for price update
+        public class ProductPriceUpdateModel
+        {
+            public decimal BuyPrice { get; set; }
+            public decimal SellPrice { get; set; }
+        }
+
 
     }
 }

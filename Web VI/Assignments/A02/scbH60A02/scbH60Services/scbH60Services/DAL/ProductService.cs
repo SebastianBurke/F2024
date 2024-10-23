@@ -98,7 +98,7 @@ namespace scbH60Services.DAL
 
         // Update
 
-        public async Task<string> Edit(Product product, IFormFile imageFile)
+        public async Task<string> Edit(Product product)
         {
             var settings = await _globalSettingsService.GetGlobalSettingsAsync();
 
@@ -123,6 +123,7 @@ namespace scbH60Services.DAL
             existingProduct.SellPrice = product.SellPrice;
             existingProduct.ProdCatId = product.ProdCatId;
             existingProduct.EmployeeNotes = product.EmployeeNotes;
+            existingProduct.ImageUrl = product.ImageUrl;
 
             _context.Products.Update(existingProduct);
             await _context.SaveChangesAsync();

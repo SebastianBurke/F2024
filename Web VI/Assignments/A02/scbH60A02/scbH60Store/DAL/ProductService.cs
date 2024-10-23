@@ -1,207 +1,87 @@
-﻿using Microsoft.EntityFrameworkCore;
-using scbH60Store.DAL;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿// ProductService.cs
+using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using scbH60Store.Models;
+using System.Text;
 
-namespace scbH60Store.Models
+public class ProductService : IProductService
 {
-    public class ProductService : IProductService
+    private readonly HttpClient _httpClient;
+
+    public ProductService(HttpClient httpClient)
     {
-        private readonly H60AssignmentDbContext _context;
-        private readonly IGlobalSettingsService _globalSettingsService;
+        _httpClient = httpClient;
+    }
 
-        public ProductService(H60AssignmentDbContext context, IGlobalSettingsService globalSettingsService)
+    public async Task<List<ProductCategory>> GetAllProductsByCategoryAsync()
+    {
+        var response = await _httpClient.GetAsync("http://localhost:21905/api/products/bycategory");
+
+        if (!response.IsSuccessStatusCode) return null;
+
+        var responseData = await response.Content.ReadAsStringAsync();
+        return JsonConvert.DeserializeObject<List<ProductCategory>>(responseData);
+    }
+
+    public async Task<List<ProductCategory>> GetProductCategoriesAsync()
+    {
+        var response = await _httpClient.GetAsync("http://localhost:21905/api/products/categories");
+        response.EnsureSuccessStatusCode();
+
+        var responseData = await response.Content.ReadAsStringAsync();
+        return JsonConvert.DeserializeObject<List<ProductCategory>>(responseData);
+    }
+
+    public async Task<GlobalSettings> GetGlobalSettingsAsync()
+    {
+        var response = await _httpClient.GetAsync("http://localhost:21905/api/globalsettings");
+        response.EnsureSuccessStatusCode();
+
+        var responseData = await response.Content.ReadAsStringAsync();
+        return JsonConvert.DeserializeObject<GlobalSettings>(responseData);
+    }
+
+    public async Task<HttpResponseMessage> CreateProductAsync(Product product)
+    {
+        var productContent = new StringContent(JsonConvert.SerializeObject(product), Encoding.UTF8, "application/json");
+        return await _httpClient.PostAsync("http://localhost:21905/api/products", productContent);
+    }
+
+    public async Task<Product> GetProductByIdAsync(int productId)
+    {
+        var response = await _httpClient.GetAsync($"http://localhost:21905/api/products/{productId}");
+        if (!response.IsSuccessStatusCode) return null;
+
+        var productData = await response.Content.ReadAsStringAsync();
+        return JsonConvert.DeserializeObject<Product>(productData);
+    }
+
+    public async Task<HttpResponseMessage> UpdateProductAsync(Product product)
+    {
+        var productContent = new StringContent(JsonConvert.SerializeObject(product), Encoding.UTF8, "application/json");
+        return await _httpClient.PutAsync($"http://localhost:21905/api/products/{product.ProductId}", productContent);
+    }
+
+    public async Task<HttpResponseMessage> UpdateProductStockAsync(int productId, int stockChange)
+    {
+        var content = new StringContent(stockChange.ToString(), Encoding.UTF8, "application/json");
+        return await _httpClient.PostAsync($"http://localhost:21905/api/products/editstock/{productId}", content);
+    }
+
+    public async Task<HttpResponseMessage> UpdateProductPriceAsync(int productId, decimal? buyPrice, decimal? sellPrice)
+    {
+        var productPriceUpdate = new
         {
-            _context = context;
-            _globalSettingsService = globalSettingsService;
-        }
+            BuyPrice = buyPrice,
+            SellPrice = sellPrice
+        };
 
-        // Create
-        public async Task<string> AddProduct(Product product)
-        {
-            var settings = await _globalSettingsService.GetGlobalSettingsAsync();
+        var content = new StringContent(JsonConvert.SerializeObject(productPriceUpdate), Encoding.UTF8, "application/json");
+        return await _httpClient.PutAsync($"http://localhost:21905/api/products/{productId}/price", content);
+    }
 
-            if (product.Stock < settings.MinStockLimit || product.Stock > settings.MaxStockLimit)
-            {
-                return $"Product stock must be between {settings.MinStockLimit} and {settings.MaxStockLimit}.";
-            }
-
-            _context.Products.Add(product);
-            await _context.SaveChangesAsync();
-            return "Product added successfully!";
-        }
-
-        // Read
-        public async Task<List<Product>> GetAllProducts()
-        {
-            return await _context.Products.OrderBy(p => p.Description).ToListAsync();
-        }
-
-        public async Task<List<ProductCategory>> GetAllProductsByCategory()
-        {
-            return await _context.ProductCategories.Include(p => p.Products).ToListAsync();
-        }
-
-        public async Task<List<Product>> GetProductsFilteredAndSorted(
-            string partialName,
-            decimal? equalTo = null,
-            decimal? lessThan = null,
-            decimal? greaterThan = null,
-            string sortBy = "description")
-        {
-            var query = _context.Products.AsQueryable();
-
-            if (!string.IsNullOrWhiteSpace(partialName))
-            {
-                query = query.Where(p => p.Description.Contains(partialName));
-            }
-
-            if (equalTo.HasValue)
-            {
-                query = query.Where(p => p.SellPrice == equalTo.Value);
-            }
-
-            if (lessThan.HasValue)
-            {
-                query = query.Where(p => p.SellPrice < lessThan.Value);
-            }
-
-            if (greaterThan.HasValue)
-            {
-                query = query.Where(p => p.SellPrice > greaterThan.Value);
-            }
-
-            query = sortBy.ToLower() switch
-            {
-                "price" => query.OrderBy(p => p.SellPrice ?? 0),
-                "stock" => query.OrderBy(p => p.Stock),
-                "markup" => query.OrderBy(p => (p.SellPrice ?? 0) - (p.BuyPrice ?? 0)),
-                _ => query.OrderBy(p => p.Description),
-            };
-
-            return await query.ToListAsync();
-        }
-
-
-        public async Task<Product> GetProductById(int id)
-        {
-            return await _context.Products.Include(p => p.ProdCat)
-                .FirstOrDefaultAsync(p => p.ProductId == id);
-        }
-
-        // Update
-        public async Task<string> Edit(Product product, IFormFile imageFile)
-        {
-            var settings = await _globalSettingsService.GetGlobalSettingsAsync();
-
-            if (product.Stock < settings.MinStockLimit || product.Stock > settings.MaxStockLimit)
-            {
-                return $"Product stock must be between {settings.MinStockLimit} and {settings.MaxStockLimit}.";
-            }
-
-            var existingProduct = await _context.Products
-                .FirstOrDefaultAsync(p => p.ProductId == product.ProductId);
-
-            if (existingProduct == null)
-            {
-                return "Product not found.";
-            }
-
-            existingProduct.Description = product.Description;
-            existingProduct.Manufacturer = product.Manufacturer;
-            existingProduct.Stock = product.Stock;
-            existingProduct.BuyPrice = product.BuyPrice;
-            existingProduct.SellPrice = product.SellPrice;
-            existingProduct.ProdCatId = product.ProdCatId;
-            existingProduct.EmployeeNotes = product.EmployeeNotes;
-
-            // Update image if a new file is uploaded
-            if (imageFile != null && imageFile.Length > 0)
-            {
-                if (existingProduct.ImageUrl != "/images/default-image.png" && !string.IsNullOrEmpty(existingProduct.ImageUrl))
-                {
-                    var oldImagePath = Path.Combine("wwwroot", existingProduct.ImageUrl.TrimStart('/'));
-                    if (System.IO.File.Exists(oldImagePath))
-                    {
-                        System.IO.File.Delete(oldImagePath);
-                    }
-                }
-
-                // Save new image
-                var imagePath = Path.Combine("wwwroot/images", imageFile.FileName);
-                using (var stream = new FileStream(imagePath, FileMode.Create))
-                {
-                    await imageFile.CopyToAsync(stream);
-                }
-                existingProduct.ImageUrl = $"/images/{imageFile.FileName}";
-            }
-
-            _context.Products.Update(existingProduct);
-            await _context.SaveChangesAsync();
-            return "Product updated successfully!";
-        }
-        public async Task EditStock(int productId, int stockChange)
-        {
-            var product = await _context.Products.FindAsync(productId);
-            if (product == null) throw new ArgumentException("Product not found");
-
-            var newStock = product.Stock + stockChange;
-
-            var settings = await _globalSettingsService.GetGlobalSettingsAsync();
-
-            if (newStock < settings.MinStockLimit || newStock > settings.MaxStockLimit)
-            {
-                throw new ArgumentException($"Stock must be between {settings.MinStockLimit} and {settings.MaxStockLimit}.");
-            }
-
-            product.Stock = newStock;
-
-            _context.Products.Update(product);
-            await _context.SaveChangesAsync();
-        }
-
-
-        public async Task EditPrice(int productId, decimal buyPrice, decimal sellPrice)
-        {
-            var product = await _context.Products.FindAsync(productId);
-            if (product == null) throw new ArgumentException("Product not found");
-            if (buyPrice < 0 || sellPrice < 0) throw new ArgumentException("Price cannot be negative");
-            if (sellPrice < buyPrice) throw new ArgumentException("Sell price cannot be less than buy price");
-
-            // Round prices to 2 decimal places
-            buyPrice = Math.Round(buyPrice, 2, MidpointRounding.AwayFromZero);
-            sellPrice = Math.Round(sellPrice, 2, MidpointRounding.AwayFromZero);
-
-            product.BuyPrice = buyPrice;
-            product.SellPrice = sellPrice;
-
-            _context.Products.Update(product);
-            await _context.SaveChangesAsync();
-        }
-
-        // Delete
-        public async Task DeleteProduct(int id)
-        {
-            var product = await _context.Products.FindAsync(id);
-            if (product == null)
-            {
-                throw new ArgumentException("Product not found");
-            }
-
-            // Delete image file if it's not the default image
-            if (product.ImageUrl != "/images/default-image.png")
-            {
-                var imagePath = Path.Combine("wwwroot", product.ImageUrl.TrimStart('/'));
-                if (System.IO.File.Exists(imagePath))
-                {
-                    System.IO.File.Delete(imagePath);
-                }
-            }
-
-            _context.Products.Remove(product);
-            await _context.SaveChangesAsync();
-        }
-
+    public async Task<HttpResponseMessage> DeleteProductAsync(int productId)
+    {
+        return await _httpClient.DeleteAsync($"http://localhost:21905/api/products/{productId}");
     }
 }

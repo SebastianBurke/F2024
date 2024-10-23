@@ -5,19 +5,14 @@ namespace scbH60Store.Models
 {
     public interface IProductService
     {
-        Task<string> AddProduct(Product product);
-        Task<List<Product>> GetAllProducts();
-        Task<List<ProductCategory>> GetAllProductsByCategory();
-        Task<List<Product>> GetProductsFilteredAndSorted(
-                string partialName,
-                decimal? equalTo,
-                decimal? lessThan,
-                decimal? greaterThan,
-                string sortBy);
-        Task<Product> GetProductById(int id);
-        Task<string> Edit(Product product, IFormFile imageFile);
-        Task EditStock(int productId, int stockChange);
-        Task EditPrice(int productId, decimal buyPrice, decimal sellPrice);
-        Task DeleteProduct(int id);
+        Task<List<ProductCategory>> GetAllProductsByCategoryAsync();
+        Task<List<ProductCategory>> GetProductCategoriesAsync();
+        Task<GlobalSettings> GetGlobalSettingsAsync();
+        Task<HttpResponseMessage> CreateProductAsync(Product product);
+        Task<Product> GetProductByIdAsync(int productId);
+        Task<HttpResponseMessage> UpdateProductAsync(Product product);
+        Task<HttpResponseMessage> UpdateProductStockAsync(int productId, int stockChange);
+        Task<HttpResponseMessage> UpdateProductPriceAsync(int productId, decimal? buyPrice, decimal? sellPrice);
+        Task<HttpResponseMessage> DeleteProductAsync(int productId);
     }
 }
