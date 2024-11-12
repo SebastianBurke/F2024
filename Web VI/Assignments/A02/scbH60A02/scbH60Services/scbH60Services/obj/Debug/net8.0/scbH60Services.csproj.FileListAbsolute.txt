@@ -141,3 +141,9 @@ D:\temp\F2024\Web VI\Assignments\A02\scbH60A02\scbH60Services\scbH60Services\obj
 D:\temp\F2024\Web VI\Assignments\A02\scbH60A02\scbH60Services\scbH60Services\obj\Debug\net8.0\scbH60Services.pdb
 D:\temp\F2024\Web VI\Assignments\A02\scbH60A02\scbH60Services\scbH60Services\obj\Debug\net8.0\scbH60Services.genruntimeconfig.cache
 D:\temp\F2024\Web VI\Assignments\A02\scbH60A02\scbH60Services\scbH60Services\obj\Debug\net8.0\ref\scbH60Services.dll
+D:\temp\F2024\Web VI\Assignments\A02\scbH60A02\scbH60Services\scbH60Services\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\temp\F2024\Web VI\Assignments\A02\scbH60A02\scbH60Services\scbH60Services\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\temp\F2024\Web VI\Assignments\A02\scbH60A02\scbH60Services\scbH60Services\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\temp\F2024\Web VI\Assignments\A02\scbH60A02\scbH60Services\scbH60Services\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+D:\temp\F2024\Web VI\Assignments\A02\scbH60A02\scbH60Services\scbH60Services\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+D:\temp\F2024\Web VI\Assignments\A02\scbH60A02\scbH60Services\scbH60Services\bin\Debug\net8.0\Newtonsoft.Json.dll

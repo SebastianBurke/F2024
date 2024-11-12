@@ -15,7 +15,6 @@ namespace scbH60Services.Controllers
             _globalSettingsService = globalSettingsService;
         }
 
-        // GET: api/globalsettings
         [HttpGet]
         public async Task<IActionResult> GetGlobalSettings()
         {
@@ -23,7 +22,6 @@ namespace scbH60Services.Controllers
             return Ok(settings);
         }
 
-        // PUT: api/globalsettings
         [HttpPut]
         public async Task<IActionResult> UpdateGlobalSettings([FromBody] GlobalSettings settings)
         {

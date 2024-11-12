@@ -8,16 +8,18 @@ namespace scbH60Store.Controllers
     [Authorize(Roles = "Manager")]
     public class GlobalSettingsController : Controller
     {
-        private readonly IGlobalSettingsService _globalSettingsService;
+        private readonly IGlobalSettingsService _globalSettingsApiService;
 
-        public GlobalSettingsController(IGlobalSettingsService globalSettingsService)
+        public GlobalSettingsController(IGlobalSettingsService globalSettingsApiService)
         {
-            _globalSettingsService = globalSettingsService;
+            _globalSettingsApiService = globalSettingsApiService;
         }
 
         public async Task<IActionResult> Index()
         {
-            var settings = await _globalSettingsService.GetGlobalSettingsAsync();
+            var settings = await _globalSettingsApiService.GetGlobalSettingsAsync();
+            if (settings == null) return View("Error");
+
             return View(settings);
         }
 
@@ -26,7 +28,7 @@ namespace scbH60Store.Controllers
         {
             if (ModelState.IsValid)
             {
-                var resultMessage = await _globalSettingsService.UpdateGlobalSettingsAsync(settings);
+                var resultMessage = await _globalSettingsApiService.UpdateGlobalSettingsAsync(settings);
                 TempData["Message"] = resultMessage;
                 if (resultMessage.Contains("successfully"))
                 {
@@ -36,5 +38,4 @@ namespace scbH60Store.Controllers
             return View("Index", settings);
         }
     }
-
 }

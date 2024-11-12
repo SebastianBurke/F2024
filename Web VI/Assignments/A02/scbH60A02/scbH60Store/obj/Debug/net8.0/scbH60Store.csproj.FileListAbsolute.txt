@@ -288,3 +288,8 @@ D:\temp\F2024\Web VI\Assignments\A02\scbH60A02\scbH60Store\obj\Debug\net8.0\refi
 D:\temp\F2024\Web VI\Assignments\A02\scbH60A02\scbH60Store\obj\Debug\net8.0\scbH60Store.pdb
 D:\temp\F2024\Web VI\Assignments\A02\scbH60A02\scbH60Store\obj\Debug\net8.0\scbH60Store.genruntimeconfig.cache
 D:\temp\F2024\Web VI\Assignments\A02\scbH60A02\scbH60Store\obj\Debug\net8.0\ref\scbH60Store.dll
+D:\temp\F2024\Web VI\Assignments\A02\scbH60A02\scbH60Store\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\temp\F2024\Web VI\Assignments\A02\scbH60A02\scbH60Store\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\temp\F2024\Web VI\Assignments\A02\scbH60A02\scbH60Store\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\temp\F2024\Web VI\Assignments\A02\scbH60A02\scbH60Store\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\temp\F2024\Web VI\Assignments\A02\scbH60A02\scbH60Store\obj\Debug\net8.0\scbH60Store.MvcApplicationPartsAssemblyInfo.cs

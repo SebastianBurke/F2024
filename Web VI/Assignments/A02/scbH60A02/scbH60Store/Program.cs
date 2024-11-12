@@ -1,16 +1,14 @@
-using Microsoft.Extensions.Configuration;
-using Microsoft.EntityFrameworkCore;
-using scbH60Store.Models;
-using scbH60Store.DAL;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using scbH60Store.DAL;
+using scbH60Store.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllersWithViews(options =>
-{
-    options.Filters.Add(new AuthorizeFilter());
-});
+// Add services to the container.
+builder.Services.AddControllersWithViews();
 
 builder.Services.AddHttpClient();
 
@@ -28,6 +26,7 @@ builder.Services.AddIdentity<User, IdentityRole>()
     .AddEntityFrameworkStores<H60AssignmentDbContext>()
     .AddDefaultTokenProviders();
 
+// Identity options configuration
 builder.Services.Configure<IdentityOptions>(options =>
 {
     options.Password.RequireDigit = true;
@@ -42,15 +41,18 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.User.RequireUniqueEmail = true;
 });
 
+// Add authentication and authorization services
 builder.Services.AddAuthentication();
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
+
+// Configure middleware pipeline
 app.UseCors("AllowSpecificOrigins");
 
 if (!app.Environment.IsDevelopment())
 {
-    app.UseDeveloperExceptionPage(); 
+    app.UseDeveloperExceptionPage();
 }
 else
 {
@@ -61,18 +63,21 @@ else
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
+
 app.UseCors(policy =>
     policy.WithOrigins("http://localhost:21905")
           .AllowAnyHeader()
           .AllowAnyMethod());
+
 app.UseAuthentication();
 app.UseAuthorization();
 
-
+// Map default routes
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Account}/{action=Login}/{id?}");
 
+// Create roles on startup
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
@@ -87,11 +92,10 @@ app.Run();
 async Task CreateRoles(RoleManager<IdentityRole> roleManager)
 {
     string[] roleNames = { "Clerk", "Manager", "Customer" };
-    
+
     foreach (var roleName in roleNames)
     {
-        bool roleExists = await roleManager.RoleExistsAsync(roleName);
-        if (!roleExists)
+        if (!await roleManager.RoleExistsAsync(roleName))
         {
             await roleManager.CreateAsync(new IdentityRole(roleName));
         }

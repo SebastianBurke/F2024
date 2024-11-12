@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("scbH60Store")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bf31799bd268945a96fdb6581c302038fe53a87b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7611413adf4d5c9484093f6212bd406452580d41")]
 [assembly: System.Reflection.AssemblyProductAttribute("scbH60Store")]
 [assembly: System.Reflection.AssemblyTitleAttribute("scbH60Store")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

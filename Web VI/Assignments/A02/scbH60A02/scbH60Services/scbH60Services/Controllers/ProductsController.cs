@@ -147,7 +147,6 @@ namespace scbH60Services.Controllers
             }
         }
 
-        // DELETE method in API to delete a product
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(int id)
         {
@@ -157,15 +156,11 @@ namespace scbH60Services.Controllers
                 return NotFound("Product not found");
             }
 
-            // Assuming DeleteProduct does not return a value (void)
             await _productService.DeleteProduct(id);
 
             return Ok("Product deleted successfully");
         }
 
-
-
-        // DTO for price update
         public class ProductPriceUpdateModel
         {
             public decimal BuyPrice { get; set; }

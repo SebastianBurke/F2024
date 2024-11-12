@@ -1,0 +1,34 @@
+﻿@model scbH60Store.Models.Product
+
+<h2 class="text-3xl font-bold mb-6">Product Details</h2>
+
+<div class="flex flex-col lg:flex-row gap-8">
+    <!-- Image Section -->
+    <div class="flex-shrink-0">
+        @if (!string.IsNullOrEmpty(Model.ImageUrl))
+        {
+            <img src="@Model.ImageUrl" alt="@Model.Description" class="max-w-md w-full h-auto rounded-lg shadow-md" />
+        }
+        else
+        {
+            <p class="text-gray-500">No image available</p>
+        }
+    </div>
+
+    <!-- Details Section -->
+    <div class="flex-1">
+        <h3 class="text-2xl font-semibold mb-4">@Model.Description</h3>
+        <p class="mb-2"><strong class="font-medium">Author(s):</strong> @Model.Manufacturer</p>
+        <p class="mb-2"><strong class="font-medium">Category:</strong> @Model.ProdCat.ProdCat</p>
+        <p class="mb-2"><strong class="font-medium">Stock:</strong> @Model.Stock</p>
+        <p class="mb-2"><strong class="font-medium">Price:</strong> @Model.SellPrice?.ToString("C")</p>
+        <p class="mb-4"><strong class="font-medium">Description:</strong> @Model.EmployeeNotes</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <a asp-action="Index" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 transition text-center">
+                Back to List
+            </a>
+        </div>
+
+    </div>
+</div>

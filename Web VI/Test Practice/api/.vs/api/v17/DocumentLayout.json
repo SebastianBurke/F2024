@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\temp\\F2024\\Web VI\\Test Practice\\api\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D33F7454-97D6-45E4-BA34-DFC98FDF8A7D}|api\\api.csproj|d:\\temp\\f2024\\web vi\\test practice\\api\\api\\repositories\\personrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D33F7454-97D6-45E4-BA34-DFC98FDF8A7D}|api\\api.csproj|solutionrelative:api\\repositories\\personrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A528971B-D8E4-4769-9ED1-C7DB7024BE17}|client\\client.csproj|d:\\temp\\f2024\\web vi\\test practice\\api\\client\\controllers\\personcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A528971B-D8E4-4769-9ED1-C7DB7024BE17}|client\\client.csproj|solutionrelative:client\\controllers\\personcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A528971B-D8E4-4769-9ED1-C7DB7024BE17}|client\\client.csproj|d:\\temp\\f2024\\web vi\\test practice\\api\\client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A528971B-D8E4-4769-9ED1-C7DB7024BE17}|client\\client.csproj|solutionrelative:client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PersonRepository.cs",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Test Practice\\api\\api\\Repositories\\PersonRepository.cs",
+              "RelativeDocumentMoniker": "api\\Repositories\\PersonRepository.cs",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Test Practice\\api\\api\\Repositories\\PersonRepository.cs",
+              "RelativeToolTip": "api\\Repositories\\PersonRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T02:08:14.224Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PersonController.cs",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Test Practice\\api\\client\\Controllers\\PersonController.cs",
+              "RelativeDocumentMoniker": "client\\Controllers\\PersonController.cs",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Test Practice\\api\\client\\Controllers\\PersonController.cs",
+              "RelativeToolTip": "client\\Controllers\\PersonController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T02:07:33.511Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Test Practice\\api\\client\\Program.cs",
+              "RelativeDocumentMoniker": "client\\Program.cs",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Test Practice\\api\\client\\Program.cs",
+              "RelativeToolTip": "client\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T02:07:28.968Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

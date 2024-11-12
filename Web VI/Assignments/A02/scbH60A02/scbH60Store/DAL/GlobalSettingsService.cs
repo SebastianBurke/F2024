@@ -1,59 +1,34 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using scbH60Store.Models;
+using System.Text;
 
 namespace scbH60Store.DAL
 {
     public class GlobalSettingsService : IGlobalSettingsService
     {
-        private readonly H60AssignmentDbContext _context;
+        private readonly HttpClient _httpClient;
 
-        public GlobalSettingsService(H60AssignmentDbContext context)
+        public GlobalSettingsService(HttpClient httpClient)
         {
-            _context = context;
+            _httpClient = httpClient;
         }
 
-        // Read
         public async Task<GlobalSettings> GetGlobalSettingsAsync()
         {
-            var settings = await _context.GlobalSettings.FindAsync(1);
-            if (settings == null)
-            {
-                // Handle case where settings do not exist
-                settings = new GlobalSettings { Id = 1, MinStockLimit = 0, MaxStockLimit = 1000 }; // Example default values
-            }
-            return settings;
+            var response = await _httpClient.GetAsync("http://localhost:21905/api/globalsettings");
+            if (!response.IsSuccessStatusCode) return null;
+
+            var responseData = await response.Content.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<GlobalSettings>(responseData);
         }
 
-        // Update
         public async Task<string> UpdateGlobalSettingsAsync(GlobalSettings settings)
         {
-            var existingSettings = await _context.GlobalSettings.FindAsync(1);
-            if (existingSettings != null)
-            {
-                // Check if any product's stock is outside the new limits
-                var invalidProducts = await _context.Products
-                    .Where(p => p.Stock < settings.MinStockLimit || p.Stock > settings.MaxStockLimit)
-                    .ToListAsync();
+            var content = new StringContent(JsonConvert.SerializeObject(settings), Encoding.UTF8, "application/json");
+            var response = await _httpClient.PutAsync("http://localhost:21905/api/globalsettings", content);
 
-                if (invalidProducts.Any())
-                {
-                    // Return an error message if there are invalid products
-                    return "Cannot update settings. Please adjust the stock of the products that fall outside the new limits.";
-                }
-
-                existingSettings.MinStockLimit = settings.MinStockLimit;
-                existingSettings.MaxStockLimit = settings.MaxStockLimit;
-                _context.Update(existingSettings);
-                await _context.SaveChangesAsync();
-                return "Settings updated successfully!";
-            }
-            else
-            {
-                // Handle case where settings do not exist
-                _context.GlobalSettings.Add(settings);
-                await _context.SaveChangesAsync();
-                return "Settings added successfully!";
-            }
+            return await response.Content.ReadAsStringAsync();
         }
 
     }

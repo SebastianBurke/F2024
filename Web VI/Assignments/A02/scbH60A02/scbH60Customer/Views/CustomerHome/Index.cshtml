@@ -1,0 +1,125 @@
+﻿@{
+    var categories = ViewBag.Categories as IEnumerable<scbH60Store.Models.ProductCategory>;
+    var randomCategory = ViewBag.RandomCategory as scbH60Store.Models.ProductCategory;
+}
+
+@if (categories != null && categories.Any())
+{
+    <div class="mb-6">
+        <h3 class="text-2xl font-semibold mb-4 flex justify-between items-center">
+            <span>
+                New to you:
+                <span class="text-blue-700">@randomCategory?.ProdCat</span>
+            </span>
+            <a asp-controller="CustomerProductCategory" asp-action="CategoryProducts" asp-route-id="@randomCategory?.CategoryId" class="text-blue-700 hover:text-blue-900 text-md">
+                See All
+            </a>
+        </h3>
+
+        <div class="relative">
+            <div class="overflow-hidden">
+                <div class="flex space-x-4 items-center">
+                    @foreach (var product in randomCategory?.Products.OrderBy(p => p.Description) ?? Enumerable.Empty<scbH60Store.Models.Product>())
+                    {
+                        <a asp-action="Details" asp-controller="CustomerProduct" asp-route-productId="@product.ProductId" class="flex-shrink-0 w-64">
+                            <div class="bg-white border rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition-transform transform hover:scale-105">
+                                <img src="@product.ImageUrl" alt="@product.Description" class="w-full h-auto aspect-[2/3] object-cover" />
+                                <div class="p-4">
+                                    <h4 class="text-lg font-semibold truncate">@product.Description</h4>
+                                    <p class="text-sm text-gray-500">Stock: @product.Stock</p>
+                                    <p class="text-sm font-medium text-gray-900">Price: @product.SellPrice</p>
+                                </div>
+                            </div>
+                        </a>
+                    }
+                </div>
+            </div>
+            <button id="prev-random" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full">‹</button>
+            <button id="next-random" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full">›</button>
+        </div>
+
+    </div>
+
+    <div class="mb-6">
+        <h3 class="text-2xl font-semibold mb-4 flex justify-between items-center">
+            Check out our categories!
+            <a asp-controller="CustomerProductCategory" asp-action="Index" class="text-blue-700 hover:text-blue-900 text-md">See All</a>
+        </h3>
+        <div class="relative">
+            <div class="overflow-hidden">
+                <div class="flex space-x-4 items-center">
+                    @foreach (var category in categories)
+                    {
+                        <a asp-controller="CustomerProductCategory" asp-action="CategoryProducts" asp-route-id="@category.CategoryId" class="flex-shrink-0 w-64">
+                            <div class="bg-white border rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition-transform transform hover:scale-105">
+                                <img src="@category.ImageUrl" alt="@category.ProdCat" class="object-cover w-full h-full rounded-md" />
+                                <div class="p-4">
+                                    <h4 class="text-lg font-semibold truncate">@category.ProdCat</h4>
+                                </div>
+                            </div>
+                        </a>
+                    }
+                </div>
+            </div>
+            <button id="prev-categories" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full">‹</button>
+            <button id="next-categories" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full">›</button>
+        </div>
+
+    </div>
+}
+else
+{
+    <p class="text-gray-500">No products available.</p>
+}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Category scroll
+        const categorySlider = document.querySelector('#prev-categories')?.parentNode;
+        const categoryNextButton = categorySlider.querySelector('#next-categories');
+        const categoryPrevButton = categorySlider.querySelector('#prev-categories');
+        const categoryContainer = categorySlider.querySelector('.flex');
+        const categoryContainerWidth = categorySlider.clientWidth;
+        const categoryItemWidth = categoryContainer.querySelector('.flex-shrink-0')?.offsetWidth || 0;
+        let categoryScrollPosition = 0;
+
+        categoryNextButton.addEventListener('click', () => {
+            const maxScroll = categoryContainer.scrollWidth - categoryContainerWidth;
+            if (categoryScrollPosition < maxScroll) {
+                categoryScrollPosition = Math.min(categoryScrollPosition + categoryItemWidth, maxScroll);
+                categoryContainer.style.transform = `translateX(-${categoryScrollPosition}px)`;
+            }
+        });
+
+        categoryPrevButton.addEventListener('click', () => {
+            if (categoryScrollPosition > 0) {
+                categoryScrollPosition = Math.max(categoryScrollPosition - categoryItemWidth, 0);
+                categoryContainer.style.transform = `translateX(-${categoryScrollPosition}px)`;
+            }
+        });
+
+        // Random category scroll
+        const randomSlider = document.querySelector('#prev-random')?.parentNode;
+        const randomNextButton = randomSlider.querySelector('#next-random');
+        const randomPrevButton = randomSlider.querySelector('#prev-random');
+        const randomContainer = randomSlider.querySelector('.flex');
+        const randomContainerWidth = randomSlider.clientWidth;
+        const randomItemWidth = randomContainer.querySelector('.flex-shrink-0')?.offsetWidth || 0;
+        let randomScrollPosition = 0;
+
+        randomNextButton.addEventListener('click', () => {
+            const maxScroll = randomContainer.scrollWidth - randomContainerWidth;
+            if (randomScrollPosition < maxScroll) {
+                randomScrollPosition = Math.min(randomScrollPosition + randomItemWidth, maxScroll);
+                randomContainer.style.transform = `translateX(-${randomScrollPosition}px)`;
+            }
+        });
+
+        randomPrevButton.addEventListener('click', () => {
+            if (randomScrollPosition > 0) {
+                randomScrollPosition = Math.max(randomScrollPosition - randomItemWidth, 0);
+                randomContainer.style.transform = `translateX(-${randomScrollPosition}px)`;
+            }
+        });
+    });
+</script>

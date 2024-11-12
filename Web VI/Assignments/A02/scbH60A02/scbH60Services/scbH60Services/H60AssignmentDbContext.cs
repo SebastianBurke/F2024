@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using scbH60Services.Models;
 
-public partial class H60AssignmentDbContext : DbContext
+public partial class H60AssignmentDbContext : IdentityDbContext<User>
 {
     public H60AssignmentDbContext()
     {
@@ -19,14 +20,29 @@ public partial class H60AssignmentDbContext : DbContext
     public virtual DbSet<Product> Products { get; set; }
     public virtual DbSet<ProductCategory> ProductCategories { get; set; }
     public virtual DbSet<GlobalSettings> GlobalSettings { get; set; }
+    public virtual DbSet<User> Users { get; set; }
+    public DbSet<IdentityUserRole<string>> UserRoles { get; set; }
+    public DbSet<ShoppingCart> ShoppingCarts { get; set; }
+    public DbSet<Order> Orders { get; set; }
+    public DbSet<OrderItem> OrderItems { get; set; }
+    public DbSet<CartItem> CartItems { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Server=cssql.cegep-heritage.qc.ca;Database=H60AssignmentDB_scb;User Id=SCANALESBURKE;Password=password;TrustServerCertificate=true;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<User>().ToTable("AspNetUsers");
+        modelBuilder.Entity<IdentityRole>().ToTable("AspNetRoles");
+        modelBuilder.Entity<IdentityUserRole<string>>().ToTable("AspNetUserRoles");
+        modelBuilder.Entity<IdentityUserClaim<string>>().ToTable("AspNetUserClaims");
+        modelBuilder.Entity<IdentityUserLogin<string>>().ToTable("AspNetUserLogins");
+        modelBuilder.Entity<IdentityRoleClaim<string>>().ToTable("AspNetRoleClaims");
+        modelBuilder.Entity<IdentityUserToken<string>>().ToTable("AspNetUserTokens");
+
         base.OnModelCreating(modelBuilder);
+
+        modelBuilder.Entity<IdentityUserRole<string>>().HasKey(r => new { r.UserId, r.RoleId });
 
         modelBuilder.Entity<Product>(entity =>
         {

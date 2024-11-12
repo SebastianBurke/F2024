@@ -1,87 +1,60 @@
-﻿using Microsoft.EntityFrameworkCore;
-using scbH60Store.DAL;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using Newtonsoft.Json;
+using System.Text;
+using static scbH60Store.Controllers.ProductCategoryController;
 
 namespace scbH60Store.Models
 {
     public class ProductCategoryService : IProductCategoryService
     {
-        private readonly H60AssignmentDbContext _context;
-        private readonly IGlobalSettingsService _globalSettingsService;
+        private readonly HttpClient _httpClient;
 
-
-        public ProductCategoryService(H60AssignmentDbContext context, IGlobalSettingsService globalSettingsService)
+        public ProductCategoryService(HttpClient httpClient)
         {
-            _context = context;
-            _globalSettingsService = globalSettingsService;
+            _httpClient = httpClient;
         }
 
-        public async Task AddCategory(ProductCategory category)
+        public async Task<List<ProductCategory>> GetAllCategoriesAsync()
         {
-            _context.ProductCategories.Add(category);
-            await _context.SaveChangesAsync();
+            var response = await _httpClient.GetAsync("http://localhost:21905/api/productcategory");
+            if (!response.IsSuccessStatusCode) return null;
+
+            var responseData = await response.Content.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<List<ProductCategory>>(responseData);
         }
 
-        public async Task<List<ProductCategory>> GetAllCategories()
+        public async Task<CategoryProductsResponse> GetProductsByCategoryAsync(int categoryId)
         {
-            return await _context.ProductCategories.ToListAsync();
+            var response = await _httpClient.GetAsync($"http://localhost:21905/api/productcategory/{categoryId}/products");
+            if (!response.IsSuccessStatusCode) return null;
+
+            var responseData = await response.Content.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<CategoryProductsResponse>(responseData);
         }
 
-        public async Task<ProductCategory> GetCategoryById(int id)
+        public async Task<ProductCategory> GetCategoryByIdAsync(int categoryId)
         {
-            return await _context.ProductCategories.FindAsync(id);
-        }
-        public async Task<List<Product>> GetCategoryProducts(int id)
-        {
-            return await _context.Products
-                       .Where(p => p.ProdCatId == id)
-                       .ToListAsync();
+            var response = await _httpClient.GetAsync($"http://localhost:21905/api/productcategory/{categoryId}");
+            if (!response.IsSuccessStatusCode) return null;
+
+            var responseData = await response.Content.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<ProductCategory>(responseData);
         }
 
-        public async Task UpdateCategory(ProductCategory category)
+        public async Task<HttpResponseMessage> CreateCategoryAsync(ProductCategory category)
         {
-            _context.ProductCategories.Update(category);
-            await _context.SaveChangesAsync();
+            var categoryContent = new StringContent(JsonConvert.SerializeObject(category), Encoding.UTF8, "application/json");
+            return await _httpClient.PostAsync("http://localhost:21905/api/productcategory", categoryContent);
         }
 
-        public async Task DeleteCategory(int id)
+        public async Task<HttpResponseMessage> UpdateCategoryAsync(ProductCategory category)
         {
-            var category = await _context.ProductCategories
-                                         .Include(c => c.Products)
-                                         .FirstOrDefaultAsync(c => c.CategoryId == id);
-
-            if (category == null)
-            {
-                throw new ArgumentException("Category not found");
-            }
-
-            if (category.Products != null && category.Products.Any())
-            {
-                foreach (var product in category.Products)
-                {
-                    // Delete image file if it's not the default image
-                    if (product.ImageUrl != "/images/default-image.png")
-                    {
-                        var imagePath = Path.Combine("wwwroot", product.ImageUrl.TrimStart('/'));
-                        if (System.IO.File.Exists(imagePath))
-                        {
-                            System.IO.File.Delete(imagePath);
-                        }
-                    }
-                }
-
-                // Remove all products associated with the category
-                _context.Products.RemoveRange(category.Products);
-            }
-
-            // Remove the category itself
-            _context.ProductCategories.Remove(category);
-
-            await _context.SaveChangesAsync();
+            var categoryContent = new StringContent(JsonConvert.SerializeObject(category), Encoding.UTF8, "application/json");
+            return await _httpClient.PutAsync($"http://localhost:21905/api/productcategory/{category.CategoryId}", categoryContent);
         }
 
-
+        public async Task<HttpResponseMessage> DeleteCategoryAsync(int categoryId)
+        {
+            return await _httpClient.DeleteAsync($"http://localhost:21905/api/productcategory/{categoryId}");
+        }
     }
 }

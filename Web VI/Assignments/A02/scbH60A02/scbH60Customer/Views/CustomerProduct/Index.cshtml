@@ -1,0 +1,97 @@
+﻿@model IEnumerable<scbH60Store.Models.Product>
+
+<div class="flex justify-between mb-4">
+    <a asp-action="ProductsByCategory" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+        View by category
+    </a>
+</div>
+
+<form asp-action="FilterAndSort" method="get" class="space-y-4 mb-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <input type="text" name="partialName" placeholder="Search by name" value="@ViewBag.PartialName"
+               class="border border-gray-300 rounded px-4 py-2 w-full lg:w-full focus:ring focus:ring-blue-200" />
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <input type="number" name="equalTo" placeholder="Price equal to" value="@ViewBag.EqualTo"
+                   class="border border-gray-300 rounded px-4 py-2 w-full focus:ring focus:ring-blue-200" />
+
+            <input type="number" name="lessThan" placeholder="Price less than" value="@ViewBag.LessThan"
+                   class="border border-gray-300 rounded px-4 py-2 w-full focus:ring focus:ring-blue-200" />
+
+            <input type="number" name="greaterThan" placeholder="Price greater than" value="@ViewBag.GreaterThan"
+                   class="border border-gray-300 rounded px-4 py-2 w-full focus:ring focus:ring-blue-200" />
+        </div>
+    </div>
+    <div class="flex justify-between mb-4">
+    <select name="sortBy" class="border border-gray-300 rounded px-4 py-2 space-x-1 focus:ring focus:ring-blue-200">
+        @if (ViewBag.CurrentSort == "description")
+        {
+            <option value="description" selected>Sort Alphabetically</option>
+        }
+        else
+        {
+            <option value="description">Sort Alphabetically</option>
+        }
+
+        @if (ViewBag.CurrentSort == "price")
+        {
+            <option value="price" selected>Sort By Price</option>
+        }
+        else
+        {
+            <option value="price">Sort By Price</option>
+        }
+
+        @if (ViewBag.CurrentSort == "stock")
+        {
+            <option value="stock" selected>Sort By Stock</option>
+        }
+        else
+        {
+            <option value="stock">Sort By Stock</option>
+        }
+
+        @if (ViewBag.CurrentSort == "markup")
+        {
+            <option value="markup" selected>Sort By Markup</option>
+        }
+        else
+        {
+            <option value="markup">Sort By Markup</option>
+        }
+    </select>
+
+    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+        Filter and Sort
+    </button>
+    </div>
+
+</form>
+
+@if (Model != null && Model.Any())
+{
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        @foreach (var product in Model)
+        {
+            <a asp-action="Details" asp-route-productId="@product.ProductId" class="block border border-gray-300 p-4 rounded-lg shadow-md bg-white hover:bg-gray-100 transition">
+                <div class="aspect-w-2 aspect-h-3 mb-4">
+                    <img src="@product.ImageUrl" alt="@product.Description" class="object-cover w-full h-full rounded-md" />
+                </div>
+
+                <p class="text-lg font-semibold mb-1">@product.Description</p>
+                <p class="text-gray-600 mb-1">Price: @product.SellPrice</p>
+                <p class="text-gray-600 mb-2">Stock: @product.Stock</p>
+
+                @if (product.Stock < 0)
+                {
+                    <p class="text-red-600 font-bold">Out of Stock</p>
+                }
+            </a>
+        }
+    </div>
+}
+else
+{
+    <p class="text-gray-500">No products available.</p>
+}
+

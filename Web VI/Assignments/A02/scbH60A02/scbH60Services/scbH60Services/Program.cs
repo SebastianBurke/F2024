@@ -14,6 +14,7 @@ builder.Services.AddDbContext<H60AssignmentDbContext>(options =>
 builder.Services.AddScoped<IProductService, ProductService>(); // Add ProductService
 builder.Services.AddScoped<IProductCategoryService, ProductCategoryService>(); // Add ProductCategoryService if necessary
 builder.Services.AddScoped<IGlobalSettingsService, GlobalSettingsService>(); // If you're using a settings service
+builder.Services.AddScoped<ICustomerService, CustomerService>();
 
 // Add controllers
 builder.Services.AddControllers();

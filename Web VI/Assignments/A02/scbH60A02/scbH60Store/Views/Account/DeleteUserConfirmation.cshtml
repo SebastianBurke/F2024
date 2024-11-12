@@ -1,0 +1,26 @@
+﻿@model scbH60Store.Models.User
+
+@{
+    ViewBag.Title = "Confirm User Deletion";
+}
+
+<h2 class="text-3xl font-bold mb-6">Confirm User Deletion</h2>
+
+<div class="mt-4 space-y-4">
+    <p>Are you sure you want to delete the following user?</p>
+    <p><strong>Email:</strong> @Model.Email</p>
+    <p><strong>Name:</strong> @Model.FirstName @Model.LastName</p>
+    <p><strong>Phone:</strong> @Model.PhoneNumber</p>
+
+    <div class="mt-6 flex space-x-4">
+        <form asp-action="DeleteUser" asp-route-userId="@Model.Id" method="post">
+            <button type="submit" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition">
+                Confirm Delete
+            </button>
+        </form>
+
+        <a asp-action="UserList" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 transition">
+            Cancel
+        </a>
+    </div>
+</div>

@@ -76,12 +76,9 @@ namespace scbH60Services.DAL
                 _context.Products.RemoveRange(category.Products);
             }
 
-            // Remove the category itself
             _context.ProductCategories.Remove(category);
 
             await _context.SaveChangesAsync();
         }
-
-
     }
 }

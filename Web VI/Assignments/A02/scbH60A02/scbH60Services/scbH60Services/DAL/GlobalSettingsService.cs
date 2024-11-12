@@ -12,51 +12,48 @@ namespace scbH60Services.DAL
             _context = context;
         }
 
-        // Read
         public async Task<GlobalSettings> GetGlobalSettingsAsync()
         {
             var settings = await _context.GlobalSettings.FindAsync(1);
-            if (settings == null)
-            {
-                // Handle case where settings do not exist
-                settings = new GlobalSettings { Id = 1, MinStockLimit = 0, MaxStockLimit = 1000 }; // Example default values
-            }
             return settings;
         }
 
-        // Update
         public async Task<string> UpdateGlobalSettingsAsync(GlobalSettings settings)
         {
+            if (settings.MinStockLimit < 0)
+            {
+                return "MinStockLimit cannot be less than zero.";
+            }
+
+            if (settings.MaxStockLimit > 1000000)
+            {
+                return "MaxStockLimit cannot be greater than 1,000,000.";
+            }
+
             var existingSettings = await _context.GlobalSettings.FindAsync(1);
+
+            var invalidProducts = await _context.Products
+                .Where(p => p.Stock < settings.MinStockLimit || p.Stock > settings.MaxStockLimit)
+                .ToListAsync();
+
+            if (invalidProducts.Any())
+            {
+                return $"Cannot update settings. Some existing products fall outside the new limits. Please adjust their stock first.";
+            }
+
             if (existingSettings != null)
             {
-                // Check if any product's stock is outside the new limits
-                var invalidProducts = await _context.Products
-                    .Where(p => p.Stock < settings.MinStockLimit || p.Stock > settings.MaxStockLimit)
-                    .ToListAsync();
-
-                if (invalidProducts.Any())
-                {
-                    // Return an error message if there are invalid products
-                    return "Cannot update settings. Please adjust the stock of the products that fall outside the new limits.";
-                }
-
                 existingSettings.MinStockLimit = settings.MinStockLimit;
                 existingSettings.MaxStockLimit = settings.MaxStockLimit;
                 _context.Update(existingSettings);
-                await _context.SaveChangesAsync();
-                return "Settings updated successfully!";
             }
             else
             {
-                // Handle case where settings do not exist
                 _context.GlobalSettings.Add(settings);
-                await _context.SaveChangesAsync();
-                return "Settings added successfully!";
             }
+
+            await _context.SaveChangesAsync();
+            return "Settings updated successfully!";
         }
-
     }
-
-
 }

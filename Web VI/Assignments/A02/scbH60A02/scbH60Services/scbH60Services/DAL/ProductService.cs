@@ -17,7 +17,6 @@ namespace scbH60Services.DAL
             _globalSettingsService = globalSettingsService;
         }
 
-        // Create
         public async Task<string> AddProduct(Product product)
         {
             var settings = await _globalSettingsService.GetGlobalSettingsAsync();
@@ -32,7 +31,6 @@ namespace scbH60Services.DAL
             await _context.SaveChangesAsync();
             return "Product added successfully!";
         }
-        // Read
 
         public async Task<List<Product>> GetAllProducts()
         {
@@ -87,16 +85,12 @@ namespace scbH60Services.DAL
             return await query.ToListAsync();
         }
 
-
         public async Task<Product> GetProductById(int id)
         {
             return await _context.Products
                 .Include(p => p.ProdCat)
                 .FirstOrDefaultAsync(p => p.ProductId == id);
         }
-
-
-        // Update
 
         public async Task<string> Edit(Product product)
         {
@@ -129,31 +123,26 @@ namespace scbH60Services.DAL
             await _context.SaveChangesAsync();
             return "Product updated successfully!";
         }
+
         public async Task EditStock(int productId, int stockChange)
         {
             var product = await _context.Products.FindAsync(productId);
             if (product == null) throw new ArgumentException("Product not found");
 
-            // Calculate the new stock value
             var newStock = product.Stock + stockChange;
 
-            // Retrieve global settings
             var settings = await _globalSettingsService.GetGlobalSettingsAsync();
 
-            // Validate the new stock value
             if (newStock < settings.MinStockLimit || newStock > settings.MaxStockLimit)
             {
                 throw new ArgumentException($"Stock must be between {settings.MinStockLimit} and {settings.MaxStockLimit}.");
             }
 
-            // Update stock with the change
             product.Stock = newStock;
 
-            // Update and save changes
             _context.Products.Update(product);
             await _context.SaveChangesAsync();
         }
-
 
         public async Task EditPrice(int productId, decimal buyPrice, decimal sellPrice)
         {
@@ -173,7 +162,6 @@ namespace scbH60Services.DAL
             await _context.SaveChangesAsync();
         }
 
-        // Delete
         public async Task DeleteProduct(int id)
         {
             var product = await _context.Products.FindAsync(id);
@@ -195,6 +183,5 @@ namespace scbH60Services.DAL
             _context.Products.Remove(product);
             await _context.SaveChangesAsync();
         }
-
     }
 }

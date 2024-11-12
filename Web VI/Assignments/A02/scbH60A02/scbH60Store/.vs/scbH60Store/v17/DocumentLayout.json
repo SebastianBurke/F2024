@@ -3,8 +3,34 @@
   "WorkspaceRootPath": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|d:\\temp\\f2024\\web vi\\assignments\\a02\\scbh60a02\\scbh60store\\controllers\\productcategorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|solutionrelative:controllers\\productcategorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7F60B9D7-AB4F-47DC-93D5-167EA0F2BD00}|..\\scbH60Customer\\scbH60Customer.csproj|d:\\temp\\f2024\\web vi\\assignments\\a02\\scbh60a02\\scbh60customer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F95BDD2-1473-4545-8E06-391B6A60F0FA}|..\\scbH60Services\\scbH60Services\\scbH60Services.csproj|d:\\temp\\f2024\\web vi\\assignments\\a02\\scbh60a02\\scbh60services\\scbh60services\\h60assignmentdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|d:\\temp\\f2024\\web vi\\assignments\\a02\\scbh60a02\\scbh60store\\models\\h60assignmentdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|solutionrelative:models\\h60assignmentdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|d:\\temp\\f2024\\web vi\\assignments\\a02\\scbh60a02\\scbh60store\\views\\account\\userlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|solutionrelative:views\\account\\userlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|d:\\temp\\f2024\\web vi\\assignments\\a02\\scbh60a02\\scbh60store\\views\\account\\deleteuserconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|solutionrelative:views\\account\\deleteuserconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|d:\\temp\\f2024\\web vi\\assignments\\a02\\scbh60a02\\scbh60store\\views\\account\\edituser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|solutionrelative:views\\account\\edituser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|d:\\temp\\f2024\\web vi\\assignments\\a02\\scbh60a02\\scbh60store\\views\\account\\userdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|solutionrelative:views\\account\\userdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|d:\\temp\\f2024\\web vi\\assignments\\a02\\scbh60a02\\scbh60store\\views\\account\\registercustomer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{974D6490-64A3-4073-A0F7-A1A606F3796A}|scbH60Store.csproj|solutionrelative:views\\account\\registercustomer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,15 +45,99 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ProductCategoryController.cs",
-              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\Controllers\\ProductCategoryController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ProductCategoryController.cs",
-              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\Controllers\\ProductCategoryController.cs",
-              "RelativeToolTip": "Controllers\\ProductCategoryController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA3AAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Customer\\Program.cs",
+              "RelativeDocumentMoniker": "..\\scbH60Customer\\Program.cs",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Customer\\Program.cs",
+              "RelativeToolTip": "..\\scbH60Customer\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T06:55:51.993Z",
+              "WhenOpened": "2024-11-12T01:07:02.226Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "H60AssignmentDbContext.cs",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Services\\scbH60Services\\H60AssignmentDbContext.cs",
+              "RelativeDocumentMoniker": "..\\scbH60Services\\scbH60Services\\H60AssignmentDbContext.cs",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Services\\scbH60Services\\H60AssignmentDbContext.cs",
+              "RelativeToolTip": "..\\scbH60Services\\scbH60Services\\H60AssignmentDbContext.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAowBwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T01:03:31.876Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "H60AssignmentDbContext.cs",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\Models\\H60AssignmentDbContext.cs",
+              "RelativeDocumentMoniker": "Models\\H60AssignmentDbContext.cs",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\Models\\H60AssignmentDbContext.cs",
+              "RelativeToolTip": "Models\\H60AssignmentDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T01:03:13.34Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserList.cshtml",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\Views\\Account\\UserList.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\UserList.cshtml",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\Views\\Account\\UserList.cshtml",
+              "RelativeToolTip": "Views\\Account\\UserList.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-12T00:58:32.614Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DeleteUserConfirmation.cshtml",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\Views\\Account\\DeleteUserConfirmation.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\DeleteUserConfirmation.cshtml",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\Views\\Account\\DeleteUserConfirmation.cshtml",
+              "RelativeToolTip": "Views\\Account\\DeleteUserConfirmation.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-12T00:59:03.508Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EditUser.cshtml",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\Views\\Account\\EditUser.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\EditUser.cshtml",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\Views\\Account\\EditUser.cshtml",
+              "RelativeToolTip": "Views\\Account\\EditUser.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAcwDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-12T00:58:59.296Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RegisterCustomer.cshtml",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\Views\\Account\\RegisterCustomer.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\RegisterCustomer.cshtml",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\Views\\Account\\RegisterCustomer.cshtml",
+              "RelativeToolTip": "Views\\Account\\RegisterCustomer.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-12T00:58:56.174Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserDetails.cshtml",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\Views\\Account\\UserDetails.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\UserDetails.cshtml",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A02\\scbH60A02\\scbH60Store\\Views\\Account\\UserDetails.cshtml",
+              "RelativeToolTip": "Views\\Account\\UserDetails.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-12T00:58:50.93Z"
             }
           ]
         }

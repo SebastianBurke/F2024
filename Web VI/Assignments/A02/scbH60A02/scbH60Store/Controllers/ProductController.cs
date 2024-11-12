@@ -23,6 +23,7 @@ namespace scbH60Store.Controllers
         }
 
         // Create
+
         [HttpGet]
         public async Task<IActionResult> Create()
         {
@@ -63,6 +64,7 @@ namespace scbH60Store.Controllers
         }
 
         // Read
+
         [HttpGet]
         public async Task<IActionResult> Index()
         {
@@ -106,6 +108,7 @@ namespace scbH60Store.Controllers
         }
 
         // Update
+
         [HttpGet]
         public async Task<IActionResult> Edit(int productId)
         {
@@ -210,6 +213,7 @@ namespace scbH60Store.Controllers
         }
 
         //Delete
+
         [HttpGet]
         public async Task<IActionResult> Delete(int productId)
         {
@@ -237,6 +241,7 @@ namespace scbH60Store.Controllers
         }
 
         // Helper Methods
+
         private void RemoveModelStateEntries(params string[] keys)
         {
             foreach (var key in keys)
