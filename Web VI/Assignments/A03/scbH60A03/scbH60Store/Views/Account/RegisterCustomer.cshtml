@@ -1,0 +1,64 @@
+﻿@model scbH60Store.Models.RegisterViewModel
+
+<h2 class="text-3xl font-bold mb-6">Register as a Customer</h2>
+
+<form asp-action="RegisterCustomer" asp-controller="Account" method="post" class="space-y-6">
+    <!-- First Name -->
+    <div>
+        <label asp-for="FirstName" class="block text-gray-700 font-medium mb-2">First Name</label>
+        <input asp-for="FirstName" class="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-blue-300" />
+        <span asp-validation-for="FirstName" class="text-red-600"></span>
+    </div>
+
+    <!-- Last Name -->
+    <div>
+        <label asp-for="LastName" class="block text-gray-700 font-medium mb-2">Last Name</label>
+        <input asp-for="LastName" class="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-blue-300" />
+        <span asp-validation-for="LastName" class="text-red-600"></span>
+    </div>
+
+    <!-- Email -->
+    <div>
+        <label asp-for="Email" class="block text-gray-700 font-medium mb-2">Email</label>
+        <input asp-for="Email" class="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-blue-300" />
+        <span asp-validation-for="Email" class="text-red-600"></span>
+    </div>
+
+    <!-- Password -->
+    <div>
+        <label asp-for="Password" class="block text-gray-700 font-medium mb-2">Password</label>
+        <input asp-for="Password" type="password" class="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-blue-300" />
+        <span asp-validation-for="Password" class="text-red-600"></span>
+    </div>
+
+    <!-- Confirm Password -->
+    <div>
+        <label asp-for="ConfirmPassword" class="block text-gray-700 font-medium mb-2">Confirm Password</label>
+        <input asp-for="ConfirmPassword" type="password" class="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-blue-300" />
+        <span asp-validation-for="ConfirmPassword" class="text-red-600"></span>
+    </div>
+
+    <!-- Phone Number -->
+    <div>
+        <label asp-for="PhoneNumber" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+        <input asp-for="PhoneNumber" class="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-blue-300" />
+        <span asp-validation-for="PhoneNumber" class="text-red-600"></span>
+    </div>
+
+    <!-- Province -->
+    <div>
+        <label asp-for="Province" class="block text-gray-700 font-medium mb-2">Province</label>
+        <input asp-for="Province" class="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-blue-300" />
+        <span asp-validation-for="Province" class="text-red-600"></span>
+    </div>
+
+    <!-- Credit Card -->
+    <div>
+        <label asp-for="CreditCard" class="block text-gray-700 font-medium mb-2">Credit Card</label>
+        <input asp-for="CreditCard" class="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-blue-300" />
+        <span asp-validation-for="CreditCard" class="text-red-600"></span>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition">Register</button>
+</form>

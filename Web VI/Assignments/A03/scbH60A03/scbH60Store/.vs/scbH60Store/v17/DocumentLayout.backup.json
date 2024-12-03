@@ -1,0 +1,116 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Store\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7F60B9D7-AB4F-47DC-93D5-167EA0F2BD00}|..\\scbH60Customer\\scbH60Customer.csproj|d:\\temp\\f2024\\web vi\\assignments\\a03\\scbh60a03\\scbh60customer\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F60B9D7-AB4F-47DC-93D5-167EA0F2BD00}|..\\scbH60Customer\\scbH60Customer.csproj|d:\\temp\\f2024\\web vi\\assignments\\a03\\scbh60a03\\scbh60customer\\views\\customerproduct\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F95BDD2-1473-4545-8E06-391B6A60F0FA}|..\\scbH60Services\\scbH60Services\\scbH60Services.csproj|d:\\temp\\f2024\\web vi\\assignments\\a03\\scbh60a03\\scbh60services\\scbh60services\\models\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F60B9D7-AB4F-47DC-93D5-167EA0F2BD00}|..\\scbH60Customer\\scbH60Customer.csproj|d:\\temp\\f2024\\web vi\\assignments\\a03\\scbh60a03\\scbh60customer\\views\\customerproduct\\viewcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F95BDD2-1473-4545-8E06-391B6A60F0FA}|..\\scbH60Services\\scbH60Services\\scbH60Services.csproj|d:\\temp\\f2024\\web vi\\assignments\\a03\\scbh60a03\\scbh60services\\scbh60services\\services\\shoppingcartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F60B9D7-AB4F-47DC-93D5-167EA0F2BD00}|..\\scbH60Customer\\scbH60Customer.csproj|d:\\temp\\f2024\\web vi\\assignments\\a03\\scbh60a03\\scbh60customer\\controllers\\customerproductcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "..\\scbH60Customer\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "..\\scbH60Customer\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAACkAAACoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-03T21:54:34.44Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ShoppingCartService.cs",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Services\\scbH60Services\\Services\\ShoppingCartService.cs",
+              "RelativeDocumentMoniker": "..\\scbH60Services\\scbH60Services\\Services\\ShoppingCartService.cs",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Services\\scbH60Services\\Services\\ShoppingCartService.cs",
+              "RelativeToolTip": "..\\scbH60Services\\scbH60Services\\Services\\ShoppingCartService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T21:50:49.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ViewCart.cshtml",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\Views\\CustomerProduct\\ViewCart.cshtml",
+              "RelativeDocumentMoniker": "..\\scbH60Customer\\Views\\CustomerProduct\\ViewCart.cshtml",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\Views\\CustomerProduct\\ViewCart.cshtml",
+              "RelativeToolTip": "..\\scbH60Customer\\Views\\CustomerProduct\\ViewCart.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-03T21:48:50.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ShoppingCart.cs",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Services\\scbH60Services\\Models\\ShoppingCart.cs",
+              "RelativeDocumentMoniker": "..\\scbH60Services\\scbH60Services\\Models\\ShoppingCart.cs",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Services\\scbH60Services\\Models\\ShoppingCart.cs",
+              "RelativeToolTip": "..\\scbH60Services\\scbH60Services\\Models\\ShoppingCart.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T21:48:37.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CustomerProductController.cs",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\Controllers\\CustomerProductController.cs",
+              "RelativeDocumentMoniker": "..\\scbH60Customer\\Controllers\\CustomerProductController.cs",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\Controllers\\CustomerProductController.cs",
+              "RelativeToolTip": "..\\scbH60Customer\\Controllers\\CustomerProductController.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAIwFUAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T21:48:11.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\Views\\CustomerProduct\\Details.cshtml",
+              "RelativeDocumentMoniker": "..\\scbH60Customer\\Views\\CustomerProduct\\Details.cshtml",
+              "ToolTip": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\Views\\CustomerProduct\\Details.cshtml",
+              "RelativeToolTip": "..\\scbH60Customer\\Views\\CustomerProduct\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-03T21:47:02.269Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

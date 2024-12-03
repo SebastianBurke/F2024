@@ -1,0 +1,35 @@
+﻿@model IEnumerable<scbH60Services.Models.User>
+
+@{
+    ViewBag.Title = "User List";
+}
+
+<h2 class="text-3xl font-bold mb-6">User List</h2>
+
+<a asp-action="Register" class="text-blue-600 hover:underline mb-4 inline-block">Create User</a>
+
+<table class="table-auto w-full border border-gray-300 mt-4">
+    <thead class="bg-gray-200">
+        <tr>
+            <th class="px-4 py-2 border">Email</th>
+            <th class="px-4 py-2 border">Name</th>
+            <th class="px-4 py-2 border">Phone</th>
+            <th class="px-4 py-2 border">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr class="hover:bg-gray-100">
+                <td class="px-4 py-2 border">@user.Email</td>
+                <td class="px-4 py-2 border">@user.FirstName @user.LastName</td>
+                <td class="px-4 py-2 border">@user.PhoneNumber</td>
+                <td class="px-4 py-2 border">
+                    <a asp-action="UserDetails" asp-route-userId="@user.Id" class="text-blue-600 hover:underline">Details</a> |
+                    <a asp-action="EditUser" asp-route-userId="@user.Id" class="text-green-600 hover:underline">Edit</a> |
+                    <a asp-action="DeleteUserConfirmation" asp-route-userId="@user.Id" class="text-red-600 hover:underline">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

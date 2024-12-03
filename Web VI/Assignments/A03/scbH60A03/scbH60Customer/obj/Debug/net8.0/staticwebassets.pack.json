@@ -1,0 +1,529 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\scbH60Customer.bundle.scp.css",
+      "PackagePath": "staticwebassets\\scbH60Customer.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\IMG_0619.jpg",
+      "PackagePath": "staticwebassets\\images\\IMG_0619.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\IMG_0620.jpg",
+      "PackagePath": "staticwebassets\\images\\IMG_0620.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\IMG_0621.jpg",
+      "PackagePath": "staticwebassets\\images\\IMG_0621.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\IMG_0622.jpg",
+      "PackagePath": "staticwebassets\\images\\IMG_0622.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\IMG_0623.jpg",
+      "PackagePath": "staticwebassets\\images\\IMG_0623.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\IMG_0624_a97da3e0-8e4f-4e9e-ad11-7abb1768fa6b.jpg",
+      "PackagePath": "staticwebassets\\images\\IMG_0624_a97da3e0-8e4f-4e9e-ad11-7abb1768fa6b.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\IMG_0626.jpg",
+      "PackagePath": "staticwebassets\\images\\IMG_0626.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\Screenshot 2021-10-04 213751.png",
+      "PackagePath": "staticwebassets\\images\\Screenshot 2021-10-04 213751.png"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\SovietSuperman.jpg",
+      "PackagePath": "staticwebassets\\images\\SovietSuperman.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\SovietUnion.jpg",
+      "PackagePath": "staticwebassets\\images\\SovietUnion.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\WallpaperEngineLockOverride_randomGLFXWL.jpg",
+      "PackagePath": "staticwebassets\\images\\WallpaperEngineLockOverride_randomGLFXWL.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\Wolverine_2024_1.jpg",
+      "PackagePath": "staticwebassets\\images\\Wolverine_2024_1.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\Wolverine_2024_2.jpg",
+      "PackagePath": "staticwebassets\\images\\Wolverine_2024_2.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\Wolverine_2024_3.jpg",
+      "PackagePath": "staticwebassets\\images\\Wolverine_2024_3.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\all_star_batman_the_deluxe_edition.jpg",
+      "PackagePath": "staticwebassets\\images\\all_star_batman_the_deluxe_edition.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\american_vampire_1.jpg",
+      "PackagePath": "staticwebassets\\images\\american_vampire_1.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\attack_on_titan_1.jpg",
+      "PackagePath": "staticwebassets\\images\\attack_on_titan_1.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\attack_on_titan_2.jpg",
+      "PackagePath": "staticwebassets\\images\\attack_on_titan_2.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\attack_on_titan_3.jpg",
+      "PackagePath": "staticwebassets\\images\\attack_on_titan_3.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\azrael_20.jpg",
+      "PackagePath": "staticwebassets\\images\\azrael_20.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\baka.png",
+      "PackagePath": "staticwebassets\\images\\baka.png"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\bam.png",
+      "PackagePath": "staticwebassets\\images\\bam.png"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\batman_day_2024_batman_elmer_fudd_special_noir_1.jpg",
+      "PackagePath": "staticwebassets\\images\\batman_day_2024_batman_elmer_fudd_special_noir_1.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\batman_the_long_halloween_the_last_halloween_0.jpg",
+      "PackagePath": "staticwebassets\\images\\batman_the_long_halloween_the_last_halloween_0.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\berserk_1.jpg",
+      "PackagePath": "staticwebassets\\images\\berserk_1.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\berserk_2.jpg",
+      "PackagePath": "staticwebassets\\images\\berserk_2.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\berserk_3.jpg",
+      "PackagePath": "staticwebassets\\images\\berserk_3.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\boom.png",
+      "PackagePath": "staticwebassets\\images\\boom.png"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\chainsaw_man_1.jpg",
+      "PackagePath": "staticwebassets\\images\\chainsaw_man_1.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\crash.png",
+      "PackagePath": "staticwebassets\\images\\crash.png"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\dc_comics.jpg",
+      "PackagePath": "staticwebassets\\images\\dc_comics.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\deadpool_6.jpg",
+      "PackagePath": "staticwebassets\\images\\deadpool_6.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\default-image.png",
+      "PackagePath": "staticwebassets\\images\\default-image.png"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\geiger_1.jpg",
+      "PackagePath": "staticwebassets\\images\\geiger_1.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\geiger_3.jpg",
+      "PackagePath": "staticwebassets\\images\\geiger_3.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\geiger_5.jpg",
+      "PackagePath": "staticwebassets\\images\\geiger_5.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\image_comics.jpg",
+      "PackagePath": "staticwebassets\\images\\image_comics.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\invincible_1.jpg",
+      "PackagePath": "staticwebassets\\images\\invincible_1.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\invincible_144.jpg",
+      "PackagePath": "staticwebassets\\images\\invincible_144.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\king_spawn_1.jpg",
+      "PackagePath": "staticwebassets\\images\\king_spawn_1.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\king_spawn_2.jpg",
+      "PackagePath": "staticwebassets\\images\\king_spawn_2.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\king_spawn_3.jpg",
+      "PackagePath": "staticwebassets\\images\\king_spawn_3.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\king_spawn_4.jpg",
+      "PackagePath": "staticwebassets\\images\\king_spawn_4.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\marvel_comics.jpg",
+      "PackagePath": "staticwebassets\\images\\marvel_comics.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\nightwing_uncovered_1.jpg",
+      "PackagePath": "staticwebassets\\images\\nightwing_uncovered_1.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\one_piece_1.jpg",
+      "PackagePath": "staticwebassets\\images\\one_piece_1.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\one_piece_2.jpg",
+      "PackagePath": "staticwebassets\\images\\one_piece_2.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\one_piece_3.jpg",
+      "PackagePath": "staticwebassets\\images\\one_piece_3.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\one_piece_4.jpg",
+      "PackagePath": "staticwebassets\\images\\one_piece_4.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\one_piece_5.jpg",
+      "PackagePath": "staticwebassets\\images\\one_piece_5.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\panel-portal-header.png",
+      "PackagePath": "staticwebassets\\images\\panel-portal-header.png"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\panel-portal.png",
+      "PackagePath": "staticwebassets\\images\\panel-portal.png"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\seinen_manga.jpg",
+      "PackagePath": "staticwebassets\\images\\seinen_manga.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\shonen_manga.jpg",
+      "PackagePath": "staticwebassets\\images\\shonen_manga.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\spider_man_reign_2_2024_1.jpg",
+      "PackagePath": "staticwebassets\\images\\spider_man_reign_2_2024_1.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\spider_man_reign_2_2024_2.jpg",
+      "PackagePath": "staticwebassets\\images\\spider_man_reign_2_2024_2.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\spider_man_reign_2_2024_3.jpg",
+      "PackagePath": "staticwebassets\\images\\spider_man_reign_2_2024_3.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\superman_18.jpg",
+      "PackagePath": "staticwebassets\\images\\superman_18.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\the_sandman.jpg",
+      "PackagePath": "staticwebassets\\images\\the_sandman.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\vinland_saga_1.jpg",
+      "PackagePath": "staticwebassets\\images\\vinland_saga_1.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\vinland_saga_2.jpg",
+      "PackagePath": "staticwebassets\\images\\vinland_saga_2.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\vinland_saga_3.jpg",
+      "PackagePath": "staticwebassets\\images\\vinland_saga_3.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\vision_2015_1.jpg",
+      "PackagePath": "staticwebassets\\images\\vision_2015_1.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\vision_2015_2.jpg",
+      "PackagePath": "staticwebassets\\images\\vision_2015_2.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\vision_2015_3.jpg",
+      "PackagePath": "staticwebassets\\images\\vision_2015_3.jpg"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\images\\zap.png",
+      "PackagePath": "staticwebassets\\images\\zap.png"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\temp\\F2024\\Web VI\\Assignments\\A03\\scbH60A03\\scbH60Customer\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.scbH60Customer.props",
+      "PackagePath": "build\\scbH60Customer.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.scbH60Customer.props",
+      "PackagePath": "buildMultiTargeting\\scbH60Customer.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.scbH60Customer.props",
+      "PackagePath": "buildTransitive\\scbH60Customer.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.scbH60Customer.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

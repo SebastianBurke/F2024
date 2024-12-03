@@ -1,0 +1,49 @@
+﻿@model scbH60Services.Models.ShoppingCart
+
+<h2 class="text-3xl font-bold mb-6">Your Shopping Cart</h2>
+
+@if (TempData["InfoMessage"] != null)
+{
+    <div class="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded relative" role="alert">
+        @TempData["InfoMessage"]
+    </div>
+}
+
+@if (Model.CartItems == null || !Model.CartItems.Any())
+{
+    <p class="text-gray-500">Your cart is empty.</p>
+}
+else
+{
+    <table class="table-auto w-full text-left border-collapse border border-gray-300">
+        <thead>
+            <tr>
+                <th class="border border-gray-300 px-4 py-2">Product</th>
+                <th class="border border-gray-300 px-4 py-2">Quantity</th>
+                <th class="border border-gray-300 px-4 py-2">Price</th>
+                <th class="border border-gray-300 px-4 py-2">Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.CartItems)
+            {
+                <tr>
+                    <td class="border border-gray-300 px-4 py-2">@item.Product?.Description</td>
+                    <td class="border border-gray-300 px-4 py-2">@item.Quantity</td>
+                    <td class="border border-gray-300 px-4 py-2">@item.Price.ToString("C")</td>
+                    <td class="border border-gray-300 px-4 py-2">@((item.Quantity * item.Price).ToString("C"))</td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="border border-gray-300 px-4 py-2 font-bold text-right">Total:</td>
+                <td class="border border-gray-300 px-4 py-2 font-bold">@Model.CartItems.Sum(item => item.Quantity * item.Price).ToString("C")</td>
+            </tr>
+        </tfoot>
+    </table>
+}
+
+<div class="mt-4">
+    <a asp-action="Index" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 transition">Continue Shopping</a>
+</div>

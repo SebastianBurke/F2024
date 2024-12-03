@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Panel Portal</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/scbH60Store.styles.css" asp-append-version="true" />
+    <style>
+        /* Custom styles for mobile menu toggle */
+        .navbar-menu {
+            display: none;
+        }
+        .navbar-menu.active {
+            display: flex;
+        }
+        .navbar-toggler {
+            cursor: pointer;
+        }
+        #cursor-images img {
+            position: absolute;
+            width: 40px; /* Adjust based on image size */
+            height: 40px; /* Adjust based on image size */
+            pointer-events: none; /* Ensure cursor images don't block other interactions */
+            z-index: 50; /* Ensure images appear above other content */
+        }
+    </style>
+</head>
+<body class="bg-white flex flex-col min-h-screen">
+    <header class="bg-white border-b border-gray-300 shadow-sm sticky top-0 z-50">
+        <div class="relative flex items-center">
+            <!-- Make the left 20% of the banner a link to index home -->
+            <a class="absolute left-0 top-0 w-1/5 h-full cursor-pointer md:hidden" asp-area="" asp-controller="Home" asp-action="Index"></a>
+            <img src="~/images/panel-portal-header.png" alt="Panel Portal Header" class="w-full h-auto" />
+            <nav class="hidden md:flex absolute right-0 top-0 items-center space-x-4 px-4 py-2">
+                <a class="text-gray-800 font-bold uppercase bg-gradient-to-r from-orange-500 to-yellow-500 px-4 py-2 rounded transition hover:bg-gradient-to-l hover:from-yellow-500 hover:to-orange-500 cursor-trigger" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                <a class="text-gray-800 font-bold uppercase bg-gradient-to-r from-orange-500 to-yellow-500 px-4 py-2 rounded transition hover:bg-gradient-to-l hover:from-yellow-500 hover:to-orange-500 cursor-trigger" asp-area="" asp-controller="Product" asp-action="Index">Comic Books</a>
+                <a class="text-gray-800 font-bold uppercase bg-gradient-to-r from-orange-500 to-yellow-500 px-4 py-2 rounded transition hover:bg-gradient-to-l hover:from-yellow-500 hover:to-orange-500 cursor-trigger" asp-area="" asp-controller="ProductCategory" asp-action="Index">Categories</a>
+                <a class="text-gray-800 font-bold uppercase bg-gradient-to-r from-orange-500 to-yellow-500 px-4 py-2 rounded transition hover:bg-gradient-to-l hover:from-yellow-500 hover:to-orange-500 cursor-trigger" asp-area="" asp-controller="GlobalSettings" asp-action="Index">Settings</a>
+                <a class="text-gray-800 font-bold uppercase bg-gradient-to-r from-orange-500 to-yellow-500 px-4 py-2 rounded transition hover:bg-gradient-to-l hover:from-yellow-500 hover:to-orange-500 cursor-trigger" asp-area="" asp-controller="Account" asp-action="UserList">Users</a>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <form asp-action="Logout" asp-controller="Account" method="post">
+                        <button type="submit" class="btn btn-link">Logout</button>
+                    </form>
+                }
+                else
+                {
+                    <a asp-controller="Account" asp-action="Login">Login</a>
+                    <a asp-controller="Account" asp-action="RegisterCustomer">Create Account</a>
+                }
+
+            </nav>
+
+            <div class="md:hidden flex items-center absolute top-0 right-0 p-4">
+                <button class="navbar-toggler text-gray-800" id="navbar-toggler">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="navbar-menu" class="navbar-menu flex flex-col items-end absolute top-0 right-0 w-full bg-white border-t border-gray-300">
+                <a class="text-gray-800 hover:text-orange-400 py-2 text-right px-4" asp-area="" asp-action="Index">Home</a>
+                <a class="text-gray-800 hover:text-orange-400 py-2 text-right px-4" asp-area="" asp-controller="Product" asp-action="Index">Comic Books</a>
+                <a class="text-gray-800 hover:text-orange-400 py-2 text-right px-4" asp-area="" asp-controller="ProductCategory" asp-action="Index">Categories</a>
+                <a class="text-gray-800 hover:text-orange-400 py-2 text-right px-4" asp-area="" asp-controller="GlobalSettings" asp-action="Index">Settings</a>
+                <a class="text-gray-800 hover:text-orange-400 py-2 text-right px-4" asp-area="" asp-controller="Account" asp-action="UserList">Users</a>
+
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-1 p-4">
+        @RenderBody()
+    </main>
+
+    <footer class="bg-red-600 text-white text-center py-4 border-t border-gray-300">
+        <div class="container mx-auto px-4">
+            <div class="mb-2">
+                &copy; 2024 - Panel Portal -
+                <a href="@Url.Action("Privacy", "Home")" class="text-white hover:text-orange-400">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cursor-images" class="fixed top-0 left-0 w-full h-full pointer-events-none z-50">
+        <img src="~/images/bam.png" alt="Bam" class="hidden" />
+        <img src="~/images/boom.png" alt="Boom" class="hidden" />
+        <img src="~/images/zap.png" alt="Zap" class="hidden" />
+        <img src="~/images/crash.png" alt="Crash" class="hidden" />
+        <img src="~/images/baka.png" alt="Baka" class="hidden" />
+    </div>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const cursorImages = document.getElementById('cursor-images');
+            const cursorImgs = Array.from(cursorImages.getElementsByTagName('img'));
+
+            function randomImage() {
+                const visibleImages = cursorImgs.filter(img => !img.classList.contains('hidden'));
+                if (visibleImages.length === 0) {
+                    return cursorImgs[Math.floor(Math.random() * cursorImgs.length)];
+                } else {
+                    return visibleImages[Math.floor(Math.random() * visibleImages.length)];
+                }
+            }
+
+            function showImageAtCursor(event) {
+                const img = randomImage().cloneNode();
+                img.style.left = `${event.clientX - img.width / 2}px`; // Center the image on cursor
+                img.style.top = `${event.clientY - img.height / 2}px`; // Center the image on cursor
+                img.classList.remove('hidden');
+                cursorImages.appendChild(img);
+                setTimeout(() => {
+                    img.remove();
+                }, 1500); // Image visibility duration
+            }
+
+            // Attach event listeners to elements with class 'cursor-trigger'
+            document.querySelectorAll('.cursor-trigger').forEach(element => {
+                element.addEventListener('mouseover', showImageAtCursor);
+                element.addEventListener('click', showImageAtCursor);
+            });
+
+            // Mobile menu toggle
+            document.getElementById('navbar-toggler').addEventListener('click', function () {
+                document.getElementById('navbar-menu').classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

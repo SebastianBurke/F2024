@@ -1,0 +1,30 @@
+﻿@model scbH60Services.Models.ProductCategory
+
+<h2 class="text-2xl font-bold mb-4">Edit Product Category</h2>
+
+<form asp-action="Edit" enctype="multipart/form-data" class="space-y-6">
+    <div class="form-group flex items-center space-x-4">
+        <div class="flex-1">
+            <label asp-for="ProdCat" class="block text-sm font-medium text-gray-700">Category Name</label>
+            <input asp-for="ProdCat" class="form-control mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" />
+            <span asp-validation-for="ProdCat" class="text-red-600 text-sm mt-1"></span>
+        </div>
+
+        <div class="flex-1">
+            <label for="ImageFile" class="block text-sm font-medium text-gray-700">Change Image</label>
+            <input type="file" name="ImageFile" id="ImageFile" class="form-control-file mt-1 block w-full border border-gray-300 rounded-md py-2 px-3">
+        </div>
+    </div>
+
+    <!-- Display the current category image -->
+    <div class="form-group text-center mt-4">
+        <label class="block text-sm font-medium text-gray-700">Current Image</label>
+        <div class="mt-1">
+            <img src="@Model.ImageUrl" alt="Category Image" class="max-w-md max-h-80 object-cover rounded-md mx-auto" />
+        </div>
+    </div>
+
+    <input type="hidden" asp-for="ImageUrl" />
+    <input type="hidden" asp-for="CategoryId" />
+    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">Save</button>
+</form>

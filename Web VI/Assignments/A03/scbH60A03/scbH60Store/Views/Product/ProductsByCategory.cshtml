@@ -1,0 +1,72 @@
+﻿@model IEnumerable<scbH60Services.Models.ProductCategory>
+
+<h2 class="text-3xl font-bold mb-6">Products by Category</h2>
+
+@if (Model != null && Model.Any())
+{
+    @foreach (var category in Model.OrderBy(c => c.ProdCat))
+    {
+        <div class="mb-6">
+            <h3 class="text-2xl font-semibold mb-4 flex justify-between items-center">
+                @category.ProdCat
+                <a asp-controller="ProductCategory" asp-action="CategoryProducts" asp-route-id="@category.CategoryId" class="text-blue-700 hover:text-blue-900 text-md">See All</a>
+            </h3>
+
+            <div class="relative">
+                <div class="overflow-hidden">
+                    <div class="flex space-x-4 items-center">
+                        @foreach (var product in category.Products.OrderBy(p => p.Description))
+                        {
+                            <a asp-action="Details" asp-route-productId="@product.ProductId" class="flex-shrink-0 w-64">
+                                <div class="bg-white border rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition-transform transform hover:scale-105">
+                                    <img src="@product.ImageUrl" alt="@product.Description" class="w-full h-auto aspect-[2/3] object-cover" />
+                                    <div class="p-4">
+                                        <h4 class="text-lg font-semibold truncate">@product.Description</h4>
+                                        <p class="text-sm text-gray-500">Stock: @product.Stock</p>
+                                        <p class="text-sm font-medium text-gray-900">Price: @product.SellPrice</p>
+                                    </div>
+                                </div>
+                            </a>
+                        }
+                    </div>
+                </div>
+                <button id="prev-@category.CategoryId" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full">‹</button>
+                <button id="next-@category.CategoryId" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full">›</button>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <p class="text-gray-500">No products available.</p>
+}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const sliders = document.querySelectorAll('.relative');
+
+        sliders.forEach(slider => {
+            const nextButton = slider.querySelector('[id^="next-"]');
+            const prevButton = slider.querySelector('[id^="prev-"]');
+            const sliderContainer = slider.querySelector('.flex');
+            const containerWidth = slider.clientWidth;
+            const itemWidth = slider.querySelector('.flex-shrink-0')?.offsetWidth || 0;
+            let scrollPosition = 0;
+
+            nextButton.addEventListener('click', () => {
+                const maxScroll = sliderContainer.scrollWidth - containerWidth;
+                if (scrollPosition < maxScroll) {
+                    scrollPosition = Math.min(scrollPosition + itemWidth, maxScroll);
+                    sliderContainer.style.transform = `translateX(-${scrollPosition}px)`;
+                }
+            });
+
+            prevButton.addEventListener('click', () => {
+                if (scrollPosition > 0) {
+                    scrollPosition = Math.max(scrollPosition - itemWidth, 0);
+                    sliderContainer.style.transform = `translateX(-${scrollPosition}px)`;
+                }
+            });
+        });
+    });
+</script>
